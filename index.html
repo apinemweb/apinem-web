@@ -23,7 +23,21 @@
     <h3>
         Como usar GIT
     </h3>
-
+ <details>
+        <summary>📘 Resumen Paso a Paso hasta como usar  Git</summary>
+        <ul>
+            <li><strong>Instalación:</strong> Descargaste Git Bash para Windows y verificaste la instalación usando el comando <code>git --version</code>.</li>
+            <li><strong>Configuración Inicial:</strong> Definiste tu nombre, correo y la rama principal "main" mediante comandos <code>git config --global</code>. Revisaste todo con <code>git config --list</code>.</li>
+            <li><strong>Inicialización:</strong> Creaste la carpeta GIT en VS Code y ejecutaste <code>git init</code>, lo que generó la carpeta oculta <code>.git</code> para guardar el historial y los commits.</li>
+            <li><strong>Archivos sin seguimiento:</strong> Creaste un archivo y aprendiste que la letra "U" significa <em>Untracked</em> (detectado pero no seguido por Git).</li>
+            <li><strong>Flujo de Trabajo:</strong> El flujo se compone de tres áreas consecutivas: <em>Working Directory</em> (edición), <em>Staging Area</em> (preparación con <code>git add .</code>) y <em>Repository</em> (guardado con <code>git commit</code>).</li>
+            <li><strong>Primer Guardado:</strong> Usaste <code>git add .</code> para preparar los archivos y <code>git commit -m "Primer commit"</code> para crear una captura o <em>snapshot</em> del proyecto.</li>
+            <li><strong>Control de Estado:</strong> Aprendiste a usar <code>git status</code> para ver el estado general y <code>git diff</code> para comparar líneas modificadas antes de confirmar un cambio. Al hacer el commit, estas herramientas se limpian.</li>
+            <li><strong>Integración en VS Code:</strong> La pestaña <em>Source Control</em> replica de forma visual las funciones de status, diff, add (+) y commit.</li>
+            <li><strong>El Ciclo Profesional:</strong> La rutina recomendada es: Modificar &rarr; status &rarr; diff &rarr; add &rarr; commit.</li>
+            <li><strong>Próximos Pasos:</strong> Una vez dominado este ciclo, sigue aprender: <code>git log</code>, <code>git restore</code>, el archivo <code>.gitignore</code>, ramas (branches), fusiones (merge) y la plataforma GitHub (push/pull).</li>
+        </ul>
+    </details>
     
 </body>
 </html>
