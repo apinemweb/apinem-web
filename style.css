@@ -1,0 +1,79 @@
+/* Configuración general del fondo y tipografía */
+body {
+    background-color: #121212; /* Negro oscuro, suave para los ojos */
+    color: #e0e0e0;            /* Blanco atenuado para evitar fatiga visual */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Títulos con colores temáticos de Git (tonos naranjas y amarillos) */
+h1 {
+    color: #f1502f; /* El color naranja oficial de Git */
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #f1502f;
+    opacity: 0.9;
+}
+
+h3 {
+    color: #e7a536; /* Amarillo cálido para subtítulos */
+    margin-top: 25px;
+}
+
+/* Párrafos */
+p {
+    color: #ffffff; /* Blanco puro para máxima legibilidad en lectura */
+    font-size: 1.1rem;
+}
+
+/* Estilos para el desplegable (Details y Summary) */
+details {
+    background-color: #1e1e1e; /* Gris muy oscuro para resaltar el bloque */
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+summary {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4fc3f7; /* Azul claro llamativo para el botón del desplegable */
+    cursor: pointer;
+    outline: none;
+}
+
+summary:hover {
+    color: #81d4fa; /* Efecto al pasar el mouse */
+}
+
+/* Lista de pasos */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 12px;
+    color: #cccccc;
+}
+
+/* Resaltado de comandos (etiqueta code) */
+code {
+    background-color: #2d2d2d;
+    color: #ff79c6; /* Rosa estilo consola Git para los comandos */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+}
+
+/* Negritas dentro de la lista */
+strong {
+    color: #f1502f; /* Resalta los conceptos clave en naranja Git */
+}
