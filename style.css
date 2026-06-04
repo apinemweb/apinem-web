@@ -1,79 +1,129 @@
-/* Configuración general del fondo y tipografía */
+/* ==========================================
+   Configuración General y Fondo
+   ========================================== */
 body {
-    background-color: #121212; /* Negro oscuro, suave para los ojos */
-    color: #e0e0e0;            /* Blanco atenuado para evitar fatiga visual */
+    background-color: #121212; /* Negro profundo pero suave para la vista */
+    color: #e0e0e0; /* Blanco grisáceo para evitar el cansancio visual */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Títulos con colores temáticos de Git (tonos naranjas y amarillos) */
+/* ==========================================
+   Títulos Principales
+   ========================================== */
 h1 {
-    color: #f1502f; /* El color naranja oficial de Git */
-    border-bottom: 2px solid #333;
+    color: #4fc3f7; /* Azul celeste llamativo */
+    border-bottom: 2px solid #333333;
     padding-bottom: 10px;
+    font-size: 2.5rem;
+    text-align: center;
 }
 
 h2 {
-    color: #f1502f;
-    opacity: 0.9;
+    color: #81c784; /* Verde suave para subtítulos */
+    margin-top: 30px;
+    font-size: 1.8rem;
 }
 
-h3 {
-    color: #e7a536; /* Amarillo cálido para subtítulos */
-    margin-top: 25px;
-}
-
-/* Párrafos */
 p {
-    color: #ffffff; /* Blanco puro para máxima legibilidad en lectura */
+    color: #b0bec5; /* Gris claro para los párrafos generales */
     font-size: 1.1rem;
 }
 
-/* Estilos para el desplegable (Details y Summary) */
+/* ==========================================
+   Estilos de los Desplegables (details)
+   ========================================== */
 details {
-    background-color: #1e1e1e; /* Gris muy oscuro para resaltar el bloque */
-    border: 1px solid #333;
-    border-radius: 6px;
+    background-color: #1e1e1e; /* Gris muy oscuro para las tarjetas */
+    border: 1px solid #333333;
+    border-radius: 8px;
+    margin-bottom: 15px;
     padding: 15px;
-    margin: 20px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* Efecto al pasar el mouse por encima del desplegable */
+details:hover {
+    border-color: #4fc3f7; /* El borde se vuelve azul */
+    background-color: #252526;
+}
+
+/* Cuando el desplegable está abierto */
+details[open] {
+    border-color: #81c784; /* El borde cambia a verde */
+    background-color: #1e1e1e;
+}
+
+/* Encabezado del desplegable */
 summary {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #4fc3f7; /* Azul claro llamativo para el botón del desplegable */
     cursor: pointer;
+    font-weight: bold;
     outline: none;
+    padding: 5px;
 }
 
-summary:hover {
-    color: #81d4fa; /* Efecto al pasar el mouse */
+/* Títulos dentro de los desplegables */
+summary h3, summary h4 {
+    display: inline; /* Mantiene el título alineado con la flecha nativa */
+    color: #ffb74d; /* Naranja cálido para resaltar los títulos internos */
+    font-size: 1.3rem;
+    margin-left: 10px;
 }
 
-/* Lista de pasos */
-ul {
-    padding-left: 20px;
+/* Especial para el resumen paso a paso */
+details summary:only-child, details[open] summary {
+    border-bottom: 1px solid #333333;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* ==========================================
+   Listas y Elementos de Texto
+   ========================================== */
+ul, ol {
+    padding-left: 25px;
+    color: #e0e0e0;
 }
 
 li {
-    margin-bottom: 12px;
-    color: #cccccc;
+    margin-bottom: 8px;
 }
 
-/* Resaltado de comandos (etiqueta code) */
+strong {
+    color: #ffffff; /* Blanco puro para las palabras importantes */
+}
+
+em {
+    color: #ea80fc; /* Rosado/Morado suave para las aclaraciones o advertencias */
+}
+
+/* ==========================================
+   Bloques de Código (Estilo Terminal)
+   ========================================== */
 code {
-    background-color: #2d2d2d;
-    color: #ff79c6; /* Rosa estilo consola Git para los comandos */
-    padding: 2px 6px;
+    background-color: #2d2d2d; /* Fondo gris código */
+    color: #f1fa8c; /* Amarillo brillante estilo consola */
+    padding: 3px 6px;
     border-radius: 4px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.95rem;
 }
 
-/* Negritas dentro de la lista */
-strong {
-    color: #f1502f; /* Resalta los conceptos clave en naranja Git */
+/* ==========================================
+   Enlaces (Links)
+   ========================================== */
+a {
+    color: #4fc3f7;
+    text-decoration: none;
+    border-bottom: 1px dashed #4fc3f7;
 }
+
+a:hover {
+    color: #81c784;
+    border-bottom: 1px solid #81c784;
+}
+
