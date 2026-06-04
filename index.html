@@ -1,9 +1,12 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <h1>
         HOLA estoy aprendiendo GIT
@@ -12,7 +15,7 @@
         La guía de GIT
     </h2>
     <p>
-        Hasta aqui est5amos viendo que es GIT y como inst5alarlo, para despues ir viendo como usarlo 
+        Hasta aqui est5amos viendo que es GIT y como inst5alarlo, para despues ir viendo como usarlo
     </p>
     <h3>
         Que es GIT
@@ -23,24 +26,81 @@
     <h3>
         Como usar GIT
     </h3>
- <details>
-        <summary>📘 Resumen Paso a Paso hasta como usar  Git</summary>
+    <details>
+        <summary>📘 Resumen Paso a Paso hasta como usar Git</summary>
         <ul>
-            <li><strong>Instalación:</strong> Descargaste Git Bash para Windows y verificaste la instalación usando el comando <code>git --version</code>.</li>
-            <li><strong>Configuración Inicial:</strong> Definiste tu nombre, correo y la rama principal "main" mediante comandos <code>git config --global</code>. Revisaste todo con <code>git config --list</code>.</li>
-            <li><strong>Inicialización:</strong> Creaste la carpeta GIT en VS Code y ejecutaste <code>git init</code>, lo que generó la carpeta oculta <code>.git</code> para guardar el historial y los commits.</li>
-            <li><strong>Archivos sin seguimiento:</strong> Creaste un archivo y aprendiste que la letra "U" significa <em>Untracked</em> (detectado pero no seguido por Git).</li>
-            <li><strong>Flujo de Trabajo:</strong> El flujo se compone de tres áreas consecutivas: <em>Working Directory</em> (edición), <em>Staging Area</em> (preparación con <code>git add .</code>) y <em>Repository</em> (guardado con <code>git commit</code>).</li>
-            <li><strong>Primer Guardado:</strong> Usaste <code>git add .</code> para preparar los archivos y <code>git commit -m "Primer commit"</code> para crear una captura o <em>snapshot</em> del proyecto.</li>
-            <li><strong>Control de Estado:</strong> Aprendiste a usar <code>git status</code> para ver el estado general y <code>git diff</code> para comparar líneas modificadas antes de confirmar un cambio. Al hacer el commit, estas herramientas se limpian.</li>
-            <li><strong>Integración en VS Code:</strong> La pestaña <em>Source Control</em> replica de forma visual las funciones de status, diff, add (+) y commit.</li>
-            <li><strong>El Ciclo Profesional:</strong> La rutina recomendada es: Modificar &rarr; status &rarr; diff &rarr; add &rarr; commit.</li>
-            <li><strong>Próximos Pasos:</strong> Una vez dominado este ciclo, sigue aprender: <code>git log</code>, <code>git restore</code>, el archivo <code>.gitignore</code>, ramas (branches), fusiones (merge) y la plataforma GitHub (push/pull).</li>
+            <li><strong>Instalación:</strong> Descargaste Git Bash para Windows y verificaste la instalación usando el
+                comando <code>git --version</code>.</li>
+            <li><strong>Configuración Inicial:</strong> Definiste tu nombre, correo y la rama principal "main" mediante
+                comandos <code>git config --global</code>. Revisaste todo con <code>git config --list</code>.</li>
+            <li><strong>Inicialización:</strong> Creaste la carpeta GIT en VS Code y ejecutaste <code>git init</code>,
+                lo que generó la carpeta oculta <code>.git</code> para guardar el historial y los commits.</li>
+            <li><strong>Archivos sin seguimiento:</strong> Creaste un archivo y aprendiste que la letra "U" significa
+                <em>Untracked</em> (detectado pero no seguido por Git).
+            </li>
+            <li><strong>Flujo de Trabajo:</strong> El flujo se compone de tres áreas consecutivas: <em>Working
+                    Directory</em> (edición), <em>Staging Area</em> (preparación con <code>git add .</code>) y
+                <em>Repository</em> (guardado con <code>git commit</code>).
+            </li>
+            <li><strong>Primer Guardado:</strong> Usaste <code>git add .</code> para preparar los archivos y
+                <code>git commit -m "Primer commit"</code> para crear una captura o <em>snapshot</em> del proyecto.
+            </li>
+            <li><strong>Control de Estado:</strong> Aprendiste a usar <code>git status</code> para ver el estado general
+                y <code>git diff</code> para comparar líneas modificadas antes de confirmar un cambio. Al hacer el
+                commit, estas herramientas se limpian.</li>
+            <li><strong>Integración en VS Code:</strong> La pestaña <em>Source Control</em> replica de forma visual las
+                funciones de status, diff, add (+) y commit.</li>
+            <li><strong>El Ciclo Profesional:</strong> La rutina recomendada es: Modificar &rarr; status &rarr; diff
+                &rarr; add &rarr; commit.</li>
+            <li><strong>Próximos Pasos:</strong> Una vez dominado este ciclo, sigue aprender: <code>git log</code>,
+                <code>git restore</code>, el archivo <code>.gitignore</code>, ramas (branches), fusiones (merge) y la
+                plataforma GitHub (push/pull).
+            </li>
         </ul>
     </details>
     <h3>
         Como usar GIT restore
     </h3>
-    
+    <p>
+        Es una herramienta diseñada exclusivamente para restaurar archivos a un estado previo (generalmente al estado
+        del último commit). Funciona como un "Ctrl + Z" inteligente para tu código.
+    </p>
+    <h3>
+        Que es HEAD y Hash
+    </h3>
+    <p>El <strong>HEAD</strong> es un puntero simbólico que indica cuál es tu posición actual en el historial de Git. Es
+        el equivalente al indicador de "usted está aquí" en un mapa. Por lo general, apunta a la rama en la que estás
+        trabajando (como main), la cual a su vez apunta al último commit de esa rama. Al mover el HEAD, cambiás lo que
+        ves en tu editor de código.</p>
+
+    <p>Un <strong>Hash</strong> (o SHA-1) es el identificador único universal de cada commit. Es una cadena de 40
+        caracteres alfanuméricos que Git genera automáticamente mediante un algoritmo matemático basándose en el
+        contenido de los archivos, el autor, la fecha y el mensaje del commit. Funciona como la huella digital exacta de
+        ese momento de tu proyecto.</p>
+
+
+
+    <h3>
+        Volver a commit anterior GIT checkout
+    </h3>
+    <p>Cuando usás <code>git checkout &lt;hash&gt;</code>, básicamente le estás diciendo a Git: "Por favor, mové mi HEAD
+        (mi puntero actual) a este punto del pasado".</p>
+
+    <h4>El concepto de "Detached HEAD"</h4>
+
+    <p>Antes de hacerlo, tenés que conocer este concepto clave. Cuando te movés a un commit pasado, entrás en un estado
+        llamado "Detached HEAD".</p>
+
+    <h5>¿Qué significa y cuáles son sus riesgos?</h5>
+
+    <ul>
+        <li><strong>¿Qué significa?</strong> Que el HEAD ya no está pegado a tu rama (main), está "desconectado" y
+            flotando en el pasado.</li>
+        <li><strong>¿Es peligroso?</strong> No, siempre y cuando sepas que todo lo que hagas ahí es temporal.</li>
+        <li><strong>Riesgo de pérdida:</strong> Si hacés cambios y te vas a otra rama sin guardarlos, esos cambios se
+            perderán.</li>
+    </ul>
+
 </body>
+
 </html>
