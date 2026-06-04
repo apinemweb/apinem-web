@@ -17,15 +17,57 @@
     <p>
         Hasta aqui est5amos viendo que es GIT y como inst5alarlo, para despues ir viendo como usarlo
     </p>
-    <h3>
-        Que es GIT
-    </h3>
-    <h3>
-        Como instalar GIT
-    </h3>
-    <h3>
-        Como usar GIT
-    </h3>
+    <!-- Desplegable 1 -->
+    <details>
+        <summary>
+            <h3>¿Qué es GIT?</h3>
+        </summary>
+        <p><strong>Git</strong> es un sistema de control de versiones distribuido. Funciona como una máquina del tiempo
+            para tu código. Registra los cambios en los archivos de un proyecto, permitiéndote volver a versiones
+            anteriores, comparar modificaciones y trabajar en equipo de forma organizada sin que el código de nadie se
+            superponga o se borre.</p>
+    </details>
+
+    <!-- Desplegable 2 -->
+    <details>
+        <summary>
+            <h3>Como instalar GIT</h3>
+        </summary>
+        <p>La instalación depende de tu sistema operativo actual:</p>
+        <ul>
+            <li><strong>Windows:</strong> Descargá el instalador oficial desde <a href="https://git-scm.com"
+                    target="_blank">git-scm.com</a>, ejecutalo y seguí el asistente ("Next, Next"). Se recomienda dejar
+                las opciones por defecto.</li>
+            <li><strong>Mac:</strong> Podés instalarlo abriendo la terminal y ejecutando el comando
+                <code>xcode-select --install</code>, o descargando el instalador desde la web oficial.
+            </li>
+            <li><strong>Linux (Ubuntu/Debian):</strong> Abrí la terminal y ejecutá el comando
+                <code>sudo apt update && sudo apt install git</code>.
+            </li>
+        </ul>
+        <p><em>Para verificar que se instaló correctamente, abrí una terminal y escribí <code>git --version</code>.</em>
+        </p>
+    </details>
+
+    <!-- Desplegable 3 -->
+    <details>
+        <summary>
+            <h3>Como usar GIT</h3>
+        </summary>
+        <p>El flujo básico de trabajo en Git consta de unos pocos comandos esenciales que ejecutás en tu terminal dentro
+            de la carpeta de tu proyecto:</p>
+        <ol>
+            <li><code>git init</code>: Inicializa un repositorio de Git en tu carpeta (crea la base de datos oculta
+                <code>.git</code>).
+            </li>
+            <li><code>git status</code>: Te muestra el estado actual de tus archivos (cuáles cambiaron, cuáles son
+                nuevos y qué se va a guardar).</li>
+            <li><code>git add nombre_archivo</code>: Envía el archivo al "área de preparación" (Staging Area),
+                preparándolo para la foto. Podés usar <code>git add .</code> para preparar todo.</li>
+            <li><code>git commit -m "Tu mensaje"</code>: Saca la "foto" oficial de tu código y la guarda en el historial
+                con un mensaje descriptivo de lo que hiciste.</li>
+        </ol>
+    </details>
     <details>
         <summary>📘 Resumen Paso a Paso hasta como usar Git</summary>
         <ul>
@@ -58,48 +100,53 @@
             </li>
         </ul>
     </details>
-    <h3>
-        Como usar GIT restore
-    </h3>
-    <p>
-        Es una herramienta diseñada exclusivamente para restaurar archivos a un estado previo (generalmente al estado
-        del último commit). Funciona como un "Ctrl + Z" inteligente para tu código.
-    </p>
-    <h3>
-        Que es HEAD y Hash
-    </h3>
-    <p>El <strong>HEAD</strong> es un puntero simbólico que indica cuál es tu posición actual en el historial de Git. Es
-        el equivalente al indicador de "usted está aquí" en un mapa. Por lo general, apunta a la rama en la que estás
-        trabajando (como main), la cual a su vez apunta al último commit de esa rama. Al mover el HEAD, cambiás lo que
-        ves en tu editor de código.</p>
+    <!-- Desplegable 4 -->
+    <details>
+        <summary>
+            <h3>Como usar GIT restore</h3>
+        </summary>
+        <p>El comando <code>git restore</code> sirve para deshacer cambios en tu espacio de trabajo. Funciona como un
+            Ctrl + Z inteligente. Sus usos principales son:</p>
+        <ul>
+            <li><code>git restore archivo.txt</code>: Descarta los cambios locales en un archivo y lo devuelve al estado
+                del último commit.</li>
+            <li><code>git restore .</code>: Descarta absolutamente todos los cambios sin guardar del proyecto.</li>
+            <li><code>git restore --staged archivo.txt</code>: Saca un archivo del área de preparación (deshace el
+                <code>git add</code>) pero conserva tus modificaciones.</li>
+        </ul>
+    </details>
 
-    <p>Un <strong>Hash</strong> (o SHA-1) es el identificador único universal de cada commit. Es una cadena de 40
-        caracteres alfanuméricos que Git genera automáticamente mediante un algoritmo matemático basándose en el
-        contenido de los archivos, el autor, la fecha y el mensaje del commit. Funciona como la huella digital exacta de
-        ese momento de tu proyecto.</p>
+    <!-- Desplegable 5 -->
+    <details>
+        <summary>
+            <h3>Que es HEAD y Hash</h3>
+        </summary>
+        <ul>
+            <li><strong>Hash (SHA-1):</strong> Es el identificador único universal de cada commit. Consiste en una
+                cadena alfanumérica generada automáticamente por un algoritmo matemático. Funciona como la huella
+                digital exacta de un momento específico de tu código.</li>
+            <li><strong>HEAD:</strong> Es un puntero simbólico que indica cuál es tu posición actual en el historial. Es
+                el equivalente al indicador de "usted está aquí" en un mapa. Cambia de posición cuando te movés entre
+                ramas o commits.</li>
+        </ul>
+    </details>
 
+    <!-- Desplegable 6 -->
+    <details>
+        <summary>
+            <h3>Volver a commit anterior GIT checkout</h3>
+        </summary>
+        <p>Permite viajar en el tiempo dentro de tu proyecto para revisar cómo estaba tu código en el pasado modificando
+            el puntero HEAD:</p>
+        <ol>
+            <li>Buscá el código identificador usando <code>git log --oneline</code>.</li>
+            <li>Viajá al pasado ejecutando <code>git checkout &lt;hash_del_commit&gt;</code>.</li>
+            <li><em>Advertencia:</em> Entrarás en estado <strong>"Detached HEAD"</strong> (HEAD desasociado). Todo
+                cambio que hagas ahí flotará en el pasado y se perderá si no creás una rama nueva.</li>
+            <li>Volvé al presente regresando a tu rama principal con <code>git checkout main</code>.</li>
+        </ol>
+    </details>
 
-
-    <h3>
-        Volver a commit anterior GIT checkout
-    </h3>
-    <p>Cuando usás <code>git checkout &lt;hash&gt;</code>, básicamente le estás diciendo a Git: "Por favor, mové mi HEAD
-        (mi puntero actual) a este punto del pasado".</p>
-
-    <h4>El concepto de "Detached HEAD"</h4>
-
-    <p>Antes de hacerlo, tenés que conocer este concepto clave. Cuando te movés a un commit pasado, entrás en un estado
-        llamado "Detached HEAD".</p>
-
-    <h5>¿Qué significa y cuáles son sus riesgos?</h5>
-
-    <ul>
-        <li><strong>¿Qué significa?</strong> Que el HEAD ya no está pegado a tu rama (main), está "desconectado" y
-            flotando en el pasado.</li>
-        <li><strong>¿Es peligroso?</strong> No, siempre y cuando sepas que todo lo que hagas ahí es temporal.</li>
-        <li><strong>Riesgo de pérdida:</strong> Si hacés cambios y te vas a otra rama sin guardarlos, esos cambios se
-            perderán.</li>
-    </ul>
 
 </body>
 
