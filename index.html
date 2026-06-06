@@ -68,6 +68,46 @@
                 con un mensaje descriptivo de lo que hiciste.</li>
         </ol>
     </details>
+    <!-- Desplegable 9 -->
+    <details>
+        <summary>
+            <h3>Working Directory, Staging Area y Repository</h3>
+        </summary>
+        <p>Git organiza el trabajo en tres áreas principales que representan las distintas etapas por las que pasan los
+            archivos antes de quedar guardados de forma permanente en el historial del proyecto.</p>
+        <ol>
+            <li><strong>Working Directory (Directorio de trabajo):</strong> Es la carpeta donde creás, modificás o
+                eliminás archivos de tu proyecto.</li>
+            <li><strong>Staging Area (Área de preparación o Index):</strong> Es el lugar temporal donde se agregan los
+                cambios que querés incluir en el próximo commit mediante <code>git add</code>.</li>
+            <li><strong>Repository (Repositorio):</strong> Es la base de datos de Git donde se almacenan de forma
+                permanente todos los commits y el historial del proyecto.</li>
+            <li>El flujo de trabajo habitual es:
+                <code>Working Directory → git add → Staging Area → git commit → Repository</code>.
+            </li>
+        </ol>
+    </details>
+    <!-- Desplegable 10 -->
+    <details>
+        <summary>
+            <h3>¿Qué es y cómo crear un commit?</h3>
+        </summary>
+        <p>Un <strong>commit</strong> es una captura del estado actual de los archivos preparados en el proyecto. Cada
+            commit guarda los cambios realizados junto con un mensaje descriptivo para facilitar el seguimiento del
+            historial.</p>
+        <ol>
+            <li>Prepará los archivos que querés guardar utilizando <code>git add nombre-del-archivo</code> o
+                <code>git add .</code>.
+            </li>
+            <li>Creá el commit ejecutando
+                <code>git commit -m "Descripción clara de los cambios realizados"</code>.
+            </li>
+            <li>Utilizá mensajes breves y descriptivos que expliquen qué modificaste o agregaste.</li>
+            <li>Verificá que el commit se haya creado correctamente ejecutando
+                <code>git log --oneline</code>.
+            </li>
+        </ol>
+    </details>
     <details>
         <summary>📘 Resumen Paso a Paso hasta como usar Git</summary>
         <ul>
@@ -112,7 +152,8 @@
                 del último commit.</li>
             <li><code>git restore .</code>: Descarta absolutamente todos los cambios sin guardar del proyecto.</li>
             <li><code>git restore --staged archivo.txt</code>: Saca un archivo del área de preparación (deshace el
-                <code>git add</code>) pero conserva tus modificaciones.</li>
+                <code>git add</code>) pero conserva tus modificaciones.
+            </li>
         </ul>
     </details>
 
@@ -146,7 +187,44 @@
             <li>Volvé al presente regresando a tu rama principal con <code>git checkout main</code>.</li>
         </ol>
     </details>
-
+    <!-- Desplegable 7 -->
+    <details>
+        <summary>
+            <h3>¿Qué es y cómo usar git revert?</h3>
+        </summary>
+        <p>Permite deshacer los cambios realizados por un commit específico creando un nuevo commit que invierte esos
+            cambios, sin eliminar el historial del proyecto.</p>
+        <ol>
+            <li>Buscá el identificador del commit ejecutando <code>git log --oneline</code>.</li>
+            <li>Ejecutá <code>git revert &lt;hash_del_commit&gt;</code> para crear un nuevo commit que revierta los
+                cambios.</li>
+            <li>Si Git abre el editor de texto para confirmar el mensaje del commit, guardá los cambios y cerrá el
+                editor.</li>
+            <li>Verificá el resultado utilizando nuevamente <code>git log --oneline</code> o revisando los archivos
+                modificados.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 8 -->
+    <details>
+        <summary>
+            <h3>¿Qué es y cómo usar git reset?</h3>
+        </summary>
+        <p>Permite mover el puntero <code>HEAD</code> hacia un commit anterior, pudiendo conservar o eliminar los
+            cambios
+            realizados dependiendo del modo utilizado.</p>
+        <ol>
+            <li>Buscá el identificador del commit ejecutando <code>git log --oneline</code>.</li>
+            <li>Usá <code>git reset --soft &lt;hash_del_commit&gt;</code> para volver a un commit anterior conservando
+                los
+                cambios preparados para el próximo commit.</li>
+            <li>Usá <code>git reset --mixed &lt;hash_del_commit&gt;</code> (modo predeterminado) para mantener los
+                cambios
+                en los archivos pero quitarlos del área de preparación.</li>
+            <li><em>Advertencia:</em> Usá <code>git reset --hard &lt;hash_del_commit&gt;</code> solo cuando estés
+                seguro,
+                ya que elimina definitivamente los cambios posteriores al commit seleccionado.</li>
+        </ol>
+    </details>
 
 </body>
 
