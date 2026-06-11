@@ -17,6 +17,9 @@
     <p>
         Hasta aqui est5amos viendo que es GIT y como inst5alarlo, para despues ir viendo como usarlo
     </p>
+    <h2>
+        ETAPA 1: Fundamentos
+    </h2>
     <!-- Desplegable 1 -->
     <details>
         <summary>
@@ -122,25 +125,137 @@
                 para administrar el repositorio.</li>
         </ol>
     </details>
-    <!-- Desplegable 10 -->
+    <!-- Desplegable 29 -->
     <details>
         <summary>
-            <h3>¿Qué es y cómo crear un commit?</h3>
+            <h3>¿Cómo crear un repositorio?</h3>
         </summary>
-        <p>Un <strong>commit</strong> es una captura del estado actual de los archivos preparados en el proyecto. Cada
-            commit guarda los cambios realizados junto con un mensaje descriptivo para facilitar el seguimiento del
-            historial.</p>
+        <p>Crear un repositorio consiste en inicializar Git dentro de una carpeta para que pueda comenzar a rastrear los
+            cambios realizados en los archivos del proyecto.</p>
         <ol>
-            <li>Prepará los archivos que querés guardar utilizando <code>git add nombre-del-archivo</code> o
+            <li>Creá una nueva carpeta para tu proyecto o abrí una carpeta existente.</li>
+            <li>Abrí una terminal dentro de dicha carpeta.</li>
+            <li>Ejecutá el comando <code>git init</code> para inicializar el repositorio.</li>
+            <li>Verificá que el repositorio se haya creado correctamente utilizando <code>git status</code>.</li>
+        </ol>
+    </details>
+    <h2>
+        ETAPA 2: Flujo básico de trabajo (la más importante)
+    </h2>
+    <!-- Desplegable 30 -->
+    <details>
+        <summary>
+            <h3>Ver el estado del proyecto - git status</h3>
+        </summary>
+        <p>El comando <code>git status</code> muestra el estado actual del repositorio, indicando qué archivos fueron
+            modificados, cuáles están preparados para un commit y cuáles aún no son rastreados por Git.</p>
+        <ol>
+            <li>Abrí una terminal dentro de tu repositorio Git.</li>
+            <li>Ejecutá el comando <code>git status</code>.</li>
+            <li>Revisá la información mostrada sobre archivos modificados, agregados o sin seguimiento.</li>
+            <li>Utilizá este comando antes de ejecutar <code>git add</code> o <code>git commit</code> para conocer el
+                estado del proyecto.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 31 -->
+    <details>
+        <summary>
+            <h3>Ver exactamente qué cambió - git diff</h3>
+        </summary>
+        <p>El comando <code>git diff</code> permite visualizar las diferencias entre la versión actual de los archivos y
+            la
+            última versión registrada en Git, mostrando las líneas agregadas, eliminadas o modificadas.</p>
+        <ol>
+            <li>Realizá uno o más cambios en los archivos del proyecto.</li>
+            <li>Ejecutá el comando <code>git diff</code>.</li>
+            <li>Observá las líneas eliminadas (precedidas por <code>-</code>) y las agregadas (precedidas por
+                <code>+</code>).
+            </li>
+            <li>Utilizá esta información para revisar tus modificaciones antes de agregarlas al área de preparación.
+            </li>
+        </ol>
+    </details>
+    <!-- Desplegable 32 -->
+    <details>
+        <summary>
+            <h3>Aprender a agregar un archivo específico - git add index.html</h3>
+        </summary>
+        <p>El comando <code>git add nombre-del-archivo</code> permite enviar un archivo específico desde el directorio
+            de
+            trabajo hacia el Staging Area para incluirlo en el próximo commit.</p>
+        <ol>
+            <li>Modificá el archivo que deseás preparar, por ejemplo <code>index.html</code>.</li>
+            <li>Ejecutá <code>git add index.html</code>.</li>
+            <li>Verificá el resultado utilizando <code>git status</code>.</li>
+            <li>Solo el archivo agregado quedará listo para formar parte del siguiente commit.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 33 -->
+    <details>
+        <summary>
+            <h3>Sacar archivos del Staging Area</h3>
+        </summary>
+        <p>Si agregaste un archivo al Staging Area por error, podés quitarlo sin perder los cambios realizados en el
+            directorio de trabajo.</p>
+        <ol>
+            <li>Verificá qué archivos están preparados utilizando <code>git status</code>.</li>
+            <li>Ejecutá <code>git restore --staged nombre-del-archivo</code> para quitar un archivo del Staging Area.
+            </li>
+            <li>Como alternativa, en versiones anteriores de Git podés utilizar
+                <code>git reset HEAD nombre-del-archivo</code>.
+            </li>
+            <li>Comprobá nuevamente el resultado ejecutando <code>git status</code>.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 35 -->
+    <details>
+        <summary>
+            <h3>¿Qué es un commit?</h3>
+        </summary>
+        <p>Un <strong>commit</strong> es un registro permanente que guarda una captura del estado de los archivos
+            preparados
+            en un momento determinado. Cada commit representa un punto en el historial del proyecto y permite seguir la
+            evolución del código a lo largo del tiempo.</p>
+        <ol>
+            <li>Almacena los cambios que fueron agregados previamente al Staging Area.</li>
+            <li>Incluye un identificador único (<code>hash</code>) generado automáticamente por Git.</li>
+            <li>También guarda información como el autor, la fecha y el mensaje descriptivo del commit.</li>
+            <li>Gracias a los commits es posible revisar, comparar o restaurar versiones anteriores del proyecto.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 36 -->
+    <details>
+        <summary>
+            <h3>¿Cómo crear un commit?</h3>
+        </summary>
+        <p>Crear un commit consiste en guardar de forma permanente los cambios preparados en el Staging Area dentro del
+            historial del repositorio.</p>
+        <ol>
+            <li>Agregá los archivos que querés incluir utilizando <code>git add nombre-del-archivo</code> o
                 <code>git add .</code>.
             </li>
-            <li>Creá el commit ejecutando
-                <code>git commit -m "Descripción clara de los cambios realizados"</code>.
-            </li>
-            <li>Utilizá mensajes breves y descriptivos que expliquen qué modificaste o agregaste.</li>
-            <li>Verificá que el commit se haya creado correctamente ejecutando
+            <li>Ejecutá el comando <code>git commit -m "Descripción de los cambios"</code>.</li>
+            <li>Escribí un mensaje claro y descriptivo que explique qué modificaciones realizaste.</li>
+            <li>Verificá que el commit se haya creado correctamente ejecutando <code>git log</code> o
                 <code>git log --oneline</code>.
             </li>
+        </ol>
+    </details>
+
+    <!-- Desplegable 34 -->
+    <details>
+        <summary>
+            <h3>Ver el historial - git log</h3>
+        </summary>
+        <p>El comando <code>git log</code> permite consultar el historial completo de commits de un repositorio,
+            mostrando
+            información como el identificador del commit, el autor, la fecha y el mensaje asociado.</p>
+        <ol>
+            <li>Abrí una terminal dentro de tu repositorio Git.</li>
+            <li>Ejecutá el comando <code>git log</code>.</li>
+            <li>Revisá la información de cada commit, incluyendo su <code>hash</code>, autor, fecha y descripción.</li>
+            <li>Si preferís una vista resumida, utilizá <code>git log --oneline</code> para mostrar cada commit en una
+                sola línea.</li>
         </ol>
     </details>
     <details>
@@ -175,10 +290,13 @@
             </li>
         </ul>
     </details>
+    <h2>
+        ETAPA 3: Recuperar cambios
+    </h2>
     <!-- Desplegable 4 -->
     <details>
         <summary>
-            <h3>Como usar GIT restore</h3>
+            <h3>GIT restore - Descartar cambios no guardados</h3>
         </summary>
         <p>El comando <code>git restore</code> sirve para deshacer cambios en tu espacio de trabajo. Funciona como un
             Ctrl + Z inteligente. Sus usos principales son:</p>
@@ -192,19 +310,43 @@
         </ul>
     </details>
 
-    <!-- Desplegable 5 -->
+
     <details>
         <summary>
-            <h3>Que es HEAD y Hash</h3>
+            <h3>¿Qué es HEAD?</h3>
         </summary>
-        <ul>
-            <li><strong>Hash (SHA-1):</strong> Es el identificador único universal de cada commit. Consiste en una
-                cadena alfanumérica generada automáticamente por un algoritmo matemático. Funciona como la huella
-                digital exacta de un momento específico de tu código.</li>
-            <li><strong>HEAD:</strong> Es un puntero simbólico que indica cuál es tu posición actual en el historial. Es
-                el equivalente al indicador de "usted está aquí" en un mapa. Cambia de posición cuando te movés entre
-                ramas o commits.</li>
-        </ul>
+        <p><code>HEAD</code> es un puntero especial de Git que indica la posición actual del repositorio. Normalmente
+            apunta
+            al último commit de la rama en la que estás trabajando y permite a Git saber cuál es la versión activa del
+            proyecto.</p>
+        <ol>
+            <li>Por defecto, <code>HEAD</code> apunta al commit más reciente de la rama actual.</li>
+            <li>Al cambiar de rama con <code>git switch</code> o <code>git checkout</code>, <code>HEAD</code> se mueve
+                automáticamente.</li>
+            <li>También puede apuntar directamente a un commit específico, entrando en el estado conocido como
+                <strong>Detached HEAD</strong>.</li>
+            <li>Muchos comandos de Git utilizan <code>HEAD</code> como referencia para comparar o restaurar cambios.
+            </li>
+        </ol>
+    </details>
+
+    <!-- Desplegable 38 -->
+    <details>
+        <summary>
+            <h3>¿Qué es un Hash?</h3>
+        </summary>
+        <p>Un <strong>Hash</strong> es un identificador único generado automáticamente por Git para cada commit. Está
+            formado por una cadena hexadecimal y permite localizar una versión específica del proyecto de manera
+            precisa.</p>
+        <ol>
+            <li>Cada commit posee un hash diferente e irrepetible.</li>
+            <li>Podés visualizar los hashes ejecutando <code>git log</code> o <code>git log --oneline</code>.</li>
+            <li>Muchos comandos de Git utilizan el hash para referirse a un commit concreto, por ejemplo
+                <code>git checkout &lt;hash&gt;</code> o <code>git revert &lt;hash&gt;</code>.
+            </li>
+            <li>Gracias a los hashes, Git puede identificar y recuperar cualquier versión almacenada en el historial del
+                repositorio.</li>
+        </ol>
     </details>
 
     <!-- Desplegable 6 -->
@@ -222,6 +364,9 @@
             <li>Volvé al presente regresando a tu rama principal con <code>git checkout main</code>.</li>
         </ol>
     </details>
+    <h2>
+        ETAPA 4: Deshacer cambios
+    </h2>
     <!-- Desplegable 7 -->
     <details>
         <summary>
@@ -280,6 +425,9 @@
                 pendientes.</li>
         </ol>
     </details>
+    <h2>
+        ETAPA 5: Trabajar con ramas
+    </h2>
     <!-- Desplegable 15 -->
     <details>
         <summary>
@@ -315,7 +463,7 @@
         </ol>
     </details>
     <h2>
-        LOS CONCEPTOS DE MERGE
+        ETAPA 6: Concepto de merge (dentro de ramas)
     </h2>
     <!-- Desplegable 20 -->
     <details>
@@ -379,7 +527,7 @@
         </ol>
     </details>
     <h2>
-        CONFLITOS DE MERGE
+        ETAPA 7: Conflictos de merge (dentro de ramas)
     </h2>
     <!-- Desplegable 24 -->
     <details>
