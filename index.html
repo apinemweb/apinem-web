@@ -96,7 +96,8 @@
             administrar repositorios de forma rápida y eficiente.</p>
         <ol>
             <li>Permite ejecutar comandos de Git como <code>git status</code>, <code>git add</code> y
-                <code>git commit</code>.</li>
+                <code>git commit</code>.
+            </li>
             <li>También permite navegar por carpetas, crear archivos y administrar proyectos desde la línea de comandos.
             </li>
             <li>Es una de las herramientas más utilizadas por desarrolladores para trabajar con Git de manera
@@ -313,11 +314,166 @@
                 ella.</li>
         </ol>
     </details>
+    <h2>
+        LOS CONCEPTOS DE MERGE
+    </h2>
+    <!-- Desplegable 20 -->
+    <details>
+        <summary>
+            <h3>¿Qué es merge?</h3>
+        </summary>
+        <p>El comando <code>git merge</code> permite combinar los cambios realizados en una rama con otra, integrando
+            los
+            historiales de desarrollo en un único proyecto.</p>
+        <ol>
+            <li>Se utiliza para unir el trabajo realizado en diferentes ramas.</li>
+            <li>Conserva el historial de commits de ambas ramas siempre que sea posible.</li>
+            <li>Es uno de los comandos más utilizados para incorporar nuevas funcionalidades al proyecto principal.</li>
+            <li>Puede realizar la fusión automáticamente o requerir intervención manual si existen conflictos.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 21 -->
+    <details>
+        <summary>
+            <h3>¿Para qué sirve merge?</h3>
+        </summary>
+        <p>El comando <code>git merge</code> sirve para integrar los cambios desarrollados en una rama dentro de otra,
+            permitiendo mantener un flujo de trabajo organizado y colaborativo.</p>
+        <ol>
+            <li>Facilita combinar nuevas funcionalidades con la rama principal del proyecto.</li>
+            <li>Permite integrar correcciones de errores desarrolladas en ramas independientes.</li>
+            <li>Ayuda a mantener un historial completo de los cambios realizados.</li>
+            <li>Es una herramienta fundamental para el trabajo en equipo utilizando Git.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 22 -->
+    <details>
+        <summary>
+            <h3>¿Cómo fusionar una rama con main?</h3>
+        </summary>
+        <p>Para fusionar una rama con <code>main</code>, primero debés posicionarte sobre la rama principal y luego
+            ejecutar
+            el comando <code>git merge</code> indicando el nombre de la rama que querés integrar.</p>
+        <ol>
+            <li>Cambiá a la rama principal ejecutando <code>git checkout main</code> o <code>git switch main</code>.
+            </li>
+            <li>Verificá que estés en <code>main</code> utilizando <code>git branch</code>.</li>
+            <li>Ejecutá <code>git merge nombre-rama</code> para incorporar los cambios.</li>
+            <li>Comprobá el resultado utilizando <code>git log</code> o revisando el contenido actualizado del proyecto.
+            </li>
+        </ol>
+    </details>
+    <!-- Desplegable 23 -->
+    <details>
+        <summary>
+            <h3>¿Qué ocurre cuando no hay conflictos?</h3>
+        </summary>
+        <p>Cuando Git detecta que los cambios de ambas ramas no se superponen ni modifican las mismas líneas de código,
+            puede realizar la fusión automáticamente sin requerir intervención del desarrollador.</p>
+        <ol>
+            <li>Git analiza el historial de ambas ramas antes de realizar la integración.</li>
+            <li>Si no existen modificaciones incompatibles, combina los cambios de forma automática.</li>
+            <li>Dependiendo del caso, puede crear un nuevo commit de fusión o realizar un <em>Fast-Forward Merge</em>.
+            </li>
+            <li>El proyecto queda actualizado y listo para continuar trabajando normalmente.</li>
+        </ol>
+    </details>
+    <h2>
+        CONFLITOS DE MERGE
+    </h2>
+    <!-- Desplegable 24 -->
+    <details>
+        <summary>
+            <h3>¿Qué es un conflicto?</h3>
+        </summary>
+        <p>Un conflicto en Git ocurre cuando el sistema no puede combinar automáticamente los cambios realizados en dos
+            ramas porque ambas modificaron la misma parte de uno o varios archivos.</p>
+        <ol>
+            <li>Se produce durante operaciones como <code>git merge</code> o <code>git rebase</code>.</li>
+            <li>Git detiene el proceso de fusión para evitar sobrescribir cambios importantes.</li>
+            <li>El desarrollador debe decidir qué contenido conservar o cómo combinar ambas versiones.</li>
+            <li>Una vez resuelto el conflicto, el proceso de integración puede continuar normalmente.</li>
+        </ol>
+    </details>
+
+    <!-- Desplegable 25 -->
+    <details>
+        <summary>
+            <h3>¿Por qué ocurre un conflicto?</h3>
+        </summary>
+        <p>Los conflictos aparecen cuando Git detecta que existen cambios incompatibles entre dos ramas y no puede
+            decidir
+            automáticamente cuál debe mantenerse.</p>
+        <ol>
+            <li>Dos ramas modifican las mismas líneas de un mismo archivo.</li>
+            <li>Una rama elimina un archivo mientras otra lo modifica.</li>
+            <li>Se intenta fusionar trabajo realizado de forma independiente sobre el mismo contenido.</li>
+            <li>Git requiere la intervención del desarrollador para resolver la situación correctamente.</li>
+        </ol>
+    </details>
+
+    <!-- Desplegable 26 -->
+    <details>
+        <summary>
+            <h3>¿Cómo identificar un conflicto?</h3>
+        </summary>
+        <p>Cuando ocurre un conflicto, Git informa el problema durante el proceso de fusión y marca los archivos
+            afectados
+            para que puedan revisarse manualmente.</p>
+        <ol>
+            <li>Al ejecutar <code>git merge</code>, Git mostrará un mensaje indicando que existen conflictos.</li>
+            <li>Utilizá <code>git status</code> para ver qué archivos necesitan atención.</li>
+            <li>Abrí los archivos afectados y buscá las marcas <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>,
+                <code>=======</code> y <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.
+            </li>
+            <li>Esas marcas delimitan las distintas versiones que deben revisarse antes de completar la fusión.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 27 -->
+    <details>
+        <summary>
+            <h3>¿Cómo resolver un conflicto?</h3>
+        </summary>
+        <p>Resolver un conflicto consiste en editar manualmente los archivos afectados para decidir qué cambios
+            conservar y
+            eliminar las marcas generadas por Git.</p>
+        <ol>
+            <li>Abrí el archivo que contiene el conflicto.</li>
+            <li>Revisá las secciones delimitadas por
+                <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>,
+                <code>=======</code> y
+                <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.
+            </li>
+            <li>Editá el contenido dejando únicamente la versión correcta y eliminando las marcas de conflicto.</li>
+            <li>Guardá el archivo y agregalo nuevamente al área de preparación con <code>git add nombre-archivo</code>.
+            </li>
+        </ol>
+    </details>
+
+    <!-- Desplegable 28 -->
+    <details>
+        <summary>
+            <h3>¿Cómo finalizar el merge?</h3>
+        </summary>
+        <p>Una vez resueltos todos los conflictos y agregados los archivos corregidos al área de preparación, el proceso
+            de
+            fusión puede completarse creando el commit de merge correspondiente.</p>
+        <ol>
+            <li>Verificá que todos los conflictos hayan sido resueltos ejecutando <code>git status</code>.</li>
+            <li>Agregá los archivos corregidos mediante <code>git add nombre-archivo</code> o <code>git add .</code>.
+            </li>
+            <li>Si Git no creó automáticamente el commit de fusión, ejecutá <code>git commit</code> para finalizar el
+                merge.</li>
+            <li>Comprobá el resultado revisando el historial con <code>git log --oneline</code>.</li>
+        </ol>
+    </details>
+
+
 
 
     <p>
-        SIGUEINTE TAREA, 
-seguir viendo branch, ult5io que vi como cfrear y6 cambiar de branch    </p>
+        SIGUEINTE TAREA,
+        seguir viendo branch, ult5io que vi como cfrear y6 cambiar de branch </p>
 
 
 
