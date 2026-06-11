@@ -1,0 +1,381 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        HOLA estoy aprendiendo GIT
+    </h1>
+    <h2>
+        La guía de GIT
+    </h2>
+    <p>
+        Hasta aqui est5amos viendo que es GIT y como inst5alarlo, para despues ir viendo como usarlo
+    </p>
+    <!-- Desplegable 1 -->
+    <details>
+        <summary>
+            <h3>¿Qué es GIT?</h3>
+        </summary>
+        <p><strong>Git</strong> es un sistema de control de versiones distribuido. Funciona como una máquina del tiempo
+            para tu código. Registra los cambios en los archivos de un proyecto, permitiéndote volver a versiones
+            anteriores, comparar modificaciones y trabajar en equipo de forma organizada sin que el código de nadie se
+            superponga o se borre.</p>
+    </details>
+
+    <!-- Desplegable 2 -->
+    <details>
+        <summary>
+            <h3>Como instalar GIT</h3>
+        </summary>
+        <p>La instalación depende de tu sistema operativo actual:</p>
+        <ul>
+            <li><strong>Windows:</strong> Descargá el instalador oficial desde <a href="https://git-scm.com"
+                    target="_blank">git-scm.com</a>, ejecutalo y seguí el asistente ("Next, Next"). Se recomienda dejar
+                las opciones por defecto.</li>
+            <li><strong>Mac:</strong> Podés instalarlo abriendo la terminal y ejecutando el comando
+                <code>xcode-select --install</code>, o descargando el instalador desde la web oficial.
+            </li>
+            <li><strong>Linux (Ubuntu/Debian):</strong> Abrí la terminal y ejecutá el comando
+                <code>sudo apt update && sudo apt install git</code>.
+            </li>
+        </ul>
+        <p><em>Para verificar que se instaló correctamente, abrí una terminal y escribí <code>git --version</code>.</em>
+        </p>
+    </details>
+
+    <!-- Desplegable 3 -->
+    <details>
+        <summary>
+            <h3>Como usar GIT</h3>
+        </summary>
+        <p>El flujo básico de trabajo en Git consta de unos pocos comandos esenciales que ejecutás en tu terminal dentro
+            de la carpeta de tu proyecto:</p>
+        <ol>
+            <li><code>git init</code>: Inicializa un repositorio de Git en tu carpeta (crea la base de datos oculta
+                <code>.git</code>).
+            </li>
+            <li><code>git status</code>: Te muestra el estado actual de tus archivos (cuáles cambiaron, cuáles son
+                nuevos y qué se va a guardar).</li>
+            <li><code>git add nombre_archivo</code>: Envía el archivo al "área de preparación" (Staging Area),
+                preparándolo para la foto. Podés usar <code>git add .</code> para preparar todo.</li>
+            <li><code>git commit -m "Tu mensaje"</code>: Saca la "foto" oficial de tu código y la guarda en el historial
+                con un mensaje descriptivo de lo que hiciste.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 9 -->
+    <details>
+        <summary>
+            <h3>Working Directory, Staging Area y Repository</h3>
+        </summary>
+        <p>Git organiza el trabajo en tres áreas principales que representan las distintas etapas por las que pasan los
+            archivos antes de quedar guardados de forma permanente en el historial del proyecto.</p>
+        <ol>
+            <li><strong>Working Directory (Directorio de trabajo):</strong> Es la carpeta donde creás, modificás o
+                eliminás archivos de tu proyecto.</li>
+            <li><strong>Staging Area (Área de preparación o Index):</strong> Es el lugar temporal donde se agregan los
+                cambios que querés incluir en el próximo commit mediante <code>git add</code>.</li>
+            <li><strong>Repository (Repositorio):</strong> Es la base de datos de Git donde se almacenan de forma
+                permanente todos los commits y el historial del proyecto.</li>
+            <li>El flujo de trabajo habitual es:
+                <code>Working Directory → git add → Staging Area → git commit → Repository</code>.
+            </li>
+        </ol>
+    </details>
+    <!-- Desplegable 18 -->
+    <details>
+        <summary>
+            <h3>¿Qué es la terminal de Git?</h3>
+        </summary>
+        <p>La terminal de Git es una interfaz basada en texto que permite ejecutar comandos para interactuar con Git y
+            administrar repositorios de forma rápida y eficiente.</p>
+        <ol>
+            <li>Permite ejecutar comandos de Git como <code>git status</code>, <code>git add</code> y
+                <code>git commit</code>.
+            </li>
+            <li>También permite navegar por carpetas, crear archivos y administrar proyectos desde la línea de comandos.
+            </li>
+            <li>Es una de las herramientas más utilizadas por desarrolladores para trabajar con Git de manera
+                profesional.</li>
+            <li>En Windows suele utilizarse <code>Git Bash</code>, mientras que en Linux y macOS se utiliza la terminal
+                integrada del sistema.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 19 -->
+    <details>
+        <summary>
+            <h3>¿Cómo usar la terminal de Git?</h3>
+        </summary>
+        <p>Utilizar la terminal de Git consiste en escribir comandos para navegar por carpetas y ejecutar acciones sobre
+            los repositorios y archivos del proyecto.</p>
+        <ol>
+            <li>Abrí Git Bash o la terminal de tu sistema operativo.</li>
+            <li>Navegá entre carpetas utilizando comandos como <code>cd</code> (cambiar directorio) y <code>ls</code>
+                (listar archivos).</li>
+            <li>Ubicate dentro de la carpeta de tu proyecto mediante <code>cd nombre-carpeta</code>.</li>
+            <li>Ejecutá comandos de Git como <code>git status</code>, <code>git log</code> o <code>git branch</code>
+                para administrar el repositorio.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 10 -->
+    <details>
+        <summary>
+            <h3>¿Qué es y cómo crear un commit?</h3>
+        </summary>
+        <p>Un <strong>commit</strong> es una captura del estado actual de los archivos preparados en el proyecto. Cada
+            commit guarda los cambios realizados junto con un mensaje descriptivo para facilitar el seguimiento del
+            historial.</p>
+        <ol>
+            <li>Prepará los archivos que querés guardar utilizando <code>git add nombre-del-archivo</code> o
+                <code>git add .</code>.
+            </li>
+            <li>Creá el commit ejecutando
+                <code>git commit -m "Descripción clara de los cambios realizados"</code>.
+            </li>
+            <li>Utilizá mensajes breves y descriptivos que expliquen qué modificaste o agregaste.</li>
+            <li>Verificá que el commit se haya creado correctamente ejecutando
+                <code>git log --oneline</code>.
+            </li>
+        </ol>
+    </details>
+    <details>
+        <summary>📘 Resumen Paso a Paso hasta como usar Git</summary>
+        <ul>
+            <li><strong>Instalación:</strong> Descargaste Git Bash para Windows y verificaste la instalación usando el
+                comando <code>git --version</code>.</li>
+            <li><strong>Configuración Inicial:</strong> Definiste tu nombre, correo y la rama principal "main" mediante
+                comandos <code>git config --global</code>. Revisaste todo con <code>git config --list</code>.</li>
+            <li><strong>Inicialización:</strong> Creaste la carpeta GIT en VS Code y ejecutaste <code>git init</code>,
+                lo que generó la carpeta oculta <code>.git</code> para guardar el historial y los commits.</li>
+            <li><strong>Archivos sin seguimiento:</strong> Creaste un archivo y aprendiste que la letra "U" significa
+                <em>Untracked</em> (detectado pero no seguido por Git).
+            </li>
+            <li><strong>Flujo de Trabajo:</strong> El flujo se compone de tres áreas consecutivas: <em>Working
+                    Directory</em> (edición), <em>Staging Area</em> (preparación con <code>git add .</code>) y
+                <em>Repository</em> (guardado con <code>git commit</code>).
+            </li>
+            <li><strong>Primer Guardado:</strong> Usaste <code>git add .</code> para preparar los archivos y
+                <code>git commit -m "Primer commit"</code> para crear una captura o <em>snapshot</em> del proyecto.
+            </li>
+            <li><strong>Control de Estado:</strong> Aprendiste a usar <code>git status</code> para ver el estado general
+                y <code>git diff</code> para comparar líneas modificadas antes de confirmar un cambio. Al hacer el
+                commit, estas herramientas se limpian.</li>
+            <li><strong>Integración en VS Code:</strong> La pestaña <em>Source Control</em> replica de forma visual las
+                funciones de status, diff, add (+) y commit.</li>
+            <li><strong>El Ciclo Profesional:</strong> La rutina recomendada es: Modificar &rarr; status &rarr; diff
+                &rarr; add &rarr; commit.</li>
+            <li><strong>Próximos Pasos:</strong> Una vez dominado este ciclo, sigue aprender: <code>git log</code>,
+                <code>git restore</code>, el archivo <code>.gitignore</code>, ramas (branches), fusiones (merge) y la
+                plataforma GitHub (push/pull).
+            </li>
+        </ul>
+    </details>
+    <!-- Desplegable 4 -->
+    <details>
+        <summary>
+            <h3>Como usar GIT restore</h3>
+        </summary>
+        <p>El comando <code>git restore</code> sirve para deshacer cambios en tu espacio de trabajo. Funciona como un
+            Ctrl + Z inteligente. Sus usos principales son:</p>
+        <ul>
+            <li><code>git restore archivo.txt</code>: Descarta los cambios locales en un archivo y lo devuelve al estado
+                del último commit.</li>
+            <li><code>git restore .</code>: Descarta absolutamente todos los cambios sin guardar del proyecto.</li>
+            <li><code>git restore --staged archivo.txt</code>: Saca un archivo del área de preparación (deshace el
+                <code>git add</code>) pero conserva tus modificaciones.
+            </li>
+        </ul>
+    </details>
+
+    <!-- Desplegable 5 -->
+    <details>
+        <summary>
+            <h3>Que es HEAD y Hash</h3>
+        </summary>
+        <ul>
+            <li><strong>Hash (SHA-1):</strong> Es el identificador único universal de cada commit. Consiste en una
+                cadena alfanumérica generada automáticamente por un algoritmo matemático. Funciona como la huella
+                digital exacta de un momento específico de tu código.</li>
+            <li><strong>HEAD:</strong> Es un puntero simbólico que indica cuál es tu posición actual en el historial. Es
+                el equivalente al indicador de "usted está aquí" en un mapa. Cambia de posición cuando te movés entre
+                ramas o commits.</li>
+        </ul>
+    </details>
+
+    <!-- Desplegable 6 -->
+    <details>
+        <summary>
+            <h3>Volver a commit anterior GIT checkout</h3>
+        </summary>
+        <p>Permite viajar en el tiempo dentro de tu proyecto para revisar cómo estaba tu código en el pasado modificando
+            el puntero HEAD:</p>
+        <ol>
+            <li>Buscá el código identificador usando <code>git log --oneline</code>.</li>
+            <li>Viajá al pasado ejecutando <code>git checkout &lt;hash_del_commit&gt;</code>.</li>
+            <li><em>Advertencia:</em> Entrarás en estado <strong>"Detached HEAD"</strong> (HEAD desasociado). Todo
+                cambio que hagas ahí flotará en el pasado y se perderá si no creás una rama nueva.</li>
+            <li>Volvé al presente regresando a tu rama principal con <code>git checkout main</code>.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 7 -->
+    <details>
+        <summary>
+            <h3>¿Qué es y cómo usar git revert?</h3>
+        </summary>
+        <p>Permite deshacer los cambios realizados por un commit específico creando un nuevo commit que invierte esos
+            cambios, sin eliminar el historial del proyecto.</p>
+        <ol>
+            <li>Buscá el identificador del commit ejecutando <code>git log --oneline</code>.</li>
+            <li>Ejecutá <code>git revert &lt;hash_del_commit&gt;</code> para crear un nuevo commit que revierta los
+                cambios.</li>
+            <li>Si Git abre el editor de texto para confirmar el mensaje del commit, guardá los cambios y cerrá el
+                editor.</li>
+            <li>Verificá el resultado utilizando nuevamente <code>git log --oneline</code> o revisando los archivos
+                modificados.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 8 -->
+    <details>
+        <summary>
+            <h3>¿Qué es y cómo usar git reset?</h3>
+        </summary>
+        <p>Permite mover el puntero <code>HEAD</code> hacia un commit anterior, pudiendo conservar o eliminar los
+            cambios
+            realizados dependiendo del modo utilizado.</p>
+        <ol>
+            <li>Buscá el identificador del commit ejecutando <code>git log --oneline</code>.</li>
+            <li>Usá <code>git reset --soft &lt;hash_del_commit&gt;</code> para volver a un commit anterior conservando
+                los
+                cambios preparados para el próximo commit.</li>
+            <li>Usá <code>git reset --mixed &lt;hash_del_commit&gt;</code> (modo predeterminado) para mantener los
+                cambios
+                en los archivos pero quitarlos del área de preparación.</li>
+            <li><em>Advertencia:</em> Usá <code>git reset --hard &lt;hash_del_commit&gt;</code> solo cuando estés
+                seguro,
+                ya que elimina definitivamente los cambios posteriores al commit seleccionado.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 15 -->
+    <details>
+        <summary>
+            <h3>¿Qué es una rama (branch)?</h3>
+        </summary>
+        <p>Una <strong>rama (branch)</strong> es una línea de desarrollo independiente dentro de un repositorio Git.
+            Permite
+            trabajar en nuevas funcionalidades, correcciones o experimentos sin afectar la rama principal del proyecto.
+        </p>
+        <ol>
+            <li>Al crear un repositorio, Git genera una rama principal llamada habitualmente <code>main</code>.</li>
+            <li>Cada rama posee su propio historial de cambios y commits.</li>
+            <li>Las ramas permiten desarrollar nuevas características de forma aislada y segura.</li>
+            <li>Cuando el trabajo está terminado, los cambios pueden integrarse nuevamente mediante un proceso llamado
+                <code>merge</code>.
+            </li>
+        </ol>
+    </details>
+    <!-- Desplegable 16 -->
+    <details>
+        <summary>
+            <h3>¿Cómo crear una rama (branch)?</h3>
+        </summary>
+        <p>Crear una rama permite comenzar una nueva línea de desarrollo sin modificar directamente la rama principal
+            del
+            proyecto.</p>
+        <ol>
+            <li>Verificá en qué rama te encontrás utilizando <code>git branch</code>.</li>
+            <li>Creá una nueva rama ejecutando <code>git branch nombre-rama</code>.</li>
+            <li>Confirmá que la rama fue creada ejecutando nuevamente <code>git branch</code>.</li>
+            <li>La nueva rama existirá en el repositorio, pero todavía permanecerás en la rama actual hasta cambiarte a
+                ella.</li>
+        </ol>
+    </details>
+
+
+    <p>
+        SIGUEINTE TAREA,
+        seguir viendo branch, ult5io que vi como cfrear y6 cambiar de branch </p>
+
+    <h2>
+        ORDEN de aprendizague visto mas tarde
+    </h2>
+    <ul>
+        <li>✅ git init</li>
+        <li>✅ git status</li>
+        <li>✅ git diff</li>
+        <li>✅ git add</li>
+        <li>✅ git commit</li>
+        <li>✅ git log</li>
+        <li>✅ git restore</li>
+        <li>✅ HEAD y Hash</li>
+        <li>✅ git checkout</li>
+        <li>✅ git revert</li>
+        <li>✅ git reset</li>
+        <li class="current-lesson">.gitignore ← estás aquí</li>
+        <li>git branch</li>
+        <li>git merge</li>
+        <li>GitHub (push, pull, clone, etc.)</li>
+    </ul>
+    <h2>
+        TUTORIAL PARALELO
+    </h2>
+    <!-- Desplegable 1 -->
+    <details>
+        <summary>
+            <h3>Git init</h3>
+        </summary>
+        <p>El comando <code>git init</code> permite inicializar un nuevo repositorio Git dentro de una carpeta, creando
+            la
+            estructura necesaria para comenzar a controlar versiones.</p>
+        <ol>
+            <li>Abrí una terminal dentro de la carpeta de tu proyecto.</li>
+            <li>Ejecutá el comando <code>git init</code>.</li>
+            <li>Git creará una carpeta oculta llamada <code>.git</code> que almacenará toda la información del
+                repositorio.</li>
+            <li>Verificá que el repositorio se haya creado correctamente utilizando <code>git status</code>.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 13 -->
+    <details>
+        <summary>
+            <h3>Git status</h3>
+        </summary>
+        <p>El comando <code>git status</code> muestra el estado actual del repositorio, indicando qué archivos fueron
+            modificados, cuáles están preparados para un commit y cuáles aún no son rastreados por Git.</p>
+        <ol>
+            <li>Abrí una terminal dentro de tu repositorio Git.</li>
+            <li>Ejecutá el comando <code>git status</code>.</li>
+            <li>Revisá los archivos modificados, agregados o pendientes de seguimiento.</li>
+            <li>Utilizá este comando frecuentemente para conocer el estado de tu proyecto antes de ejecutar
+                <code>git add</code> o <code>git commit</code>.
+            </li>
+        </ol>
+    </details>
+    <!-- Desplegable 14 -->
+    <details>
+        <summary>
+            <h3>Git diff</h3>
+        </summary>
+        <p>El comando <code>git diff</code> permite visualizar las diferencias entre versiones de archivos, mostrando
+            qué
+            líneas fueron agregadas, eliminadas o modificadas.</p>
+        <ol>
+            <li>Realizá cambios en uno o más archivos de tu proyecto.</li>
+            <li>Ejecutá el comando <code>git diff</code>.</li>
+            <li>Analizá las líneas eliminadas (precedidas por <code>-</code>) y las líneas agregadas (precedidas por
+                <code>+</code>).
+            </li>
+            <li>Utilizá esta información para revisar tus cambios antes de agregarlos al área de preparación mediante
+                <code>git add</code>.
+            </li>
+        </ol>
+    </details>
+
+
+</body>
+
+</html>
