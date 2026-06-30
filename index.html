@@ -142,7 +142,8 @@
             profesional.</p>
         <ol>
             <li>En Visual Studio Code abrí la terminal con <code>Ctrl + Ñ</code> o desde
-                <code>Terminal → New Terminal</code>.</li>
+                <code>Terminal → New Terminal</code>.
+            </li>
             <li>Hacé clic en la flecha desplegable ubicada junto al botón <strong>+</strong> de la terminal y seleccioná
                 <strong>Select Default Profile</strong>.
             </li>
@@ -304,6 +305,74 @@
                 sola línea.</li>
         </ol>
     </details>
+    <!-- Desplegable 41 -->
+    <details>
+        <summary>
+            <h3>Diferentes maneras de ver la información con git log</h3>
+        </summary>
+        <p>El comando <code>git log</code> dispone de múltiples opciones para visualizar el historial de commits según
+            la
+            información que necesites. Algunas muestran un historial completo, mientras que otras presentan una vista
+            más
+            resumida, gráfica o personalizada. Estas son las formas más utilizadas:</p>
+        <ol>
+            <li>
+                <strong>Historial completo:</strong>
+                <code>git log</code><br>
+                Muestra todos los commits con información detallada, incluyendo el <code>hash</code>, autor, fecha y
+                mensaje de cada commit.
+            </li>
+
+            <li>
+                <strong>Historial resumido:</strong>
+                <code>git log --oneline</code><br>
+                Presenta cada commit en una única línea utilizando un hash abreviado y el mensaje del commit,
+                facilitando
+                una lectura rápida del historial.
+            </li>
+
+            <li>
+                <strong>Vista gráfica del historial:</strong>
+                <code>git log --graph</code><br>
+                Agrega un gráfico en forma de árbol utilizando caracteres ASCII para representar la relación entre ramas
+                y
+                fusiones (merge).
+            </li>
+
+            <li>
+                <strong>Historial resumido con gráfico:</strong>
+                <code>git log --oneline --graph</code><br>
+                Combina una vista compacta de los commits con la representación gráfica de las ramas.
+            </li>
+
+            <li>
+                <strong>Ver todas las ramas:</strong>
+                <code>git log --oneline --graph --all</code><br>
+                Muestra el historial completo de todas las ramas del repositorio junto con el árbol de bifurcaciones y
+                fusiones.
+            </li>
+
+            <li>
+                <strong>Ver los últimos commits:</strong>
+                <code>git log -n 5</code><br>
+                Limita la salida para mostrar únicamente los últimos cinco commits. Podés reemplazar el número por la
+                cantidad que necesites.
+            </li>
+
+            <li>
+                <strong>Historial resumido con autor y fecha:</strong>
+                <code>git log --pretty=oneline</code><br>
+                Muestra una versión simplificada del historial en una línea por commit, útil para inspecciones rápidas.
+            </li>
+
+            <li>
+                <strong>Ver los cambios realizados en cada commit:</strong>
+                <code>git log -p</code><br>
+                Además del historial, muestra el contenido de las modificaciones realizadas en cada commit mediante un
+                <code>diff</code>.
+            </li>
+        </ol>
+    </details>
     <details>
         <summary>📘 Resumen Paso a Paso hasta como usar Git</summary>
         <ul>
@@ -335,6 +404,37 @@
                 plataforma GitHub (push/pull).
             </li>
         </ul>
+    </details>
+    <!-- Desplegable 42 -->
+    <details>
+        <summary>
+            <h3>Git alias para crear atajos</h3>
+        </summary>
+        <p>Los <strong>alias</strong> de Git permiten crear comandos personalizados o atajos para ejecutar instrucciones
+            largas de forma más rápida. Son ideales para ahorrar tiempo, evitar errores al escribir comandos repetitivos
+            y
+            aumentar la productividad al trabajar con Git.</p>
+        <ol>
+            <li>Creá un alias utilizando el comando
+                <code>git config --global alias.nombre "comando"</code>.
+            </li>
+            <li>Por ejemplo, para reemplazar <code>git status</code> por un comando más corto, ejecutá
+                <code>git config --global alias.st status</code>.
+            </li>
+            <li>Una vez creado el alias, simplemente escribí <code>git st</code> en lugar de
+                <code>git status</code>.
+            </li>
+            <li>Podés crear alias para cualquier comando de Git. Algunos de los más utilizados son:
+                <ul>
+                    <li><code>git config --global alias.st status</code> → <code>git st</code></li>
+                    <li><code>git config --global alias.co checkout</code> → <code>git co</code></li>
+                    <li><code>git config --global alias.br branch</code> → <code>git br</code></li>
+                    <li><code>git config --global alias.cm "commit -m"</code> → <code>git cm "Mensaje"</code></li>
+                    <li><code>git config --global alias.lg "log --oneline --graph --all"</code> → <code>git lg</code>
+                    </li>
+                </ul>
+            </li>
+        </ol>
     </details>
     <h2>
         ETAPA 3: Recuperar cambios
@@ -681,6 +781,7 @@
         <li>✅ git add</li>
         <li>✅ git commit</li>
         <li>✅ git log</li>
+        <li>✅ git alias</li>
         <li>✅ git restore</li>
         <li>✅ HEAD y Hash</li>
         <li>✅ git checkout</li>
@@ -752,11 +853,10 @@
         SIGUEINTE TAREA,
         creo que arranca git GitHub
         ULTIMO QUE VI:
-        fusinar merge <br>antes deberia ver tutorual video y comparar
-    </p>
+        estoy viendo dstinas maneras de ver la informacion dentro de git log </p>
 
     <p>
-        EN QUE ESTOY AHORA?<BR>Estoy viendo el video - Ultima minuto - 40min
+        EN QUE ESTOY AHORA?<BR>Estoy viendo el video - Ultima minuto - 1 hora 09min (git diff)
     </p>
 
 </body>
