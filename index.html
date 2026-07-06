@@ -511,6 +511,29 @@
             <li>Volvé al presente regresando a tu rama principal con <code>git checkout main</code>.</li>
         </ol>
     </details>
+    <!-- Desplegable 43 -->
+    <details>
+        <summary>
+            <h3>Crear etiquetas - Git tag</h3>
+        </summary>
+        <p>Las <strong>etiquetas (tags)</strong> permiten marcar commits importantes dentro del historial de un
+            repositorio.
+            Se utilizan principalmente para identificar versiones estables o lanzamientos de un proyecto, como
+            <code>v1.0.0</code>, <code>v2.0.0</code> o <code>v2.1.3</code>, facilitando su localización y distribución.
+        </p>
+        <ol>
+            <li>Creá una etiqueta ligera ejecutando <code>git tag nombre-etiqueta</code>, por ejemplo
+                <code>git tag v1.0.0</code>.
+            </li>
+            <li>Si querés agregar información como el autor, la fecha y un mensaje descriptivo, utilizá una etiqueta
+                anotada:
+                <code>git tag -a v1.0.0 -m "Primera versión estable"</code>.
+            </li>
+            <li>Visualizá todas las etiquetas del repositorio ejecutando <code>git tag</code>.</li>
+            <li>Para compartir las etiquetas con un repositorio remoto, ejecutá <code>git push origin --tags</code>.
+            </li>
+        </ol>
+    </details>
     <h2>
         ETAPA 4: Deshacer cambios
     </h2>
