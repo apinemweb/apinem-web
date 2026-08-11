@@ -1,0 +1,851 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        HOLA estoy aprendiendo GitHub
+    </h1>
+    <h2>
+        La guía de GitHub
+    </h2>
+    <p>
+        Una vez aprendida toda la primera parte en el <a href="index.html">curso de GIT</a>, ahora es tiempo de aprender
+        GitHub!!!
+    </p>
+    <h2>
+        ETAPA 1: Introducción
+    </h2>
+    <!-- Desplegable 45 -->
+    <details>
+        <summary>
+            <h3>GitHub - ¿Qué es y para qué sirve?</h3>
+        </summary>
+        <p><strong>GitHub</strong> es una plataforma en línea que permite alojar repositorios Git y trabajar de forma
+            colaborativa en proyectos de software. Mientras Git se encarga de controlar las versiones de un proyecto de
+            manera local, GitHub permite almacenar esos repositorios en la nube, compartirlos y colaborar con otros
+            desarrolladores.</p>
+        <ol>
+            <li>Se utiliza normalmente para guardar una copia remota de un repositorio Git y tener el proyecto
+                disponible
+                en línea.</li>
+            <li>Permite colaborar con otros desarrolladores mediante ramas, <strong>Pull Requests</strong>, revisiones
+                de
+                código e incidencias (<em>Issues</em>).</li>
+            <li>Para comenzar, creá una cuenta en GitHub y luego creá un repositorio remoto desde la plataforma.</li>
+            <li>Conectá tu repositorio local con GitHub utilizando
+                <code>git remote add origin URL_DEL_REPOSITORIO</code>.
+            </li>
+            <li>Finalmente, enviá tus commits al repositorio remoto utilizando
+                <code>git push -u origin main</code>.
+            </li>
+        </ol>
+    </details>
+    <!-- Desplegable 46 -->
+    <details>
+        <summary>
+            <h3>Beneficios</h3>
+        </summary>
+        <p>GitHub se utiliza en proyectos personales, equipos de desarrollo, empresas y proyectos de código abierto.
+            Además
+            de almacenar repositorios Git, permite colaborar, revisar código, gestionar tareas y publicar proyectos.</p>
+        <ol>
+            <li><strong>Guardar proyectos:</strong> podés subir un proyecto desarrollado en tu computadora para tener
+                una
+                copia remota y acceder a él desde diferentes dispositivos.</li>
+            <li><strong>Trabajar en equipo:</strong> varios desarrolladores pueden trabajar sobre el mismo proyecto
+                mediante
+                ramas, commits y <em>Pull Requests</em>.</li>
+            <li><strong>Participar en proyectos de código abierto:</strong> permite consultar proyectos públicos,
+                realizar
+                un <em>fork</em>, crear cambios y proponerlos al proyecto original mediante un <em>Pull Request</em>.
+            </li>
+            <li><strong>Gestionar tareas y errores:</strong> las herramientas como <em>Issues</em> permiten registrar
+                problemas, solicitudes de funcionalidades y tareas pendientes.</li>
+            <li><strong>Revisar código:</strong> los <em>Pull Requests</em> permiten que otros desarrolladores revisen
+                los
+                cambios antes de incorporarlos a una rama principal.</li>
+            <li><strong>Crear un portfolio:</strong> los desarrolladores pueden utilizar sus repositorios públicos para
+                mostrar proyectos y conocimientos técnicos.</li>
+            <li><strong>Automatizar procesos:</strong> GitHub Actions permite ejecutar tareas automáticamente, como
+                pruebas,
+                análisis de código o procesos de despliegue.</li>
+            <li><strong>Publicar sitios web:</strong> mediante GitHub Pages es posible publicar determinados proyectos y
+                sitios web directamente desde un repositorio.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 47 -->
+    <details>
+        <summary>
+            <h3>Ejemplo de uso real</h3>
+        </summary>
+        <p>Supongamos que trabajás como desarrollador en una empresa y formás parte de un equipo que está construyendo
+            una
+            aplicación web. Diferentes desarrolladores trabajan al mismo tiempo en distintas partes del proyecto. En
+            este
+            escenario, Git y GitHub permiten organizar el trabajo y evitar que los cambios de un desarrollador
+            sobrescriban
+            los de otro.</p>
+        <ol>
+            <li><strong>Crear el repositorio:</strong> el equipo crea un repositorio en GitHub donde se almacena el
+                código
+                del proyecto y se centraliza el trabajo.</li>
+            <li><strong>Trabajar con ramas:</strong> cada desarrollador crea una rama para trabajar de forma
+                independiente.
+                Por ejemplo, <code>login</code> para desarrollar el sistema de inicio de sesión o
+                <code>carrito-compras</code> para implementar el carrito.
+            </li>
+            <li><strong>Realizar commits:</strong> cada desarrollador guarda sus avances mediante commits descriptivos,
+                manteniendo un historial de todos los cambios realizados.</li>
+            <li><strong>Subir los cambios a GitHub:</strong> cuando termina una parte del trabajo, utiliza
+                <code>git push</code> para enviar su rama al repositorio remoto.
+            </li>
+            <li><strong>Crear un Pull Request:</strong> el desarrollador solicita incorporar sus cambios a la rama
+                principal.
+                Otros integrantes del equipo pueden revisar el código antes de aprobarlo.</li>
+            <li><strong>Resolver conflictos:</strong> si dos desarrolladores modificaron la misma parte del código, Git
+                puede
+                detectar un conflicto que deberá resolverse antes de completar la integración.</li>
+            <li><strong>Fusionar los cambios:</strong> una vez revisado y aprobado el código, la rama se integra con
+                <code>main</code> mediante un <em>merge</em>.
+            </li>
+            <li><strong>Continuar el desarrollo:</strong> el resto del equipo puede obtener los nuevos cambios
+                utilizando
+                <code>git pull</code> y continuar trabajando sobre la versión actualizada del proyecto.
+            </li>
+        </ol>
+    </details>
+    <!-- Desplegable 48 -->
+    <details>
+        <summary>
+            <h3>Git vs GitHub</h3>
+        </summary>
+        <p><strong>Git y GitHub no son lo mismo</strong>, aunque están estrechamente relacionados. Git es el sistema de
+            control de versiones que permite gestionar los cambios de un proyecto, mientras que GitHub es una plataforma
+            en línea que permite alojar repositorios Git y facilitar la colaboración entre desarrolladores.</p>
+        <ol>
+            <li><strong>Git:</strong> es un programa que se instala en tu computadora y permite crear repositorios,
+                realizar
+                commits, trabajar con ramas, comparar cambios y consultar el historial del proyecto.</li>
+            <li><strong>GitHub:</strong> es un servicio en línea donde podés almacenar repositorios Git, compartirlos y
+                trabajar colaborativamente con otros desarrolladores.</li>
+            <li><strong>Git funciona localmente:</strong> podés utilizar Git sin conexión a Internet para controlar las
+                versiones de tus proyectos.</li>
+            <li><strong>GitHub funciona de forma remota:</strong> necesitás una conexión para enviar o recibir
+                información
+                del repositorio remoto, por ejemplo mediante <code>git push</code> y <code>git pull</code>.</li>
+            <li><strong>Trabajan juntos:</strong> Git administra el historial y las versiones en tu computadora,
+                mientras
+                que GitHub puede almacenar una copia remota y proporcionar herramientas para colaborar con otros
+                desarrolladores.</li>
+        </ol>
+    </details>
+    <!-- Desplegable 49 -->
+    <details>
+        <summary>
+            <h3>Flujo de trabajo</h3>
+        </summary>
+        <p>El flujo de trabajo básico de GitHub consiste en conectar un repositorio local de Git con un repositorio
+            remoto
+            en GitHub para poder desarrollar, guardar y compartir los cambios realizados en un proyecto.</p>
+        <ol>
+            <li><strong>Crear o clonar el repositorio:</strong> podés crear un proyecto local con <code>git init</code>
+                o
+                descargar uno existente desde GitHub utilizando <code>git clone</code>.</li>
+            <li><strong>Crear una rama:</strong> para trabajar en una nueva funcionalidad o corrección, creá una rama
+                independiente utilizando <code>git switch -c nombre-rama</code>.</li>
+            <li><strong>Modificar los archivos:</strong> realizá los cambios necesarios en el proyecto desde tu editor
+                de
+                código, como Visual Studio Code.</li>
+            <li><strong>Revisar los cambios:</strong> utilizá <code>git status</code> y <code>git diff</code> para
+                comprobar
+                qué archivos fueron modificados y qué cambios realizaste.</li>
+            <li><strong>Preparar los archivos:</strong> agregá los cambios al Staging Area mediante
+                <code>git add nombre-archivo</code> o <code>git add .</code>.
+            </li>
+            <li><strong>Crear un commit:</strong> guardá los cambios en el historial local utilizando
+                <code>git commit -m "Descripción de los cambios"</code>.
+            </li>
+            <li><strong>Subir la rama a GitHub:</strong> enviá los commits al repositorio remoto mediante
+                <code>git push -u origin nombre-rama</code>.
+            </li>
+            <li><strong>Crear un Pull Request:</strong> desde GitHub, solicitá la revisión de los cambios para que otros
+                integrantes del equipo puedan analizarlos antes de incorporarlos a <code>main</code>.</li>
+            <li><strong>Fusionar los cambios:</strong> una vez aprobados, los cambios pueden integrarse a la rama
+                principal
+                mediante un <em>merge</em>.</li>
+            <li><strong>Actualizar el repositorio local:</strong> obtené los últimos cambios realizados por el equipo
+                con
+                <code>git pull</code> antes de continuar trabajando.
+            </li>
+        </ol>
+    </details>
+    <h2>
+        ETAPA 2: Desarrollo
+    </h2>
+    <!-- Desplegable 50 -->
+    <details>
+        <summary>
+            <h3>Crear una cuenta paso a paso</h3>
+        </summary>
+        <p>Para comenzar a utilizar GitHub necesitás crear una cuenta gratuita. Con ella podrás crear repositorios,
+            guardar proyectos, colaborar con otros desarrolladores y utilizar las herramientas de GitHub.</p>
+        <ol>
+            <li>Ingresá al sitio oficial de <strong>GitHub</strong> y seleccioná la opción <strong>Sign up</strong> para
+                crear una nueva cuenta.</li>
+            <li>Ingresá tu <strong>correo electrónico</strong>, establecé una contraseña segura y elegí un nombre de
+                usuario
+                que utilizarás para identificarte en GitHub.</li>
+            <li>Completá el proceso de verificación solicitado por GitHub para confirmar que sos una persona real.</li>
+            <li>Revisá tu correo electrónico y <strong>verificá tu dirección de email</strong> siguiendo las
+                instrucciones
+                recibidas.</li>
+            <li>Completá las opciones de configuración inicial que GitHub pueda mostrarte, como tus preferencias o
+                características que quieras utilizar.</li>
+            <li>Una vez finalizado el registro, iniciá sesión y accederás a tu <strong>cuenta de GitHub</strong>.</li>
+            <li>Desde tu cuenta ya podrás crear tu primer repositorio utilizando el botón <strong>New</strong> o
+                <strong>Create repository</strong>.
+            </li>
+        </ol>
+    </details>
+    <!-- Desplegable 54 -->
+    <details>
+        <summary>
+            <h3>Configuración inicial</h3>
+        </summary>
+        <p>Después de crear una cuenta en GitHub, es recomendable realizar algunas configuraciones iniciales para
+            trabajar de
+            forma segura, organizada y profesional. Estas opciones permiten proteger la cuenta, identificar
+            correctamente
+            tus contribuciones y preparar el entorno para trabajar con repositorios.</p>
+        <ol>
+            <li>
+                <strong>Verificar el correo electrónico:</strong>
+                confirmá tu dirección de email desde el mensaje enviado por GitHub. Esto permite utilizar correctamente
+                diferentes funciones de la plataforma y asociar tus commits con tu cuenta.
+            </li>
+
+            <li>
+                <strong>Configurar la autenticación en dos pasos (2FA):</strong>
+                activá la autenticación de dos factores desde la configuración de seguridad de GitHub. Esto agrega una
+                capa
+                adicional de protección además de la contraseña.
+            </li>
+
+            <li>
+                <strong>Configurar tu perfil:</strong>
+                agregá un nombre, fotografía, biografía y, si corresponde, información sobre tus conocimientos o
+                proyectos.
+                Un perfil bien configurado resulta especialmente útil cuando utilizás GitHub como portfolio profesional.
+            </li>
+
+            <li>
+                <strong>Configurar una dirección de email para los commits:</strong>
+                asegurate de utilizar en Git el mismo correo electrónico asociado a tu cuenta de GitHub, o una dirección
+                proporcionada por GitHub para mantener tu privacidad. Podés configurarlo con:
+                <code>git config --global user.email "tu-correo@example.com"</code>.
+            </li>
+
+            <li>
+                <strong>Configurar la autenticación con Git:</strong>
+                para trabajar desde la terminal con repositorios privados o realizar operaciones como
+                <code>git push</code>, configurá un método de autenticación. Actualmente se recomienda utilizar
+                <strong>SSH</strong> o herramientas de autenticación compatibles con GitHub en lugar de utilizar una
+                contraseña tradicional.
+            </li>
+
+            <li>
+                <strong>Configurar una clave SSH:</strong>
+                una clave SSH permite autenticar tu computadora con GitHub y trabajar con repositorios sin tener que
+                introducir credenciales constantemente. Después de configurarla, podés utilizar una URL SSH como
+                <code>git@github.com:usuario/repositorio.git</code>.
+            </li>
+
+            <li>
+                <strong>Revisar las opciones de notificaciones:</strong>
+                configurá qué notificaciones querés recibir para evitar recibir información innecesaria y mantener
+                organizados los avisos relacionados con repositorios, Issues y Pull Requests.
+            </li>
+
+            <li>
+                <strong>Conocer la configuración de repositorios:</strong>
+                familiarizate con opciones como colaboradores, permisos, ramas protegidas y reglas del repositorio,
+                especialmente cuando comiences a trabajar en proyectos de equipo.
+            </li>
+
+            <li>
+                <strong>Configurar GitHub CLI (opcional):</strong>
+                si trabajás habitualmente desde la terminal, <code>gh</code> permite interactuar con GitHub desde la
+                línea de
+                comandos, por ejemplo para crear repositorios, consultar Issues o administrar Pull Requests.
+            </li>
+        </ol>
+
+        <p><strong>Configuración mínima recomendada:</strong> verificá tu email, activá 2FA, completá tu perfil,
+            configurá
+            correctamente el email utilizado por Git y establecé un método seguro de autenticación, preferentemente
+            <strong>SSH</strong> para trabajar desde tu computadora.
+        </p>
+    </details>
+    <!-- Desplegable 51 -->
+    <details>
+        <summary>
+            <h3>Conociendo la interfaz</h3>
+        </summary>
+        <p>La interfaz de <strong>GitHub</strong> permite administrar repositorios, consultar archivos, revisar commits,
+            trabajar con ramas, crear Pull Requests y colaborar con otros desarrolladores. Es importante conocer sus
+            principales secciones y relacionarlas con los comandos de Git que utilizamos desde la terminal.</p>
+        <ol>
+            <li><strong>Code:</strong> permite acceder a los archivos del repositorio, consultar las ramas disponibles,
+                copiar la URL del repositorio y descargar o clonar el proyecto.</li>
+
+            <li><strong>Issues:</strong> permite registrar errores, tareas, problemas y nuevas funcionalidades que deben
+                resolverse dentro del proyecto.</li>
+
+            <li><strong>Pull requests:</strong> permite proponer cambios realizados en una rama para que otros
+                integrantes
+                del equipo puedan revisarlos antes de incorporarlos a otra rama.</li>
+
+            <li><strong>Actions:</strong> permite automatizar tareas mediante GitHub Actions, como ejecutar pruebas,
+                analizar código o realizar procesos de despliegue.</li>
+
+            <li><strong>Settings:</strong> permite configurar diferentes aspectos del repositorio, como colaboradores,
+                permisos, ramas y otras opciones.</li>
+
+            <li><strong>Commits:</strong> desde el historial del repositorio podés consultar los commits realizados,
+                incluyendo su mensaje, autor y cambios asociados.</li>
+
+            <li><strong>Branches:</strong> permite consultar las diferentes ramas existentes en el repositorio y conocer
+                cuál es la rama principal del proyecto.</li>
+
+            <li><strong>README:</strong> normalmente se utiliza para explicar qué hace el proyecto, cómo instalarlo,
+                cómo
+                utilizarlo y cualquier otra información importante.</li>
+
+            <li><strong>Releases:</strong> permite publicar versiones específicas del proyecto utilizando etiquetas
+                (<code>git tag</code>), por ejemplo <code>v1.0.0</code>.</li>
+
+            <li><strong>Clone:</strong> desde el botón <strong>Code</strong> podés obtener la dirección del repositorio
+                para clonarlo en tu computadora mediante <code>git clone URL_DEL_REPOSITORIO</code>.</li>
+        </ol>
+
+        <p><strong>Comandos que debés conocer para trabajar con GitHub:</strong></p>
+
+        <ul>
+            <li><code>git clone</code> → descarga un repositorio de GitHub a tu computadora.</li>
+            <li><code>git remote</code> → permite consultar o administrar la conexión con el repositorio remoto.</li>
+            <li><code>git push</code> → envía commits desde tu repositorio local hacia GitHub.</li>
+            <li><code>git pull</code> → obtiene cambios de GitHub y los integra en tu rama local.</li>
+            <li><code>git fetch</code> → descarga información del repositorio remoto sin integrar automáticamente los
+                cambios.</li>
+            <li><code>git branch</code> → permite crear, consultar y administrar ramas.</li>
+            <li><code>git switch</code> → permite cambiar de una rama a otra.</li>
+            <li><code>git merge</code> → permite fusionar los cambios de una rama con otra.</li>
+        </ul>
+
+        <p>El flujo básico para trabajar con GitHub desde la terminal suele ser:
+            <code>git clone</code> → modificar archivos → <code>git add</code> →
+            <code>git commit</code> → <code>git push</code>. Para obtener cambios realizados por otros integrantes,
+            normalmente utilizaremos <code>git pull</code>.
+        </p>
+    </details>
+    <!-- Desplegable 52 -->
+    <details>
+        <summary>
+            <h3>¿Qué es un repositorio?</h3>
+        </summary>
+        <p>Un <strong>repositorio en GitHub</strong> es un espacio donde se almacena un proyecto y toda la información
+            relacionada con su desarrollo. Puede contener archivos de código, documentación, imágenes, commits, ramas y
+            otros elementos necesarios para gestionar y colaborar en el proyecto.</p>
+        <ol>
+            <li><strong>Almacena el proyecto:</strong> contiene los archivos y carpetas que forman parte de la
+                aplicación,
+                sitio web o proyecto.</li>
+            <li><strong>Guarda el historial:</strong> los commits permiten consultar cómo fue evolucionando el proyecto
+                y
+                conocer los cambios realizados.</li>
+            <li><strong>Permite trabajar con ramas:</strong> cada desarrollador puede crear ramas para desarrollar
+                nuevas
+                funcionalidades o realizar correcciones sin modificar directamente la rama principal.</li>
+            <li><strong>Facilita la colaboración:</strong> varios desarrolladores pueden trabajar sobre el mismo
+                repositorio
+                utilizando Pull Requests, Issues y revisiones de código.</li>
+            <li><strong>Puede ser público o privado:</strong> un repositorio público puede ser consultado por otras
+                personas,
+                mientras que uno privado limita el acceso a los usuarios autorizados.</li>
+            <li><strong>Puede conectarse con un repositorio local:</strong> mediante comandos como
+                <code>git remote add</code>, <code>git push</code> y <code>git pull</code> es posible sincronizar el
+                repositorio de tu computadora con el repositorio alojado en GitHub.
+            </li>
+        </ol>
+        <p>Por ejemplo, si tenés un proyecto llamado <strong>mi-sitio-web</strong>, podés crear un repositorio con ese
+            nombre en GitHub y utilizarlo como repositorio remoto para almacenar y compartir el código de tu proyecto.
+        </p>
+    </details>
+    <!-- Desplegable 53 -->
+    <details>
+        <summary>
+            <h3>Crear un repositorio paso a paso</h3>
+        </summary>
+        <p>Crear un repositorio en GitHub permite alojar un proyecto de forma remota y conectarlo posteriormente con el
+            repositorio Git de tu computadora. Es uno de los primeros pasos para comenzar a trabajar con GitHub.</p>
+        <ol>
+            <li>Iniciá sesión en tu cuenta de <strong>GitHub</strong>.</li>
+
+            <li>En la parte superior de GitHub, seleccioná <strong>+</strong> y luego
+                <strong>New repository</strong>.
+            </li>
+
+            <li>En <strong>Repository name</strong>, escribí el nombre que tendrá tu repositorio, por ejemplo
+                <code>mi-proyecto</code>.
+            </li>
+
+            <li>Si querés, agregá una descripción breve para explicar cuál es el objetivo del proyecto.</li>
+
+            <li>Elegí la visibilidad del repositorio:
+                <ul>
+                    <li><strong>Public:</strong> cualquier persona puede consultar el repositorio.</li>
+                    <li><strong>Private:</strong> solamente vos y las personas autorizadas podrán acceder.</li>
+                </ul>
+            </li>
+
+            <li>Podés seleccionar <strong>Add a README file</strong> si querés que GitHub cree automáticamente un
+                archivo
+                <code>README.md</code> para documentar el proyecto.
+            </li>
+
+            <li>Si el proyecto ya existe en tu computadora y vas a conectarlo con este repositorio, evitá agregar
+                inicialmente archivos como <code>README</code>, <code>.gitignore</code> o licencia para mantener el
+                repositorio remoto vacío y evitar conflictos al realizar la primera sincronización.</li>
+
+            <li>Seleccioná <strong>Create repository</strong> para crear el repositorio.</li>
+
+            <li>Una vez creado, GitHub mostrará la dirección del repositorio. Podrás utilizarla para conectar tu
+                proyecto
+                local con GitHub mediante <code>git remote add origin URL_DEL_REPOSITORIO</code>.</li>
+
+            <li>Finalmente, podés enviar tu proyecto local a GitHub utilizando
+                <code>git push -u origin main</code>.
+            </li>
+        </ol>
+    </details>
+    <!-- Desplegable 55 -->
+    <details>
+        <summary>
+            <h3>Cómo conectar un repositorio local con GitHub</h3>
+        </summary>
+        <p>Conectar un repositorio local con GitHub permite vincular el proyecto que tenés en tu computadora con un
+            repositorio remoto. De esta manera, podés enviar tus commits a GitHub mediante <code>git push</code> y
+            obtener
+            posteriormente los cambios realizados desde otros equipos o por otros integrantes del proyecto.</p>
+        <ol>
+            <li>
+                <strong>Creá un repositorio en GitHub:</strong>
+                primero creá un repositorio remoto desde tu cuenta de GitHub. Si ya tenés un proyecto local con commits,
+                es recomendable crear el repositorio remoto vacío, sin agregar inicialmente un README.
+            </li>
+
+            <li>
+                <strong>Abrí la terminal en tu proyecto:</strong>
+                ubicá la terminal dentro de la carpeta que contiene tu proyecto local.
+            </li>
+
+            <li>
+                <strong>Verificá que sea un repositorio Git:</strong>
+                ejecutá <code>git status</code>. Si todavía no lo inicializaste, utilizá
+                <code>git init</code>.
+            </li>
+
+            <li>
+                <strong>Agregá el repositorio remoto:</strong>
+                ejecutá
+                <code>git remote add origin URL_DEL_REPOSITORIO</code>.
+                La palabra <code>origin</code> será el nombre utilizado habitualmente para identificar el repositorio
+                remoto.
+            </li>
+
+            <li>
+                <strong>Verificá la conexión:</strong>
+                ejecutá <code>git remote -v</code>. Git mostrará las direcciones utilizadas para obtener y enviar
+                información
+                al repositorio remoto.
+            </li>
+
+            <li>
+                <strong>Verificá el nombre de tu rama principal:</strong>
+                podés utilizar <code>git branch</code>. Si tu rama principal se llama <code>main</code>, continuarás
+                utilizando ese nombre en los siguientes comandos.
+            </li>
+
+            <li>
+                <strong>Enviá los commits a GitHub:</strong>
+                ejecutá <code>git push -u origin main</code>. La opción <code>-u</code> establece la relación entre tu
+                rama
+                local <code>main</code> y la rama remota correspondiente.
+            </li>
+
+            <li>
+                <strong>Comprobá el resultado:</strong>
+                actualizá la página del repositorio en GitHub y verificá que los archivos y commits de tu proyecto local
+                aparezcan en el repositorio remoto.
+            </li>
+        </ol>
+
+        <p><strong>Flujo básico:</strong>
+            <code>git init</code> → <code>git add .</code> → <code>git commit</code> →
+            <code>git remote add origin URL</code> → <code>git push -u origin main</code>.
+        </p>
+    </details>
+    <!-- Desplegable 56 -->
+    <details>
+        <summary>
+            <h3>README.md – Documentar un proyecto</h3>
+        </summary>
+        <p>El archivo <code>README.md</code> es el documento principal de un repositorio y se utiliza para explicar qué
+            es
+            el proyecto, para qué sirve, cómo instalarlo y cómo utilizarlo. GitHub muestra automáticamente este archivo
+            en
+            la página principal del repositorio.</p>
+        <ol>
+            <li>
+                <strong>Creá el archivo:</strong>
+                dentro de la carpeta principal del proyecto, creá un archivo llamado
+                <code>README.md</code>.
+            </li>
+
+            <li>
+                <strong>Agregá una descripción:</strong>
+                explicá brevemente qué hace el proyecto y cuál es su objetivo.
+            </li>
+
+            <li>
+                <strong>Documentá la instalación:</strong>
+                indicá los requisitos necesarios y los pasos que debe seguir otra persona para instalar y ejecutar el
+                proyecto.
+            </li>
+
+            <li>
+                <strong>Explicá cómo utilizarlo:</strong>
+                agregá ejemplos de uso, comandos importantes o instrucciones necesarias para comenzar a trabajar con el
+                proyecto.
+            </li>
+
+            <li>
+                <strong>Documentá las tecnologías:</strong>
+                indicá qué lenguajes, frameworks, bibliotecas o herramientas fueron utilizadas para desarrollar el
+                proyecto.
+            </li>
+
+            <li>
+                <strong>Agregá información adicional:</strong>
+                dependiendo del proyecto, podés incluir características principales, capturas de pantalla, estructura de
+                carpetas, configuración, licencia, autores y formas de contacto.
+            </li>
+
+            <li>
+                <strong>Guardá el README en Git:</strong>
+                agregalo al Staging Area utilizando <code>git add README.md</code> y luego creá un commit con
+                <code>git commit -m "Agregar documentación del proyecto"</code>.
+            </li>
+
+            <li>
+                <strong>Subilo a GitHub:</strong>
+                enviá el commit mediante <code>git push</code>. GitHub mostrará automáticamente el contenido del
+                <code>README.md</code> en la página principal del repositorio.
+            </li>
+        </ol>
+
+        <p><strong>Estructura recomendada:</strong></p>
+
+        <ul>
+            <li><code># Nombre del proyecto</code> → título principal.</li>
+            <li><code>## Descripción</code> → explicación del proyecto.</li>
+            <li><code>## Características</code> → funcionalidades principales.</li>
+            <li><code>## Tecnologías utilizadas</code> → herramientas y tecnologías.</li>
+            <li><code>## Instalación</code> → pasos para instalarlo.</li>
+            <li><code>## Uso</code> → instrucciones y ejemplos.</li>
+            <li><code>## Capturas de pantalla</code> → imágenes del proyecto, si corresponde.</li>
+            <li><code>## Autor</code> → información del desarrollador.</li>
+            <li><code>## Licencia</code> → licencia utilizada por el proyecto.</li>
+        </ul>
+
+        <p>Un buen <code>README.md</code> es especialmente importante en proyectos profesionales y de código abierto
+            porque
+            permite que otra persona pueda comprender rápidamente el proyecto, instalarlo y comenzar a utilizarlo sin
+            necesidad de preguntarle al desarrollador cómo funciona.</p>
+    </details>
+    <!-- Desplegable 57 -->
+    <details>
+        <summary>
+            <h3>Git push – Subir cambios a GitHub</h3>
+        </summary>
+        <p><strong>git push</strong> es el comando que permite enviar los commits de un repositorio local hacia un
+            repositorio remoto, como GitHub. Es fundamental para compartir tu trabajo, realizar copias remotas del
+            proyecto
+            y permitir que otros integrantes del equipo puedan acceder a tus cambios.</p>
+
+        <ol>
+            <li>
+                <strong>Verificá el estado del proyecto:</strong>
+                antes de subir cambios, ejecutá <code>git status</code> para comprobar qué archivos fueron modificados y
+                en
+                qué estado se encuentran.
+            </li>
+
+            <li>
+                <strong>Revisá los cambios:</strong>
+                utilizá <code>git diff</code> para comprobar exactamente qué líneas fueron modificadas antes de
+                guardarlas
+                en un commit.
+            </li>
+
+            <li>
+                <strong>Agregá los archivos al Staging Area:</strong>
+                utilizá <code>git add nombre-archivo</code> para agregar un archivo específico o
+                <code>git add .</code> para agregar todos los cambios.
+            </li>
+
+            <li>
+                <strong>Creá un commit:</strong>
+                guardá los cambios en el historial local mediante
+                <code>git commit -m "Descripción de los cambios"</code>.
+            </li>
+
+            <li>
+                <strong>Verificá el repositorio remoto:</strong>
+                ejecutá <code>git remote -v</code> para comprobar que tu repositorio local está conectado correctamente
+                con
+                GitHub.
+            </li>
+
+            <li>
+                <strong>Subí los cambios:</strong>
+                utilizá
+                <code>git push origin main</code>
+                para enviar los commits de tu rama local <code>main</code> hacia la rama <code>main</code> del
+                repositorio
+                remoto.
+            </li>
+
+            <li>
+                <strong>Configurá el seguimiento de la rama:</strong>
+                cuando realizás el primer envío de una rama podés utilizar
+                <code>git push -u origin main</code>.
+                La opción <code>-u</code> establece una relación entre la rama local y la rama remota.
+            </li>
+
+            <li>
+                <strong>Realizá futuros push:</strong>
+                después de establecer el seguimiento, normalmente será suficiente utilizar
+                <code>git push</code> para enviar los nuevos commits a GitHub.
+            </li>
+        </ol>
+
+        <p><strong>Ejemplo completo:</strong></p>
+
+        <ol>
+            <li>Modificás <code>index.html</code>.</li>
+            <li>Comprobás los cambios con <code>git status</code> y <code>git diff</code>.</li>
+            <li>Preparás el archivo con <code>git add index.html</code>.</li>
+            <li>Creás el commit con <code>git commit -m "Actualizar página principal"</code>.</li>
+            <li>Subís el commit con <code>git push</code>.</li>
+        </ol>
+
+        <p><strong>Flujo básico:</strong>
+            <code>Modificar → git status → git diff → git add → git commit → git push</code>.
+        </p>
+
+        <p><strong>¿Qué hace realmente git push?</strong>
+            El comando no sube simplemente archivos individuales. Git envía al repositorio remoto los commits que
+            todavía no
+            están allí y actualiza la referencia de la rama remota. Por eso, antes de utilizar <code>git push</code>,
+            los
+            cambios deben haber sido guardados previamente mediante uno o varios commits.
+        </p>
+
+        <p><strong>Subir una rama diferente:</strong>
+            si estás trabajando en una rama llamada <code>login</code>, podés enviarla a GitHub utilizando
+            <code>git push -u origin login</code>. Esto permite que la rama también exista en el repositorio remoto y
+            pueda
+            utilizarse posteriormente para crear un Pull Request.
+        </p>
+
+        <p><strong>Ver las ramas remotas:</strong>
+            podés utilizar <code>git branch -r</code> para consultar las ramas remotas conocidas por tu repositorio
+            local.
+        </p>
+
+        <p><strong>Importante:</strong>
+            <code>git push</code> normalmente no debe utilizarse para sobrescribir el trabajo de otros integrantes. Si
+            el
+            repositorio remoto contiene cambios que todavía no tenés localmente, Git puede rechazar el envío. En ese
+            caso,
+            primero deberás obtener y revisar los cambios remotos, normalmente mediante <code>git pull</code> o
+            utilizando
+            un flujo basado en <code>git fetch</code>.
+        </p>
+    </details>
+    <!-- Desplegable 58 -->
+<details>
+    <summary>
+        <h3>Git clone – Descargar un repositorio de GitHub</h3>
+    </summary>
+    <p><strong>git clone</strong> es el comando que permite copiar un repositorio remoto, como uno alojado en GitHub,
+        a tu computadora. No solo descarga los archivos del proyecto, sino también su historial de commits, ramas y la
+        configuración necesaria para establecer la conexión con el repositorio remoto.</p>
+
+    <ol>
+        <li>
+            <strong>Obtené la URL del repositorio:</strong>
+            ingresá al repositorio de GitHub que querés descargar y seleccioná el botón
+            <strong>Code</strong>. Allí podrás copiar su dirección mediante <strong>HTTPS</strong> o
+            <strong>SSH</strong>.
+        </li>
+
+        <li>
+            <strong>Abrí la terminal:</strong>
+            abrí Git Bash o la terminal integrada de Visual Studio Code y ubicáte en la carpeta donde querés guardar
+            el proyecto.
+        </li>
+
+        <li>
+            <strong>Cloná el repositorio:</strong>
+            ejecutá <code>git clone URL_DEL_REPOSITORIO</code>. Git creará automáticamente una carpeta con el nombre del
+            repositorio y descargará su contenido.
+        </li>
+
+        <li>
+            <strong>Entrá en la carpeta:</strong>
+            utilizá <code>cd nombre-del-repositorio</code> para ingresar al proyecto recién descargado.
+        </li>
+
+        <li>
+            <strong>Verificá el repositorio:</strong>
+            ejecutá <code>git status</code> para comprobar que el proyecto fue clonado correctamente.
+        </li>
+
+        <li>
+            <strong>Verificá el repositorio remoto:</strong>
+            utilizá <code>git remote -v</code>. Git debería mostrar la dirección de GitHub asociada al repositorio
+            remoto, normalmente identificada como <code>origin</code>.
+        </li>
+    </ol>
+
+    <p><strong>Ejemplo utilizando HTTPS:</strong></p>
+
+    <pre><code>git clone https://github.com/usuario/mi-proyecto.git</code></pre>
+
+    <p><strong>Ejemplo utilizando SSH:</strong></p>
+
+    <pre><code>git clone git@github.com:usuario/mi-proyecto.git</code></pre>
+
+    <p><strong>¿Qué ocurre después de ejecutar git clone?</strong> Git crea una copia local del repositorio y configura
+        automáticamente el repositorio remoto como <code>origin</code>. Además, descarga los commits y la información
+        necesaria para que puedas continuar trabajando con Git desde tu computadora.</p>
+
+    <p><strong>Después de clonar:</strong> normalmente podés abrir el proyecto en Visual Studio Code, crear una nueva
+        rama, modificar los archivos, realizar commits y enviar tus cambios nuevamente a GitHub mediante
+        <code>git push</code>.</p>
+
+    <p><strong>Flujo básico:</strong>
+        <code>GitHub → Code → Copiar URL → git clone → cd proyecto → git status → trabajar → git add → git commit → git push</code>.
+    </p>
+
+    <p><strong>¿Cuándo se utiliza?</strong> Es especialmente útil cuando comenzás a trabajar en un proyecto que ya existe
+        en GitHub, cuando te incorporás a un equipo de desarrollo o cuando necesitás obtener una copia del proyecto en
+        otra computadora.</p>
+
+    <p><strong>Importante:</strong> <code>git clone</code> se utiliza normalmente para obtener un repositorio por primera
+        vez. Si ya tenés el repositorio clonado y simplemente querés obtener los cambios más recientes realizados por
+        otros integrantes, normalmente utilizarás <code>git pull</code> en lugar de volver a ejecutar
+        <code>git clone</code>.</p>
+</details>
+<!-- Desplegable 59 -->
+<details>
+    <summary>
+        <h3>Git pull – Actualizar un proyecto desde GitHub</h3>
+    </summary>
+    <p><strong>git pull</strong> es el comando que permite obtener los cambios realizados en un repositorio remoto,
+        como GitHub, e incorporarlos a tu repositorio local. Es fundamental cuando trabajás en equipo y otros
+        desarrolladores han enviado nuevos commits al repositorio remoto.</p>
+
+    <ol>
+        <li>
+            <strong>Ubicate en tu proyecto:</strong>
+            abrí Git Bash o la terminal de Visual Studio Code y entrá en la carpeta del repositorio utilizando
+            <code>cd nombre-del-repositorio</code>.
+        </li>
+
+        <li>
+            <strong>Verificá el estado actual:</strong>
+            ejecutá <code>git status</code> para comprobar si tenés cambios locales pendientes antes de actualizar el
+            proyecto.
+        </li>
+
+        <li>
+            <strong>Comprobá la rama actual:</strong>
+            utilizá <code>git branch</code> para verificar en qué rama estás trabajando. Si querés actualizar
+            <code>main</code>, asegurate de encontrarte en esa rama.</li>
+
+        <li>
+            <strong>Obtené e integrá los cambios:</strong>
+            ejecutá <code>git pull</code>. Git descargará los cambios del repositorio remoto y los integrará en tu rama
+            local.
+        </li>
+
+        <li>
+            <strong>Verificá el resultado:</strong>
+            utilizá nuevamente <code>git status</code> y, si es necesario, <code>git log --oneline</code> para comprobar
+            que tu repositorio local quedó actualizado.
+        </li>
+    </ol>
+
+    <p><strong>Ejemplo básico:</strong></p>
+
+    <pre><code>git pull</code></pre>
+
+    <p>También podés indicar explícitamente el repositorio remoto y la rama que querés actualizar:</p>
+
+    <pre><code>git pull origin main</code></pre>
+
+    <p><strong>¿Qué hace realmente git pull?</strong> Conceptualmente, <code>git pull</code> combina dos operaciones:
+        primero obtiene información y commits nuevos del repositorio remoto y después intenta integrarlos en tu rama
+        local. Por eso, si existen cambios locales incompatibles con los cambios remotos, Git puede solicitar que
+        resuelvas un conflicto.</p>
+
+    <p><strong>¿Cuándo se utiliza?</strong> Es especialmente importante en equipos de desarrollo. Por ejemplo, si otro
+        integrante del equipo modificó el proyecto y ejecutó <code>git push</code>, vos podés ejecutar
+        <code>git pull</code> para obtener esos cambios y continuar trabajando sobre la versión más reciente.</p>
+
+    <p><strong>Ejemplo de trabajo en equipo:</strong></p>
+
+    <ol>
+        <li>Un desarrollador modifica el proyecto y crea un commit.</li>
+        <li>Ejecuta <code>git push</code> y envía sus cambios a GitHub.</li>
+        <li>Otro desarrollador, que tiene una copia local del mismo repositorio, ejecuta <code>git pull</code>.</li>
+        <li>Git descarga los nuevos commits e intenta integrarlos en su rama local.</li>
+        <li>El segundo desarrollador puede continuar trabajando sobre la versión actualizada.</li>
+    </ol>
+
+    <p><strong>¿Qué ocurre si hay conflictos?</strong> Si tus cambios locales entran en conflicto con los cambios que
+        vienen desde GitHub, Git puede detener la integración y solicitar que resuelvas manualmente los archivos
+        afectados. Después de solucionar los conflictos, deberás preparar los archivos con <code>git add</code> y
+        completar la integración según el estado indicado por Git.</p>
+
+    <p><strong>git pull vs git clone:</strong> <code>git clone</code> se utiliza normalmente para descargar un repositorio
+        por primera vez. En cambio, <code>git pull</code> se utiliza cuando ya tenés el repositorio en tu computadora y
+        querés actualizarlo con los cambios disponibles en GitHub.</p>
+
+    <p><strong>Flujo habitual:</strong>
+        <code>git pull → modificar → git add → git commit → git push</code>.
+        En un equipo de trabajo, es habitual actualizar primero el repositorio antes de comenzar una nueva tarea para
+        reducir la posibilidad de trabajar sobre una versión desactualizada.</p>
+</details>
+</body>
+
+</html>
