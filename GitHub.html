@@ -186,7 +186,7 @@
         </ol>
     </details>
     <h2>
-        ETAPA 2: Desarrollo
+        ETAPA 2: Crear cuenta
     </h2>
     <!-- Desplegable 50 -->
     <details>
@@ -354,6 +354,9 @@
             normalmente utilizaremos <code>git pull</code>.
         </p>
     </details>
+    <h2>
+        ETAPA 2: Repositorio
+    </h2>
     <!-- Desplegable 52 -->
     <details>
         <summary>
@@ -579,6 +582,9 @@
             permite que otra persona pueda comprender rápidamente el proyecto, instalarlo y comenzar a utilizarlo sin
             necesidad de preguntarle al desarrollador cómo funciona.</p>
     </details>
+    <h2>
+        ETAPA 2: Git + GitHub
+    </h2>
     <!-- Desplegable 57 -->
     <details>
         <summary>
@@ -691,161 +697,311 @@
         </p>
     </details>
     <!-- Desplegable 58 -->
-<details>
-    <summary>
-        <h3>Git clone – Descargar un repositorio de GitHub</h3>
-    </summary>
-    <p><strong>git clone</strong> es el comando que permite copiar un repositorio remoto, como uno alojado en GitHub,
-        a tu computadora. No solo descarga los archivos del proyecto, sino también su historial de commits, ramas y la
-        configuración necesaria para establecer la conexión con el repositorio remoto.</p>
+    <details>
+        <summary>
+            <h3>Git clone – Descargar un repositorio de GitHub</h3>
+        </summary>
+        <p><strong>git clone</strong> es el comando que permite copiar un repositorio remoto, como uno alojado en
+            GitHub,
+            a tu computadora. No solo descarga los archivos del proyecto, sino también su historial de commits, ramas y
+            la
+            configuración necesaria para establecer la conexión con el repositorio remoto.</p>
 
-    <ol>
-        <li>
-            <strong>Obtené la URL del repositorio:</strong>
-            ingresá al repositorio de GitHub que querés descargar y seleccioná el botón
-            <strong>Code</strong>. Allí podrás copiar su dirección mediante <strong>HTTPS</strong> o
-            <strong>SSH</strong>.
-        </li>
+        <ol>
+            <li>
+                <strong>Obtené la URL del repositorio:</strong>
+                ingresá al repositorio de GitHub que querés descargar y seleccioná el botón
+                <strong>Code</strong>. Allí podrás copiar su dirección mediante <strong>HTTPS</strong> o
+                <strong>SSH</strong>.
+            </li>
 
-        <li>
-            <strong>Abrí la terminal:</strong>
-            abrí Git Bash o la terminal integrada de Visual Studio Code y ubicáte en la carpeta donde querés guardar
-            el proyecto.
-        </li>
+            <li>
+                <strong>Abrí la terminal:</strong>
+                abrí Git Bash o la terminal integrada de Visual Studio Code y ubicáte en la carpeta donde querés guardar
+                el proyecto.
+            </li>
 
-        <li>
-            <strong>Cloná el repositorio:</strong>
-            ejecutá <code>git clone URL_DEL_REPOSITORIO</code>. Git creará automáticamente una carpeta con el nombre del
-            repositorio y descargará su contenido.
-        </li>
+            <li>
+                <strong>Cloná el repositorio:</strong>
+                ejecutá <code>git clone URL_DEL_REPOSITORIO</code>. Git creará automáticamente una carpeta con el nombre
+                del
+                repositorio y descargará su contenido.
+            </li>
 
-        <li>
-            <strong>Entrá en la carpeta:</strong>
-            utilizá <code>cd nombre-del-repositorio</code> para ingresar al proyecto recién descargado.
-        </li>
+            <li>
+                <strong>Entrá en la carpeta:</strong>
+                utilizá <code>cd nombre-del-repositorio</code> para ingresar al proyecto recién descargado.
+            </li>
 
-        <li>
-            <strong>Verificá el repositorio:</strong>
-            ejecutá <code>git status</code> para comprobar que el proyecto fue clonado correctamente.
-        </li>
+            <li>
+                <strong>Verificá el repositorio:</strong>
+                ejecutá <code>git status</code> para comprobar que el proyecto fue clonado correctamente.
+            </li>
 
-        <li>
-            <strong>Verificá el repositorio remoto:</strong>
-            utilizá <code>git remote -v</code>. Git debería mostrar la dirección de GitHub asociada al repositorio
-            remoto, normalmente identificada como <code>origin</code>.
-        </li>
-    </ol>
+            <li>
+                <strong>Verificá el repositorio remoto:</strong>
+                utilizá <code>git remote -v</code>. Git debería mostrar la dirección de GitHub asociada al repositorio
+                remoto, normalmente identificada como <code>origin</code>.
+            </li>
+        </ol>
 
-    <p><strong>Ejemplo utilizando HTTPS:</strong></p>
+        <p><strong>Ejemplo utilizando HTTPS:</strong></p>
 
-    <pre><code>git clone https://github.com/usuario/mi-proyecto.git</code></pre>
+        <pre><code>git clone https://github.com/usuario/mi-proyecto.git</code></pre>
 
-    <p><strong>Ejemplo utilizando SSH:</strong></p>
+        <p><strong>Ejemplo utilizando SSH:</strong></p>
 
-    <pre><code>git clone git@github.com:usuario/mi-proyecto.git</code></pre>
+        <pre><code>git clone git@github.com:usuario/mi-proyecto.git</code></pre>
 
-    <p><strong>¿Qué ocurre después de ejecutar git clone?</strong> Git crea una copia local del repositorio y configura
-        automáticamente el repositorio remoto como <code>origin</code>. Además, descarga los commits y la información
-        necesaria para que puedas continuar trabajando con Git desde tu computadora.</p>
+        <p><strong>¿Qué ocurre después de ejecutar git clone?</strong> Git crea una copia local del repositorio y
+            configura
+            automáticamente el repositorio remoto como <code>origin</code>. Además, descarga los commits y la
+            información
+            necesaria para que puedas continuar trabajando con Git desde tu computadora.</p>
 
-    <p><strong>Después de clonar:</strong> normalmente podés abrir el proyecto en Visual Studio Code, crear una nueva
-        rama, modificar los archivos, realizar commits y enviar tus cambios nuevamente a GitHub mediante
-        <code>git push</code>.</p>
+        <p><strong>Después de clonar:</strong> normalmente podés abrir el proyecto en Visual Studio Code, crear una
+            nueva
+            rama, modificar los archivos, realizar commits y enviar tus cambios nuevamente a GitHub mediante
+            <code>git push</code>.
+        </p>
 
-    <p><strong>Flujo básico:</strong>
-        <code>GitHub → Code → Copiar URL → git clone → cd proyecto → git status → trabajar → git add → git commit → git push</code>.
-    </p>
+        <p><strong>Flujo básico:</strong>
+            <code>GitHub → Code → Copiar URL → git clone → cd proyecto → git status → trabajar → git add → git commit → git push</code>.
+        </p>
 
-    <p><strong>¿Cuándo se utiliza?</strong> Es especialmente útil cuando comenzás a trabajar en un proyecto que ya existe
-        en GitHub, cuando te incorporás a un equipo de desarrollo o cuando necesitás obtener una copia del proyecto en
-        otra computadora.</p>
+        <p><strong>¿Cuándo se utiliza?</strong> Es especialmente útil cuando comenzás a trabajar en un proyecto que ya
+            existe
+            en GitHub, cuando te incorporás a un equipo de desarrollo o cuando necesitás obtener una copia del proyecto
+            en
+            otra computadora.</p>
 
-    <p><strong>Importante:</strong> <code>git clone</code> se utiliza normalmente para obtener un repositorio por primera
-        vez. Si ya tenés el repositorio clonado y simplemente querés obtener los cambios más recientes realizados por
-        otros integrantes, normalmente utilizarás <code>git pull</code> en lugar de volver a ejecutar
-        <code>git clone</code>.</p>
-</details>
-<!-- Desplegable 59 -->
-<details>
-    <summary>
-        <h3>Git pull – Actualizar un proyecto desde GitHub</h3>
-    </summary>
-    <p><strong>git pull</strong> es el comando que permite obtener los cambios realizados en un repositorio remoto,
-        como GitHub, e incorporarlos a tu repositorio local. Es fundamental cuando trabajás en equipo y otros
-        desarrolladores han enviado nuevos commits al repositorio remoto.</p>
+        <p><strong>Importante:</strong> <code>git clone</code> se utiliza normalmente para obtener un repositorio por
+            primera
+            vez. Si ya tenés el repositorio clonado y simplemente querés obtener los cambios más recientes realizados
+            por
+            otros integrantes, normalmente utilizarás <code>git pull</code> en lugar de volver a ejecutar
+            <code>git clone</code>.
+        </p>
+    </details>
+    <!-- Desplegable 59 -->
+    <details>
+        <summary>
+            <h3>Git pull – Actualizar un proyecto desde GitHub</h3>
+        </summary>
+        <p><strong>git pull</strong> es el comando que permite obtener los cambios realizados en un repositorio remoto,
+            como GitHub, e incorporarlos a tu repositorio local. Es fundamental cuando trabajás en equipo y otros
+            desarrolladores han enviado nuevos commits al repositorio remoto.</p>
 
-    <ol>
-        <li>
-            <strong>Ubicate en tu proyecto:</strong>
-            abrí Git Bash o la terminal de Visual Studio Code y entrá en la carpeta del repositorio utilizando
-            <code>cd nombre-del-repositorio</code>.
-        </li>
+        <ol>
+            <li>
+                <strong>Ubicate en tu proyecto:</strong>
+                abrí Git Bash o la terminal de Visual Studio Code y entrá en la carpeta del repositorio utilizando
+                <code>cd nombre-del-repositorio</code>.
+            </li>
 
-        <li>
-            <strong>Verificá el estado actual:</strong>
-            ejecutá <code>git status</code> para comprobar si tenés cambios locales pendientes antes de actualizar el
-            proyecto.
-        </li>
+            <li>
+                <strong>Verificá el estado actual:</strong>
+                ejecutá <code>git status</code> para comprobar si tenés cambios locales pendientes antes de actualizar
+                el
+                proyecto.
+            </li>
 
-        <li>
-            <strong>Comprobá la rama actual:</strong>
-            utilizá <code>git branch</code> para verificar en qué rama estás trabajando. Si querés actualizar
-            <code>main</code>, asegurate de encontrarte en esa rama.</li>
+            <li>
+                <strong>Comprobá la rama actual:</strong>
+                utilizá <code>git branch</code> para verificar en qué rama estás trabajando. Si querés actualizar
+                <code>main</code>, asegurate de encontrarte en esa rama.
+            </li>
 
-        <li>
-            <strong>Obtené e integrá los cambios:</strong>
-            ejecutá <code>git pull</code>. Git descargará los cambios del repositorio remoto y los integrará en tu rama
-            local.
-        </li>
+            <li>
+                <strong>Obtené e integrá los cambios:</strong>
+                ejecutá <code>git pull</code>. Git descargará los cambios del repositorio remoto y los integrará en tu
+                rama
+                local.
+            </li>
 
-        <li>
-            <strong>Verificá el resultado:</strong>
-            utilizá nuevamente <code>git status</code> y, si es necesario, <code>git log --oneline</code> para comprobar
-            que tu repositorio local quedó actualizado.
-        </li>
-    </ol>
+            <li>
+                <strong>Verificá el resultado:</strong>
+                utilizá nuevamente <code>git status</code> y, si es necesario, <code>git log --oneline</code> para
+                comprobar
+                que tu repositorio local quedó actualizado.
+            </li>
+        </ol>
 
-    <p><strong>Ejemplo básico:</strong></p>
+        <p><strong>Ejemplo básico:</strong></p>
 
-    <pre><code>git pull</code></pre>
+        <pre><code>git pull</code></pre>
 
-    <p>También podés indicar explícitamente el repositorio remoto y la rama que querés actualizar:</p>
+        <p>También podés indicar explícitamente el repositorio remoto y la rama que querés actualizar:</p>
 
-    <pre><code>git pull origin main</code></pre>
+        <pre><code>git pull origin main</code></pre>
 
-    <p><strong>¿Qué hace realmente git pull?</strong> Conceptualmente, <code>git pull</code> combina dos operaciones:
-        primero obtiene información y commits nuevos del repositorio remoto y después intenta integrarlos en tu rama
-        local. Por eso, si existen cambios locales incompatibles con los cambios remotos, Git puede solicitar que
-        resuelvas un conflicto.</p>
+        <p><strong>¿Qué hace realmente git pull?</strong> Conceptualmente, <code>git pull</code> combina dos
+            operaciones:
+            primero obtiene información y commits nuevos del repositorio remoto y después intenta integrarlos en tu rama
+            local. Por eso, si existen cambios locales incompatibles con los cambios remotos, Git puede solicitar que
+            resuelvas un conflicto.</p>
 
-    <p><strong>¿Cuándo se utiliza?</strong> Es especialmente importante en equipos de desarrollo. Por ejemplo, si otro
-        integrante del equipo modificó el proyecto y ejecutó <code>git push</code>, vos podés ejecutar
-        <code>git pull</code> para obtener esos cambios y continuar trabajando sobre la versión más reciente.</p>
+        <p><strong>¿Cuándo se utiliza?</strong> Es especialmente importante en equipos de desarrollo. Por ejemplo, si
+            otro
+            integrante del equipo modificó el proyecto y ejecutó <code>git push</code>, vos podés ejecutar
+            <code>git pull</code> para obtener esos cambios y continuar trabajando sobre la versión más reciente.
+        </p>
 
-    <p><strong>Ejemplo de trabajo en equipo:</strong></p>
+        <p><strong>Ejemplo de trabajo en equipo:</strong></p>
 
-    <ol>
-        <li>Un desarrollador modifica el proyecto y crea un commit.</li>
-        <li>Ejecuta <code>git push</code> y envía sus cambios a GitHub.</li>
-        <li>Otro desarrollador, que tiene una copia local del mismo repositorio, ejecuta <code>git pull</code>.</li>
-        <li>Git descarga los nuevos commits e intenta integrarlos en su rama local.</li>
-        <li>El segundo desarrollador puede continuar trabajando sobre la versión actualizada.</li>
-    </ol>
+        <ol>
+            <li>Un desarrollador modifica el proyecto y crea un commit.</li>
+            <li>Ejecuta <code>git push</code> y envía sus cambios a GitHub.</li>
+            <li>Otro desarrollador, que tiene una copia local del mismo repositorio, ejecuta <code>git pull</code>.</li>
+            <li>Git descarga los nuevos commits e intenta integrarlos en su rama local.</li>
+            <li>El segundo desarrollador puede continuar trabajando sobre la versión actualizada.</li>
+        </ol>
 
-    <p><strong>¿Qué ocurre si hay conflictos?</strong> Si tus cambios locales entran en conflicto con los cambios que
-        vienen desde GitHub, Git puede detener la integración y solicitar que resuelvas manualmente los archivos
-        afectados. Después de solucionar los conflictos, deberás preparar los archivos con <code>git add</code> y
-        completar la integración según el estado indicado por Git.</p>
+        <p><strong>¿Qué ocurre si hay conflictos?</strong> Si tus cambios locales entran en conflicto con los cambios
+            que
+            vienen desde GitHub, Git puede detener la integración y solicitar que resuelvas manualmente los archivos
+            afectados. Después de solucionar los conflictos, deberás preparar los archivos con <code>git add</code> y
+            completar la integración según el estado indicado por Git.</p>
 
-    <p><strong>git pull vs git clone:</strong> <code>git clone</code> se utiliza normalmente para descargar un repositorio
-        por primera vez. En cambio, <code>git pull</code> se utiliza cuando ya tenés el repositorio en tu computadora y
-        querés actualizarlo con los cambios disponibles en GitHub.</p>
+        <p><strong>git pull vs git clone:</strong> <code>git clone</code> se utiliza normalmente para descargar un
+            repositorio
+            por primera vez. En cambio, <code>git pull</code> se utiliza cuando ya tenés el repositorio en tu
+            computadora y
+            querés actualizarlo con los cambios disponibles en GitHub.</p>
 
-    <p><strong>Flujo habitual:</strong>
-        <code>git pull → modificar → git add → git commit → git push</code>.
-        En un equipo de trabajo, es habitual actualizar primero el repositorio antes de comenzar una nueva tarea para
-        reducir la posibilidad de trabajar sobre una versión desactualizada.</p>
-</details>
+        <p><strong>Flujo habitual:</strong>
+            <code>git pull → modificar → git add → git commit → git push</code>.
+            En un equipo de trabajo, es habitual actualizar primero el repositorio antes de comenzar una nueva tarea
+            para
+            reducir la posibilidad de trabajar sobre una versión desactualizada.
+        </p>
+    </details>
+    <!-- Desplegable 60 -->
+    <details>
+        <summary>
+            <h3>Git fetch – Consultar cambios remotos</h3>
+        </summary>
+        <p><strong>git fetch</strong> permite consultar y descargar información nueva desde un repositorio remoto, como
+            GitHub, sin modificar automáticamente los archivos de tu proyecto ni integrar esos cambios en la rama en la
+            que estás trabajando. Es especialmente útil cuando querés revisar qué cambios realizaron otros
+            desarrolladores
+            antes de decidir si incorporarlos.</p>
+
+        <ol>
+            <li>
+                <strong>Verificá el estado del proyecto:</strong>
+                ejecutá <code>git status</code> para comprobar que no tengas cambios locales pendientes.
+            </li>
+
+            <li>
+                <strong>Descargá la información del repositorio remoto:</strong>
+                ejecutá <code>git fetch</code>. Git consultará el repositorio remoto y descargará los nuevos commits,
+                ramas y referencias disponibles.
+            </li>
+
+            <li>
+                <strong>Consultá qué cambios existen:</strong>
+                podés utilizar <code>git log --oneline main..origin/main</code> para ver los commits que están en la
+                rama
+                remota y todavía no están en tu rama local.
+            </li>
+
+            <li>
+                <strong>Compará los cambios:</strong>
+                utilizá <code>git diff main origin/main</code> para comprobar exactamente qué diferencias existen entre
+                tu
+                rama local y la rama remota.
+            </li>
+
+            <li>
+                <strong>Decidí qué hacer:</strong>
+                después de revisar los cambios podés integrarlos utilizando <code>git merge</code> o actualizar tu rama
+                mediante <code>git pull</code>.
+            </li>
+        </ol>
+
+        <p><strong>Ejemplo básico:</strong></p>
+
+        <pre><code>git fetch</code></pre>
+
+        <p>Después de ejecutar este comando, Git habrá actualizado la información que conoce sobre el repositorio
+            remoto,
+            pero <strong>no habrá modificado automáticamente tus archivos de trabajo</strong>.</p>
+
+        <p><strong>Ejemplo de trabajo en equipo:</strong></p>
+
+        <ol>
+            <li>Otro desarrollador realiza cambios en el proyecto y ejecuta <code>git push</code>.</li>
+            <li>Vos ejecutás <code>git fetch</code> para consultar si existen novedades.</li>
+            <li>Git descarga los nuevos commits y actualiza las referencias remotas.</li>
+            <li>Podés consultar los cambios utilizando <code>git log</code> o <code>git diff</code>.</li>
+            <li>Si los cambios son correctos y querés incorporarlos, podés utilizar <code>git merge</code> o
+                <code>git pull</code>.
+            </li>
+        </ol>
+
+        <p><strong>Una diferencia importante con git pull:</strong>
+            <code>git fetch</code> descarga los cambios remotos pero no los integra automáticamente en tu rama actual.
+            En cambio, <code>git pull</code> obtiene los cambios y posteriormente intenta integrarlos en tu rama.
+        </p>
+
+        <p><strong>Por ejemplo:</strong></p>
+
+        <pre><code>git fetch origin</code></pre>
+
+        <p>Luego podés consultar las diferencias:</p>
+
+        <pre><code>git diff main origin/main</code></pre>
+
+        <p>Y si decidís incorporar esos cambios:</p>
+
+        <pre><code>git merge origin/main</code></pre>
+
+        <p><strong>¿Cuándo conviene utilizar git fetch?</strong> Es especialmente útil cuando trabajás en equipo y
+            querés
+            mantener el control sobre cuándo incorporar cambios. Primero podés consultar qué ocurrió en GitHub, revisar
+            los
+            commits y diferencias, y recién después decidir si querés fusionarlos con tu trabajo.</p>
+
+        <p><strong>Flujo habitual:</strong>
+            <code>git fetch → git log / git diff → revisar cambios → git merge</code>.
+        </p>
+
+        <p><strong>Resumen:</strong> <code>git fetch</code> es una herramienta de consulta y sincronización de
+            información
+            remota. Te permite saber qué cambió en GitHub <strong>sin modificar inmediatamente tu trabajo
+                local</strong>.
+            Por eso resulta especialmente útil antes de realizar una integración de cambios.</p>
+    </details>
+
+
+
+
+    <h2>BLOQUE 4 — Ramas y colaboración</h2>
+    <h3>Ramas en GitHub</h3>
+    <h3>Pull Requests</h3>
+    <h3>Crear Pull Request</h3>
+    <h3>Merge de Pull Requests</h3>
+    <h3>Resolver conflictos</h3>
+    <h3>Colaboradores</h3>
+
+    <h2>BLOQUE 5 — Gestión de proyectos</h2>
+    <h3>Issues</h3>
+    <h3>Labels y Milestones</h3>
+    <h3>Projects</h3>
+
+    <h2>BLOQUE 6 — Open Source</h2>
+    <h3>Fork</h3>
+    <h3>Fork + Pull Request</h3>
+    <h3>Open Source</h3>
+
+    <h2>BLOQUE 7 — Perfil y publicación</h2>
+    <h3>GitHub Profile</h3>
+    <h3>GitHub Pages</h3>
+    <h3>Publicar una web con GitHub Pages</h3>
+
+    <p> Visto hasta 2:40 min en youtube</p>
+
 </body>
 
 </html>
