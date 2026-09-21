@@ -978,27 +978,1503 @@
 
 
     <h2>BLOQUE 4 — Ramas y colaboración</h2>
-    <h3>Ramas en GitHub</h3>
-    <h3>Pull Requests</h3>
-    <h3>Crear Pull Request</h3>
-    <h3>Merge de Pull Requests</h3>
-    <h3>Resolver conflictos</h3>
-    <h3>Colaboradores</h3>
+    <!-- Desplegable 61 -->
+    <details>
+        <summary>
+            <h3>Ramas en GitHub</h3>
+        </summary>
+        <p>Las <strong>ramas (branches)</strong> en GitHub permiten trabajar sobre diferentes versiones de un proyecto
+            sin
+            modificar directamente la rama principal. Son fundamentales para desarrollar nuevas funcionalidades,
+            corregir
+            errores y organizar el trabajo de varios desarrolladores de forma independiente.</p>
+
+        <ol>
+            <li>
+                <strong>Consultar las ramas:</strong>
+                desde GitHub podés acceder al selector de ramas del repositorio para ver las ramas disponibles y cambiar
+                entre ellas.
+            </li>
+
+            <li>
+                <strong>Crear una rama:</strong>
+                desde GitHub podés crear una nueva rama a partir de una rama existente. Por ejemplo,
+                <code>nueva-funcionalidad</code> puede crearse a partir de <code>main</code>.
+            </li>
+
+            <li>
+                <strong>Trabajar en una rama:</strong>
+                cada desarrollador puede realizar cambios en su propia rama sin modificar directamente
+                <code>main</code>. Esto permite desarrollar funcionalidades de manera independiente.
+            </li>
+
+            <li>
+                <strong>Crear una rama desde la terminal:</strong>
+                también podés crearla localmente utilizando
+                <code>git switch -c nombre-rama</code>.
+            </li>
+
+            <li>
+                <strong>Subir la rama a GitHub:</strong>
+                después de crearla localmente, podés enviarla al repositorio remoto mediante
+                <code>git push -u origin nombre-rama</code>.
+            </li>
+
+            <li>
+                <strong>Comparar ramas:</strong>
+                GitHub permite comparar los cambios realizados entre dos ramas antes de integrarlos.
+            </li>
+
+            <li>
+                <strong>Crear un Pull Request:</strong>
+                cuando terminás el trabajo de una rama, podés crear un <strong>Pull Request</strong> para solicitar que
+                tus
+                cambios sean revisados antes de incorporarlos a otra rama, normalmente <code>main</code>.
+            </li>
+
+            <li>
+                <strong>Fusionar la rama:</strong>
+                después de revisar y aprobar los cambios, el Pull Request puede integrarse mediante un
+                <strong>merge</strong>.
+            </li>
+
+            <li>
+                <strong>Eliminar una rama:</strong>
+                una vez incorporados los cambios, las ramas que ya no son necesarias pueden eliminarse del repositorio
+                para
+                mantenerlo organizado.
+            </li>
+        </ol>
+
+        <p><strong>Ejemplo de trabajo:</strong> imaginá que el proyecto tiene una rama principal llamada
+            <code>main</code> y necesitás desarrollar un sistema de inicio de sesión. Podés crear una rama llamada
+            <code>login</code>, realizar allí todos los cambios y subirla a GitHub. Una vez terminado el trabajo, creás
+            un
+            Pull Request para que el equipo revise los cambios antes de fusionarlos con <code>main</code>.
+        </p>
+
+        <p><strong>Flujo habitual:</strong>
+            <code>main → crear rama → trabajar → commit → git push → Pull Request → revisión → merge → main</code>.
+        </p>
+
+        <p><strong>Comandos relacionados:</strong></p>
+
+        <ul>
+            <li><code>git branch</code> → muestra las ramas locales.</li>
+            <li><code>git branch -a</code> → muestra las ramas locales y remotas conocidas.</li>
+            <li><code>git switch -c nombre-rama</code> → crea una nueva rama y cambia a ella.</li>
+            <li><code>git switch nombre-rama</code> → cambia a una rama existente.</li>
+            <li><code>git push -u origin nombre-rama</code> → publica la rama local en GitHub.</li>
+            <li><code>git merge nombre-rama</code> → integra una rama con la rama actual.</li>
+            <li><code>git branch -d nombre-rama</code> → elimina una rama local que ya no necesitás.</li>
+        </ul>
+
+        <p><strong>Importante:</strong> una rama de GitHub y una rama local representan referencias del mismo sistema de
+            control de versiones, pero pueden encontrarse en lugares diferentes. Por eso, después de crear una rama
+            localmente, normalmente utilizamos <code>git push</code> para publicarla en GitHub.</p>
+    </details>
+    <!-- Desplegable 62 -->
+    <details>
+        <summary>
+            <h3>Pull Requests</h3>
+        </summary>
+
+        <p>Los <strong>Pull Requests (PR)</strong> son una de las herramientas principales de GitHub para proponer,
+            revisar e integrar cambios realizados en una rama. Permiten que otros colaboradores puedan analizar el
+            código,
+            realizar comentarios y aprobar los cambios antes de incorporarlos a otra rama, normalmente
+            <code>main</code>.
+        </p>
+
+        <ol>
+            <li><strong>Trabajar en una rama:</strong> primero creás una rama independiente para desarrollar una
+                funcionalidad, corregir un error o realizar cualquier otro cambio sin modificar directamente
+                <code>main</code>.
+            </li>
+
+            <li><strong>Realizar los cambios:</strong> trabajás normalmente en tu proyecto, modificando archivos,
+                agregando funcionalidades o corrigiendo errores.</li>
+
+            <li><strong>Crear commits:</strong> una vez realizados los cambios, los guardás en el historial mediante
+                <code>git add</code> y <code>git commit</code>.
+            </li>
+
+            <li><strong>Subir la rama a GitHub:</strong> utilizás <code>git push</code> para publicar los commits de tu
+                rama en el repositorio remoto.</li>
+
+            <li><strong>Crear el Pull Request:</strong> desde GitHub seleccionás la opción para crear un Pull Request y
+                elegís la rama que contiene los cambios y la rama donde querés incorporarlos, por ejemplo
+                <code>login</code> → <code>main</code>.
+            </li>
+
+            <li><strong>Describir los cambios:</strong> el Pull Request permite explicar qué se modificó, por qué se
+                realizaron esos cambios y qué aspectos debería revisar el equipo.</li>
+
+            <li><strong>Revisar el código:</strong> otros colaboradores pueden analizar los cambios realizados, comparar
+                las diferencias entre las ramas y dejar comentarios o sugerencias.</li>
+
+            <li><strong>Realizar correcciones:</strong> si la revisión encuentra algún problema, podés modificar
+                nuevamente tu rama y subir nuevos commits. Esos cambios aparecerán automáticamente dentro del mismo
+                Pull Request.</li>
+
+            <li><strong>Aprobar los cambios:</strong> cuando la revisión está terminada y se cumplen las condiciones
+                necesarias, los colaboradores autorizados pueden aprobar el Pull Request.</li>
+
+            <li><strong>Fusionar el Pull Request:</strong> finalmente, los cambios pueden incorporarse a la rama de
+                destino mediante un <strong>merge</strong>.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que un proyecto tiene una rama principal llamada
+            <code>main</code> y necesitás agregar un formulario de inicio de sesión. Creás una rama llamada
+            <code>login</code>, desarrollás allí la funcionalidad y realizás varios commits. Después ejecutás
+            <code>git push -u origin login</code> para subir la rama a GitHub.
+        </p>
+
+        <p>Una vez publicada la rama, creás un Pull Request desde <code>login</code> hacia <code>main</code>. El resto
+            del
+            equipo puede revisar los archivos modificados, hacer comentarios y solicitar correcciones. Cuando los
+            cambios
+            están listos, el Pull Request puede aprobarse y fusionarse con <code>main</code>.</p>
+
+        <p><strong>Flujo habitual:</strong>
+            <code>crear rama → trabajar → commit → git push → Pull Request → revisión → correcciones → aprobación → merge</code>.
+        </p>
+
+        <p><strong>¿Qué permite hacer un Pull Request?</strong></p>
+
+        <ul>
+            <li>Proponer cambios antes de incorporarlos a otra rama.</li>
+            <li>Revisar el código realizado por otros colaboradores.</li>
+            <li>Comentar líneas específicas del código.</li>
+            <li>Solicitar modificaciones antes de aprobar los cambios.</li>
+            <li>Comprobar los cambios realizados entre dos ramas.</li>
+            <li>Ejecutar comprobaciones automáticas mediante herramientas configuradas en el repositorio.</li>
+            <li>Registrar quién revisó y aprobó los cambios.</li>
+            <li>Fusionar los cambios cuando cumplen las condiciones del proyecto.</li>
+        </ul>
+
+        <p><strong>Importante:</strong> un Pull Request no es un comando de Git. Es una funcionalidad de
+            <strong>GitHub</strong> que utiliza las ramas y los commits de Git para facilitar la revisión y colaboración
+            antes de integrar los cambios.
+        </p>
+
+        <p><strong>Comandos que normalmente intervienen:</strong></p>
+
+        <ul>
+            <li><code>git switch -c nombre-rama</code> → crea una rama y cambia a ella.</li>
+            <li><code>git add .</code> → prepara los cambios para el commit.</li>
+            <li><code>git commit -m "Descripción del cambio"</code> → guarda los cambios en el historial.</li>
+            <li><code>git push -u origin nombre-rama</code> → publica la rama y sus commits en GitHub.</li>
+            <li><code>git pull</code> → actualiza el repositorio local con los cambios remotos.</li>
+        </ul>
+
+    </details>
+    <!-- Desplegable 63 -->
+    <details>
+        <summary>
+            <h3>Crear Pull Request</h3>
+        </summary>
+
+        <p>Crear un <strong>Pull Request</strong> en GitHub permite proponer que los cambios realizados en una rama sean
+            revisados y posteriormente incorporados a otra rama. Es un paso habitual cuando trabajás en equipo, ya que
+            permite revisar el código antes de modificar la rama principal.</p>
+
+        <ol>
+            <li><strong>Crear una rama:</strong> comenzá trabajando en una rama independiente de <code>main</code>.
+                Por ejemplo, podés crear una rama llamada <code>login</code> para desarrollar un sistema de inicio de
+                sesión.</li>
+
+            <li><strong>Realizar los cambios:</strong> modificá, agregá o eliminá los archivos necesarios para completar
+                la funcionalidad que estás desarrollando.</li>
+
+            <li><strong>Crear los commits:</strong> guardá los cambios en el historial de Git utilizando
+                <code>git add</code> y <code>git commit</code>.
+            </li>
+
+            <li><strong>Subir la rama a GitHub:</strong> publicá la rama y sus commits en el repositorio remoto con
+                <code>git push -u origin login</code>.
+            </li>
+
+            <li><strong>Abrir GitHub:</strong> ingresá al repositorio donde acabás de subir la rama. GitHub normalmente
+                mostrará una opción para crear un Pull Request a partir de la nueva rama.</li>
+
+            <li><strong>Seleccionar las ramas:</strong> comprobá que la rama que contiene tus cambios sea la rama de
+                origen y que la rama que recibirá los cambios sea la rama de destino. Por ejemplo:
+                <code>login</code> → <code>main</code>.
+            </li>
+
+            <li><strong>Agregar un título:</strong> escribí un título claro que permita entender rápidamente qué cambio
+                propone el Pull Request.</li>
+
+            <li><strong>Describir los cambios:</strong> explicá qué se modificó, por qué se realizó el cambio y
+                cualquier
+                información que pueda ser útil para la persona encargada de revisar el código.</li>
+
+            <li><strong>Revisar los cambios:</strong> antes de crear el Pull Request, revisá los archivos y diferencias
+                que
+                GitHub muestra para asegurarte de que los cambios sean los esperados.</li>
+
+            <li><strong>Crear el Pull Request:</strong> finalmente, seleccioná la opción para crear el Pull Request.
+                A partir de ese momento, los colaboradores podrán revisar los cambios y participar en la conversación.
+            </li>
+        </ol>
+
+        <p><strong>Ejemplo:</strong> imaginá que estás trabajando en un sitio web y creaste la rama
+            <code>formulario-contacto</code>. Después de terminar el formulario, realizás los commits correspondientes y
+            ejecutás <code>git push -u origin formulario-contacto</code>.
+        </p>
+
+        <p>En GitHub creás un Pull Request desde <code>formulario-contacto</code> hacia <code>main</code>. En la
+            descripción podés explicar que agregaste el formulario de contacto, indicar qué archivos modificaste y
+            cualquier aspecto que el equipo debería revisar.</p>
+
+        <p><strong>Flujo completo:</strong>
+            <code>crear rama → modificar archivos → commit → git push → crear Pull Request → revisión → aprobación → merge</code>.
+        </p>
+
+        <p><strong>¿Qué sucede después de crear el Pull Request?</strong></p>
+
+        <ul>
+            <li>Los colaboradores pueden revisar los cambios.</li>
+            <li>Se pueden agregar comentarios y sugerencias.</li>
+            <li>Podés realizar nuevos commits para corregir o mejorar el código.</li>
+            <li>GitHub actualiza automáticamente el Pull Request con esos nuevos commits.</li>
+            <li>Una vez finalizada la revisión, el Pull Request puede aprobarse y fusionarse.</li>
+        </ul>
+
+        <p><strong>Importante:</strong> crear un Pull Request no significa que los cambios ya estén incorporados en
+            <code>main</code>. El Pull Request representa una propuesta de integración. La incorporación definitiva
+            ocurre
+            cuando el Pull Request se fusiona mediante un <strong>merge</strong> u otro método de integración disponible
+            en el repositorio.
+        </p>
+
+    </details>
+    <!-- Desplegable 64 -->
+    <details>
+        <summary>
+            <h3>Merge de Pull Requests</h3>
+        </summary>
+
+        <p>El <strong>merge de un Pull Request</strong> es el proceso mediante el cual los cambios de una rama se
+            incorporan a otra rama dentro de un repositorio de GitHub. Normalmente se utiliza para integrar el trabajo
+            realizado en una rama de desarrollo con la rama principal, como <code>main</code>, después de que los
+            cambios
+            fueron revisados.</p>
+
+        <ol>
+            <li><strong>Completar el trabajo:</strong> primero terminá los cambios en la rama donde estás desarrollando
+                la
+                funcionalidad o corrección.</li>
+
+            <li><strong>Crear los commits:</strong> guardá los cambios utilizando <code>git add</code> y
+                <code>git commit</code>.
+            </li>
+
+            <li><strong>Subir la rama:</strong> utilizá <code>git push</code> para enviar los commits a GitHub y
+                permitir
+                que estén disponibles para la revisión.</li>
+
+            <li><strong>Crear el Pull Request:</strong> proponé integrar tu rama con la rama de destino, por ejemplo
+                <code>login</code> → <code>main</code>.
+            </li>
+
+            <li><strong>Revisar los cambios:</strong> los colaboradores pueden analizar el código, realizar comentarios,
+                solicitar modificaciones y comprobar que el Pull Request cumple con los requisitos del proyecto.</li>
+
+            <li><strong>Resolver los problemas:</strong> si existen correcciones pendientes o conflictos entre las
+                ramas,
+                deben solucionarse antes de completar la integración.</li>
+
+            <li><strong>Aprobar el Pull Request:</strong> cuando la revisión está terminada y se cumplen las condiciones
+                establecidas por el repositorio, el Pull Request puede quedar listo para fusionarse.</li>
+
+            <li><strong>Realizar el merge:</strong> desde el Pull Request se selecciona la opción correspondiente para
+                fusionar los cambios con la rama de destino.</li>
+
+            <li><strong>Confirmar la integración:</strong> GitHub incorpora los cambios a la rama de destino y el Pull
+                Request queda marcado como integrado.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que un desarrollador creó la rama
+            <code>formulario-contacto</code> a partir de <code>main</code>. Allí agregó un nuevo formulario, realizó sus
+            commits y subió la rama a GitHub.
+        </p>
+
+        <p>Después creó un Pull Request desde <code>formulario-contacto</code> hacia <code>main</code>. Otro miembro del
+            equipo revisó los cambios y, una vez finalizada la revisión, el Pull Request se fusionó. Como resultado, el
+            código del formulario pasó a formar parte de <code>main</code>.</p>
+
+        <p><strong>¿Qué ocurre al hacer merge?</strong></p>
+
+        <ul>
+            <li>Los cambios de la rama de origen pasan a formar parte de la rama de destino.</li>
+            <li>El Pull Request queda registrado como integrado.</li>
+            <li>El historial de Git conserva la información de los commits involucrados.</li>
+            <li>La rama utilizada para desarrollar la funcionalidad puede conservarse o eliminarse, según las
+                necesidades
+                del proyecto.</li>
+        </ul>
+
+        <p><strong>Tipos de merge disponibles en GitHub:</strong></p>
+
+        <ul>
+            <li><strong>Create a merge commit:</strong> integra los cambios creando un nuevo commit de merge que conecta
+                las historias de ambas ramas.</li>
+            <li><strong>Squash and merge:</strong> combina los commits del Pull Request en un único commit antes de
+                incorporarlo a la rama de destino.</li>
+            <li><strong>Rebase and merge:</strong> incorpora los commits del Pull Request sobre la historia de la rama
+                de
+                destino sin crear un commit de merge adicional.</li>
+        </ul>
+
+        <p>Las opciones disponibles pueden depender de la configuración y las reglas establecidas en cada repositorio.
+            Por eso, no todos los proyectos necesariamente permiten utilizar los tres métodos.</p>
+
+        <p><strong>Después del merge:</strong> si la integración se realizó correctamente, quienes trabajan con una
+            copia
+            local del proyecto pueden actualizarla para obtener los cambios incorporados en GitHub mediante
+            <code>git pull</code>.
+        </p>
+
+        <p><strong>Flujo completo:</strong>
+            <code>rama → cambios → commit → git push → Pull Request → revisión → aprobación → merge → git pull</code>.
+        </p>
+
+        <p><strong>Importante:</strong> hacer merge no es simplemente «copiar archivos». Git integra los cambios dentro
+            del historial del repositorio y puede detectar conflictos cuando las mismas partes de un archivo fueron
+            modificadas de manera incompatible en diferentes ramas. Cuando esto ocurre, es necesario resolver el
+            conflicto
+            antes de completar la integración.</p>
+
+    </details>
+    <!-- Desplegable 65 -->
+    <details>
+        <summary>
+            <h3>Resolver conflictos</h3>
+        </summary>
+
+        <p>Los <strong>conflictos en GitHub</strong> aparecen cuando Git no puede combinar automáticamente dos cambios
+            realizados sobre la misma parte de un archivo. Suelen producirse al fusionar ramas mediante un Pull Request,
+            especialmente cuando diferentes personas modificaron las mismas líneas de código.</p>
+
+        <ol>
+            <li><strong>Identificar el conflicto:</strong> cuando GitHub detecta que no puede realizar la integración
+                automáticamente, el Pull Request muestra que existen conflictos que deben resolverse.</li>
+
+            <li><strong>Consultar los archivos afectados:</strong> revisá qué archivos contienen conflictos y analizá
+                qué
+                cambios fueron realizados en cada rama.</li>
+
+            <li><strong>Decidir qué cambios conservar:</strong> compará las modificaciones y determiná si corresponde
+                conservar los cambios de una rama, los de la otra o combinar manualmente ambas versiones.</li>
+
+            <li><strong>Resolver el conflicto:</strong> podés hacerlo directamente desde GitHub cuando el conflicto es
+                compatible con las herramientas disponibles, o descargar la rama y resolverlo localmente con Git y un
+                editor como VS Code.</li>
+
+            <li><strong>Eliminar las marcas del conflicto:</strong> cuando trabajás localmente, Git coloca marcas
+                especiales dentro del archivo para indicar las versiones en conflicto. Debés editar el archivo y dejar
+                únicamente el código correcto.</li>
+
+            <li><strong>Comprobar el resultado:</strong> revisá el archivo después de resolver el conflicto y, si es
+                posible, ejecutá las pruebas del proyecto para verificar que los cambios sigan funcionando
+                correctamente.
+            </li>
+
+            <li><strong>Preparar la resolución:</strong> utilizá <code>git add</code> sobre los archivos que ya fueron
+                corregidos.</li>
+
+            <li><strong>Crear el commit:</strong> guardá la resolución mediante <code>git commit</code>. Git registrará
+                que el conflicto fue solucionado.</li>
+
+            <li><strong>Subir los cambios:</strong> ejecutá <code>git push</code> para enviar la resolución a GitHub.
+                El Pull Request se actualizará automáticamente.</li>
+
+            <li><strong>Completar el merge:</strong> cuando todos los conflictos estén resueltos y las comprobaciones
+                necesarias sean correctas, el Pull Request podrá fusionarse.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que dos desarrolladores trabajan sobre el mismo archivo
+            <code>index.html</code>. El desarrollador A modifica una línea para agregar un título y el desarrollador B
+            modifica esa misma línea para agregar otro contenido.
+        </p>
+
+        <p>Cuando se intenta fusionar una rama con la otra, Git detecta que existen dos versiones diferentes de la misma
+            parte del archivo y no puede determinar automáticamente cuál debe conservarse. En ese momento se produce un
+            conflicto.</p>
+
+        <p><strong>Cuando el conflicto se resuelve localmente, Git puede mostrar marcas como estas:</strong></p>
+
+        <pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+&lt;h1&gt;Título del proyecto&lt;/h1&gt;
+=======
+&lt;h1&gt;Mi proyecto web&lt;/h1&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; otra-rama</code></pre>
+
+        <p>Estas marcas indican las dos versiones que entraron en conflicto. Debés decidir qué código conservar y
+            eliminar
+            las marcas <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> y
+            <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.
+        </p>
+
+        <p><strong>Comandos útiles para resolver conflictos:</strong></p>
+
+        <ul>
+            <li><code>git status</code> → muestra los archivos que tienen conflictos.</li>
+            <li><code>git diff</code> → permite revisar las diferencias.</li>
+            <li><code>git add archivo</code> → indica a Git que el conflicto de ese archivo fue resuelto.</li>
+            <li><code>git commit</code> → registra la resolución del conflicto.</li>
+            <li><code>git push</code> → sube la resolución a GitHub.</li>
+            <li><code>git merge --abort</code> → cancela un merge en curso y devuelve el estado anterior al inicio del
+                merge.</li>
+        </ul>
+
+        <p><strong>¿Cómo evitar conflictos?</strong></p>
+
+        <ul>
+            <li>Trabajá en ramas independientes para cada funcionalidad o corrección.</li>
+            <li>Actualizá tu rama con frecuencia antes de comenzar nuevos cambios.</li>
+            <li>Realizá commits pequeños y relacionados con un único objetivo.</li>
+            <li>Comunicá al equipo cuando estés modificando una parte importante del proyecto.</li>
+            <li>Revisá los Pull Requests antes de fusionarlos.</li>
+        </ul>
+
+        <p><strong>Importante:</strong> un conflicto no significa que el proyecto esté dañado. Significa que Git
+            necesita
+            que una persona decida cómo combinar cambios que no puede integrar automáticamente. La resolución correcta
+            depende del objetivo del proyecto y del código que debe conservarse.</p>
+
+        <p><strong>Flujo habitual:</strong>
+            <code>Pull Request → detectar conflicto → revisar cambios → resolver → git add → git commit → git push → comprobar → merge</code>.
+        </p>
+
+    </details>
+    <!-- Desplegable 66 -->
+    <details>
+        <summary>
+            <h3>Colaboradores</h3>
+        </summary>
+
+        <p>Los <strong>colaboradores en GitHub</strong> son personas a las que se les concede acceso a un repositorio
+            para
+            que puedan participar directamente en su desarrollo. Esto permite que varias personas trabajen sobre un
+            mismo
+            proyecto, creen ramas, realicen commits, abran Pull Requests y, según sus permisos, administren diferentes
+            aspectos del repositorio.</p>
+
+        <ol>
+            <li><strong>Acceder al repositorio:</strong> ingresá al repositorio de GitHub en el que querés agregar una
+                persona como colaborador.</li>
+
+            <li><strong>Abrir la configuración:</strong> seleccioná la sección <strong>Settings</strong> del repositorio
+                para acceder a sus opciones de configuración.</li>
+
+            <li><strong>Buscar las opciones de acceso:</strong> dentro de la configuración, accedé a la sección
+                relacionada
+                con el acceso y la administración de colaboradores.</li>
+
+            <li><strong>Agregar una persona:</strong> utilizá la opción para agregar o invitar a un colaborador e indicá
+                su nombre de usuario o la información solicitada por GitHub.</li>
+
+            <li><strong>Enviar la invitación:</strong> seleccioná el nivel de acceso correspondiente y enviá la
+                invitación. La persona deberá aceptarla para comenzar a colaborar en el repositorio.</li>
+
+            <li><strong>Trabajar en el proyecto:</strong> una vez que tiene acceso, el colaborador puede clonar el
+                repositorio, crear ramas, realizar cambios, hacer commits y subirlos a GitHub según los permisos que
+                tenga.
+            </li>
+
+            <li><strong>Utilizar Pull Requests:</strong> en un equipo es habitual que los colaboradores trabajen
+                mediante
+                ramas y Pull Requests para revisar los cambios antes de incorporarlos a la rama principal.</li>
+
+            <li><strong>Administrar los permisos:</strong> los permisos pueden modificarse posteriormente si las
+                necesidades del proyecto cambian. También es posible retirar el acceso de una persona cuando ya no debe
+                colaborar en el repositorio.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que estás desarrollando una página web y tenés un repositorio
+            llamado
+            <code>mi-sitio-web</code>. Podés agregar a otro desarrollador como colaborador para que trabaje junto con
+            vos
+            en el proyecto.
+        </p>
+
+        <p>El colaborador puede clonar el repositorio, crear una rama llamada <code>contacto</code>, desarrollar el
+            formulario de contacto y subir los cambios a GitHub. Después puede crear un Pull Request para que revises el
+            código antes de incorporarlo a <code>main</code>.</p>
+
+        <p><strong>¿Qué puede hacer un colaborador?</strong></p>
+
+        <ul>
+            <li>Acceder al repositorio según el permiso asignado.</li>
+            <li>Clonar el proyecto y trabajar con una copia local.</li>
+            <li>Crear y utilizar ramas.</li>
+            <li>Realizar commits.</li>
+            <li>Subir cambios mediante <code>git push</code>, cuando sus permisos lo permiten.</li>
+            <li>Crear y participar en Pull Requests.</li>
+            <li>Revisar cambios y realizar comentarios.</li>
+            <li>Participar en Issues y otras herramientas del repositorio según sus permisos.</li>
+        </ul>
+
+        <p><strong>Permisos y acceso:</strong> no todos los colaboradores necesariamente tienen las mismas capacidades.
+            GitHub permite utilizar diferentes niveles de permisos para determinar qué acciones puede realizar cada
+            persona
+            dentro de un repositorio.</p>
+
+        <p>Por ejemplo, una persona puede tener permisos suficientes para trabajar con el código, mientras que otra
+            puede
+            contar además con permisos administrativos para modificar determinadas configuraciones del repositorio.</p>
+
+        <p><strong>Colaboradores y ramas:</strong> agregar personas al repositorio no significa que todos deban trabajar
+            directamente sobre <code>main</code>. En un flujo organizado, cada colaborador suele trabajar en una rama
+            independiente y utilizar Pull Requests para proponer la integración de sus cambios.</p>
+
+        <p><strong>Flujo habitual de un equipo:</strong>
+            <code>agregar colaborador → clonar repositorio → crear rama → realizar cambios → commit → push → Pull Request → revisión → merge</code>.
+        </p>
+
+        <p><strong>Importante:</strong> los colaboradores son diferentes de los usuarios que simplemente pueden
+            consultar
+            un repositorio público. Un repositorio público puede ser visible para muchas personas, pero eso no significa
+            que
+            todas ellas tengan permisos para modificar directamente su contenido.</p>
+
+    </details>
+
 
     <h2>BLOQUE 5 — Gestión de proyectos</h2>
-    <h3>Issues</h3>
-    <h3>Labels y Milestones</h3>
-    <h3>Projects</h3>
+    <!-- Desplegable 67 -->
+    <details>
+        <summary>
+            <h3>Issues</h3>
+        </summary>
+
+        <p>Los <strong>GitHub Issues</strong> permiten registrar y organizar tareas, errores, mejoras, preguntas y otras
+            actividades relacionadas con un proyecto. Funcionan como un sistema de seguimiento que ayuda al equipo a
+            saber
+            qué debe hacerse, quién está trabajando en cada tarea y qué problemas todavía están pendientes.</p>
+
+        <ol>
+            <li><strong>Acceder a Issues:</strong> dentro de un repositorio de GitHub, ingresá a la sección
+                <strong>Issues</strong> para consultar las tareas y problemas registrados en el proyecto.
+            </li>
+
+            <li><strong>Crear un Issue:</strong> seleccioná la opción para crear un nuevo Issue y escribí un título que
+                describa claramente el problema, tarea o propuesta.</li>
+
+            <li><strong>Describir el problema o tarea:</strong> utilizá el cuerpo del Issue para explicar qué sucede,
+                qué
+                se necesita realizar, cómo reproducir un error o cualquier otra información relevante.</li>
+
+            <li><strong>Agregar etiquetas:</strong> podés utilizar <strong>Labels</strong> para clasificar el Issue. Por
+                ejemplo, <code>bug</code>, <code>feature</code>, <code>documentation</code> o <code>help wanted</code>.
+            </li>
+
+            <li><strong>Asignar responsables:</strong> podés asignar el Issue a uno o varios colaboradores para indicar
+                quiénes se encargarán de trabajar en él.</li>
+
+            <li><strong>Relacionar el Issue con el trabajo:</strong> un Issue puede utilizarse como referencia durante
+                el
+                desarrollo de una funcionalidad y relacionarse con Pull Requests y otros elementos del proyecto.</li>
+
+            <li><strong>Comentar y actualizar:</strong> los colaboradores pueden agregar comentarios para compartir
+                información, hacer preguntas, indicar avances o proponer soluciones.</li>
+
+            <li><strong>Realizar el trabajo:</strong> cuando un desarrollador comienza a solucionar el problema o
+                desarrollar la tarea, puede crear una rama específica y trabajar sobre ella.</li>
+
+            <li><strong>Cerrar el Issue:</strong> cuando el problema fue solucionado o la tarea fue completada, el Issue
+                puede cerrarse para indicar que ya no está pendiente.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que los usuarios de una página web informan que el botón
+            <code>Enviar</code> de un formulario no funciona. Podés crear un Issue llamado
+            <strong>“El botón de contacto no envía el formulario”</strong> y explicar qué ocurre y cómo reproducir el
+            problema.
+        </p>
+
+        <p>Después podés asignar el Issue a un colaborador y agregar la etiqueta <code>bug</code>. El desarrollador crea
+            una rama llamada <code>corregir-formulario</code>, soluciona el problema, realiza los commits y abre un Pull
+            Request.</p>
+
+        <p>Una vez revisado y fusionado el Pull Request, el Issue puede cerrarse porque el problema registrado ya fue
+            solucionado.</p>
+
+        <p><strong>¿Para qué se utilizan los Issues?</strong></p>
+
+        <ul>
+            <li>Registrar errores o problemas del proyecto.</li>
+            <li>Planificar nuevas funcionalidades.</li>
+            <li>Organizar tareas pendientes.</li>
+            <li>Proponer mejoras.</li>
+            <li>Hacer preguntas relacionadas con el proyecto.</li>
+            <li>Asignar tareas a colaboradores.</li>
+            <li>Clasificar actividades mediante etiquetas.</li>
+            <li>Seguir el progreso de diferentes trabajos.</li>
+            <li>Relacionar tareas con Pull Requests y cambios de código.</li>
+        </ul>
+
+        <p><strong>Issue y Pull Request no son lo mismo:</strong> un Issue sirve principalmente para registrar y
+            organizar
+            una tarea, problema, pregunta o propuesta. Un Pull Request, en cambio, se utiliza para proponer cambios de
+            código que pueden ser revisados y posteriormente integrados en otra rama.</p>
+
+        <p><strong>Ejemplo de flujo:</strong>
+            <code>Issue → asignar tarea → crear rama → realizar cambios → commit → push → Pull Request → revisión → merge → cerrar Issue</code>.
+        </p>
+
+        <p><strong>Importante:</strong> los Issues no están limitados exclusivamente a errores de programación. También
+            pueden utilizarse para organizar tareas, documentar necesidades, planificar funcionalidades y mantener una
+            lista de trabajo pendiente dentro del proyecto.</p>
+
+    </details>
+    <!-- Desplegable 68 -->
+    <details>
+        <summary>
+            <h3>Labels y Milestones</h3>
+        </summary>
+
+        <p>Las <strong>Labels</strong> y los <strong>Milestones</strong> son herramientas de GitHub que ayudan a
+            organizar y seguir el trabajo de un proyecto. Las Labels permiten clasificar Issues y Pull Requests mediante
+            etiquetas, mientras que los Milestones permiten agrupar varios Issues y Pull Requests relacionados con un
+            objetivo o una etapa determinada del proyecto.</p>
+
+        <ol>
+            <li><strong>Utilizar Labels:</strong> las etiquetas permiten identificar rápidamente el tipo o estado de un
+                Issue o Pull Request. Por ejemplo, podés crear etiquetas como <code>bug</code>, <code>feature</code>,
+                <code>documentation</code> o <code>urgent</code>.
+            </li>
+
+            <li><strong>Crear una Label:</strong> desde la sección de Issues del repositorio podés acceder a las
+                etiquetas
+                y crear una nueva indicando su nombre, descripción y, cuando corresponda, un color.</li>
+
+            <li><strong>Asignar una Label:</strong> al crear o editar un Issue o Pull Request podés agregar una o varias
+                etiquetas para clasificarlo.</li>
+
+            <li><strong>Utilizar varias Labels:</strong> un mismo Issue puede tener diferentes etiquetas. Por ejemplo,
+                podría utilizar <code>bug</code> para indicar el tipo de problema y <code>alta-prioridad</code> para
+                indicar que requiere atención.</li>
+
+            <li><strong>Crear un Milestone:</strong> un Milestone representa un objetivo o etapa del proyecto. Por
+                ejemplo,
+                podés crear uno llamado <code>Versión 1.0</code> para agrupar todas las tareas necesarias antes de
+                publicar esa versión.</li>
+
+            <li><strong>Asignar Issues a un Milestone:</strong> una vez creado el Milestone, podés asociarle los Issues
+                relacionados con ese objetivo.</li>
+
+            <li><strong>Seguir el progreso:</strong> GitHub permite consultar cuántos elementos asociados a un Milestone
+                fueron completados y cuáles todavía están pendientes.</li>
+
+            <li><strong>Utilizar Milestones para organizar etapas:</strong> podés crear diferentes Milestones para
+                representar versiones, entregas o etapas del desarrollo del proyecto.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico con Labels:</strong> imaginá que estás desarrollando una página web y tenés varios
+            Issues pendientes. Podés utilizar <code>bug</code> para los errores, <code>feature</code> para las nuevas
+            funcionalidades y <code>documentation</code> para las tareas relacionadas con la documentación.</p>
+
+        <p>De esta manera, cuando consultás los Issues del repositorio, podés identificar rápidamente qué tipo de
+            trabajo
+            representa cada uno y utilizar los filtros de GitHub para encontrar los elementos que necesitás.</p>
+
+        <p><strong>Ejemplo práctico con Milestones:</strong> supongamos que estás preparando la versión
+            <code>1.0</code> de una aplicación. Podés crear un Milestone llamado <strong>Versión 1.0</strong> y asociar
+            todos los Issues necesarios para completar esa versión.
+        </p>
+
+        <p>Por ejemplo, podrías incluir tareas como corregir errores, crear el formulario de registro, mejorar el diseño
+            y
+            preparar la documentación. A medida que cada tarea se completa, el progreso del Milestone permite visualizar
+            cuánto trabajo queda pendiente.</p>
+
+        <p><strong>Diferencia entre Labels y Milestones:</strong></p>
+
+        <ul>
+            <li><strong>Labels:</strong> sirven principalmente para clasificar y filtrar Issues y Pull Requests.</li>
+            <li><strong>Milestones:</strong> sirven para agrupar trabajo relacionado con un objetivo o etapa del
+                proyecto
+                y realizar un seguimiento de su progreso.</li>
+            <li><strong>Una Label</strong> puede utilizarse en muchos Issues y Pull Requests independientemente de una
+                etapa concreta.</li>
+            <li><strong>Un Milestone</strong> reúne diferentes Issues y Pull Requests que forman parte de un mismo
+                objetivo.
+            </li>
+        </ul>
+
+        <p><strong>Ejemplo de organización:</strong></p>
+
+        <ul>
+            <li><strong>Milestone:</strong> <code>Versión 1.0</code></li>
+            <li><strong>Issue:</strong> Crear formulario de registro → <code>feature</code></li>
+            <li><strong>Issue:</strong> Corregir error del login → <code>bug</code> + <code>alta-prioridad</code></li>
+            <li><strong>Issue:</strong> Crear documentación → <code>documentation</code></li>
+        </ul>
+
+        <p>En este ejemplo, las <strong>Labels</strong> indican qué tipo de trabajo representa cada tarea, mientras que
+            el
+            <strong>Milestone</strong> indica que todas esas tareas forman parte de un mismo objetivo: preparar la
+            versión
+            <code>1.0</code>.
+        </p>
+
+        <p><strong>Flujo habitual:</strong>
+            <code>crear Issue → asignar Labels → asociar a Milestone → trabajar → Pull Request → completar → cerrar Issue</code>.
+        </p>
+
+        <p><strong>Importante:</strong> Labels y Milestones cumplen funciones diferentes y pueden utilizarse
+            conjuntamente.
+            Las etiquetas ayudan a clasificar el trabajo, mientras que los Milestones permiten organizarlo alrededor de
+            objetivos concretos y realizar un seguimiento del progreso.</p>
+
+    </details>
+    <!-- Desplegable 69 -->
+    <details>
+        <summary>
+            <h3>GitHub Projects</h3>
+        </summary>
+
+        <p><strong>GitHub Projects</strong> es una herramienta de GitHub que permite organizar, planificar y realizar un
+            seguimiento visual del trabajo de un proyecto. Puede utilizarse para gestionar tareas, Issues y Pull
+            Requests
+            desde diferentes tipos de vistas, facilitando la planificación tanto de proyectos personales como de equipos
+            de
+            desarrollo.</p>
+
+        <ol>
+            <li><strong>Crear un Project:</strong> desde GitHub podés crear un nuevo proyecto y asignarle un nombre que
+                permita identificar fácilmente su objetivo, por ejemplo <code>Desarrollo de mi sitio web</code>.</li>
+
+            <li><strong>Elegir una vista:</strong> GitHub Projects permite organizar la información mediante diferentes
+                vistas, como una <strong>tabla</strong>, un <strong>tablero</strong> o una <strong>hoja de
+                    ruta</strong>,
+                según la forma en que quieras visualizar el trabajo.</li>
+
+            <li><strong>Agregar elementos:</strong> podés incorporar Issues, Pull Requests y otros elementos
+                relacionados
+                con el trabajo que necesitás organizar.</li>
+
+            <li><strong>Crear tareas:</strong> también podés utilizar el Project para organizar tareas que todavía no
+                necesitan estar representadas como un Issue del repositorio.</li>
+
+            <li><strong>Organizar el trabajo:</strong> los elementos pueden clasificarse mediante campos, estados,
+                etiquetas y diferentes propiedades para facilitar su seguimiento.</li>
+
+            <li><strong>Utilizar estados:</strong> podés organizar las tareas según su situación, por ejemplo
+                <code>Todo</code>, <code>In Progress</code> y <code>Done</code>.
+            </li>
+
+            <li><strong>Asignar responsables:</strong> cuando trabajás en equipo, podés indicar quién se encargará de
+                una
+                determinada tarea.</li>
+
+            <li><strong>Establecer fechas:</strong> los elementos pueden organizarse utilizando fechas para planificar
+                cuándo deberían comenzar o finalizar determinadas tareas.</li>
+
+            <li><strong>Filtrar y agrupar:</strong> GitHub Projects permite utilizar diferentes opciones para mostrar
+                únicamente la información que necesitás analizar en cada momento.</li>
+
+            <li><strong>Seguir el progreso:</strong> a medida que las tareas avanzan, podés actualizar su estado y
+                utilizar
+                las diferentes vistas para conocer qué trabajo está pendiente, en desarrollo o terminado.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que estás desarrollando un sitio web. Podés crear un GitHub
+            Project
+            llamado <code>Nuevo sitio web</code> y agregar tareas como <strong>Diseñar la página de inicio</strong>,
+            <strong>Crear el formulario de contacto</strong>, <strong>Adaptar el diseño para móviles</strong> y
+            <strong>Publicar el sitio</strong>.
+        </p>
+
+        <p>Después podés organizar esas tareas en un tablero con columnas como <code>Por hacer</code>,
+            <code>En progreso</code> y <code>Completado</code>. A medida que trabajás, cada tarea puede cambiar de
+            columna
+            para reflejar su estado actual.
+        </p>
+
+        <p><strong>GitHub Projects y los Issues:</strong> ambas herramientas pueden trabajar conjuntamente. Un Issue
+            puede
+            representar una tarea o problema concreto, mientras que GitHub Projects permite organizar visualmente ese
+            Issue
+            junto con otras tareas y Pull Requests.</p>
+
+        <p><strong>¿Qué permite hacer GitHub Projects?</strong></p>
+
+        <ul>
+            <li>Planificar el trabajo de un proyecto.</li>
+            <li>Organizar tareas y actividades pendientes.</li>
+            <li>Visualizar el progreso del desarrollo.</li>
+            <li>Gestionar Issues y Pull Requests.</li>
+            <li>Asignar responsables.</li>
+            <li>Establecer fechas y prioridades.</li>
+            <li>Crear diferentes vistas para organizar la información.</li>
+            <li>Filtrar y agrupar tareas según diferentes criterios.</li>
+            <li>Coordinar el trabajo de un equipo.</li>
+        </ul>
+
+        <p><strong>Ejemplo de flujo:</strong>
+            <code>crear Project → agregar tareas → organizar → asignar responsables → trabajar → actualizar estados → completar</code>.
+        </p>
+
+        <p><strong>Importante:</strong> GitHub Projects no reemplaza a Git, los repositorios, las ramas, los Issues ni
+            los
+            Pull Requests. Su función es ayudar a <strong>organizar y visualizar el trabajo</strong> que se realiza
+            utilizando esas herramientas.</p>
+
+    </details>
 
     <h2>BLOQUE 6 — Open Source</h2>
-    <h3>Fork</h3>
-    <h3>Fork + Pull Request</h3>
-    <h3>Open Source</h3>
+    <!-- Desplegable 70 -->
+    <details>
+        <summary>
+            <h3>Fork</h3>
+        </summary>
+
+        <p>Un <strong>Fork en GitHub</strong> es una copia de un repositorio que se crea dentro de otra cuenta de
+            GitHub.
+            Permite trabajar sobre un proyecto sin modificar directamente el repositorio original. Es especialmente útil
+            cuando querés contribuir a proyectos en los que no tenés permisos de escritura.</p>
+
+        <ol>
+            <li><strong>Elegir el repositorio:</strong> ingresá al repositorio de GitHub que querés copiar. Puede
+                tratarse
+                de un proyecto de código abierto al que quieras aportar una mejora.</li>
+
+            <li><strong>Crear el Fork:</strong> desde el repositorio original utilizá la opción <strong>Fork</strong>.
+                GitHub creará una copia del repositorio dentro de tu propia cuenta.</li>
+
+            <li><strong>Seleccionar el propietario:</strong> si GitHub te lo solicita, elegí la cuenta u organización
+                donde
+                querés crear el Fork.</li>
+
+            <li><strong>Trabajar sobre tu Fork:</strong> una vez creado, tendrás tu propia copia del repositorio. Podés
+                modificar archivos, crear ramas y realizar commits sin modificar directamente el proyecto original.</li>
+
+            <li><strong>Clonar el Fork:</strong> si querés trabajar desde tu computadora, podés clonar tu Fork
+                utilizando
+                <code>git clone</code>.
+            </li>
+
+            <li><strong>Crear una rama:</strong> para organizar los cambios, normalmente se crea una rama independiente
+                desde tu Fork, por ejemplo <code>mejora-documentacion</code>.</li>
+
+            <li><strong>Realizar los cambios:</strong> modificá el proyecto, agregá los archivos necesarios y guardá los
+                cambios mediante commits.</li>
+
+            <li><strong>Subir los cambios:</strong> utilizá <code>git push</code> para enviar tu rama a tu Fork en
+                GitHub.
+            </li>
+
+            <li><strong>Crear un Pull Request:</strong> si querés proponer tus cambios al proyecto original, podés crear
+                un
+                Pull Request desde tu Fork hacia el repositorio original.</li>
+
+            <li><strong>Esperar la revisión:</strong> los responsables del proyecto original pueden revisar tu
+                propuesta,
+                solicitar cambios, aprobarla y finalmente incorporarla al proyecto.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que encontrás un proyecto de código abierto llamado
+            <code>mi-proyecto</code>. No tenés permisos para modificar directamente su repositorio, pero querés corregir
+            un error en la documentación.
+        </p>
+
+        <p>Primero creás un Fork del repositorio. GitHub genera una copia dentro de tu cuenta. Después clonás esa copia
+            en
+            tu computadora, creás una rama llamada <code>corregir-documentacion</code>, realizás los cambios y los subís
+            a
+            tu Fork.</p>
+
+        <p>Finalmente, creás un Pull Request desde tu Fork hacia el repositorio original. Los responsables del proyecto
+            pueden revisar tus cambios y decidir si los incorporan.</p>
+
+        <p><strong>Fork y clonación no son lo mismo:</strong></p>
+
+        <ul>
+            <li><strong>Fork:</strong> crea una copia del repositorio dentro de GitHub, asociada a tu cuenta.</li>
+            <li><strong>Clone:</strong> descarga un repositorio de GitHub a tu computadora para trabajar localmente.
+            </li>
+            <li><strong>Fork + Clone:</strong> es un flujo habitual para contribuir a proyectos en los que no tenés
+                permisos de escritura.</li>
+        </ul>
+
+        <p><strong>Fork y Pull Request también cumplen funciones diferentes:</strong> el Fork crea tu propia copia del
+            repositorio, mientras que el Pull Request permite proponer que los cambios realizados en tu copia o en una
+            rama
+            sean incorporados al repositorio de destino.</p>
+
+        <p><strong>Flujo habitual para contribuir a un proyecto:</strong>
+            <code>Fork → Clone → crear rama → realizar cambios → commit → push → Pull Request → revisión → merge</code>.
+        </p>
+
+        <p><strong>¿Para qué se utiliza un Fork?</strong></p>
+
+        <ul>
+            <li>Contribuir a proyectos de código abierto.</li>
+            <li>Trabajar sobre un proyecto sin modificar directamente el repositorio original.</li>
+            <li>Experimentar con cambios de manera independiente.</li>
+            <li>Preparar mejoras para posteriormente proponerlas mediante un Pull Request.</li>
+            <li>Mantener una copia del proyecto dentro de tu propia cuenta de GitHub.</li>
+        </ul>
+
+        <p><strong>Importante:</strong> un Fork no significa simplemente descargar los archivos del proyecto. GitHub
+            mantiene una relación entre el Fork y el repositorio original, lo que facilita trabajar de forma
+            independiente
+            y posteriormente proponer cambios mediante un Pull Request.</p>
+
+    </details>
+    <!-- Desplegable 71 -->
+    <details>
+        <summary>
+            <h3>Fork + Pull Request</h3>
+        </summary>
+
+        <p>El flujo <strong>Fork + Pull Request</strong> es una forma habitual de contribuir a proyectos de GitHub
+            cuando
+            no tenés permisos para modificar directamente el repositorio original. Primero creás un Fork para obtener
+            una
+            copia del proyecto en tu cuenta y después utilizás un Pull Request para proponer que tus cambios sean
+            incorporados al repositorio original.</p>
+
+        <ol>
+            <li><strong>Elegir el repositorio:</strong> buscá el proyecto de GitHub al que querés contribuir. Por
+                ejemplo,
+                puede ser un proyecto de código abierto en el que encontraste un error o querés agregar una mejora.</li>
+
+            <li><strong>Crear el Fork:</strong> seleccioná la opción <strong>Fork</strong> para crear una copia del
+                repositorio dentro de tu propia cuenta de GitHub.</li>
+
+            <li><strong>Clonar tu Fork:</strong> descargá tu copia a la computadora utilizando <code>git clone</code>
+                para
+                poder trabajar con los archivos localmente.</li>
+
+            <li><strong>Ingresar al proyecto:</strong> utilizá <code>cd nombre-del-repositorio</code> para acceder a la
+                carpeta que contiene el proyecto.</li>
+
+            <li><strong>Crear una rama:</strong> creá una rama independiente para realizar tu contribución. Por ejemplo,
+                <code>corregir-error</code>.
+            </li>
+
+            <li><strong>Realizar los cambios:</strong> modificá los archivos necesarios y comprobá que la solución
+                funcione correctamente.</li>
+
+            <li><strong>Crear los commits:</strong> utilizá <code>git add</code> y <code>git commit</code> para guardar
+                los
+                cambios en el historial de Git.</li>
+
+            <li><strong>Subir la rama:</strong> ejecutá <code>git push -u origin corregir-error</code> para publicar tu
+                rama en tu Fork de GitHub.</li>
+
+            <li><strong>Crear el Pull Request:</strong> desde GitHub proponé integrar los cambios de tu rama con el
+                repositorio original. Por ejemplo, tu rama <code>corregir-error</code> puede dirigirse hacia la rama
+                <code>main</code> del repositorio original.
+            </li>
+
+            <li><strong>Describir la contribución:</strong> agregá un título y una descripción explicando qué problema
+                solucionaste, qué cambios realizaste y cualquier información relevante para los responsables del
+                proyecto.
+            </li>
+
+            <li><strong>Esperar la revisión:</strong> los responsables del repositorio original pueden revisar tu
+                código,
+                realizar comentarios y solicitar modificaciones.</li>
+
+            <li><strong>Realizar correcciones:</strong> si te solicitan cambios, podés modificar nuevamente tu rama y
+                realizar nuevos commits. Después utilizás <code>git push</code> para actualizar automáticamente el Pull
+                Request.</li>
+
+            <li><strong>Esperar la integración:</strong> si la propuesta es aprobada, los responsables del proyecto
+                pueden
+                fusionar el Pull Request con el repositorio original.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que encontrás un error en un proyecto de código abierto. No tenés
+            permisos para modificar directamente el repositorio del propietario, pero querés solucionarlo.</p>
+
+        <p>Primero creás un <strong>Fork</strong> del proyecto. Después clonás esa copia en tu computadora y creás una
+            rama llamada <code>corregir-error-login</code>. Realizás la corrección, creás un commit y subís la rama a tu
+            Fork.</p>
+
+        <p>Finalmente, creás un <strong>Pull Request</strong> desde tu Fork hacia el repositorio original. El equipo
+            responsable puede revisar la solución y, si considera que los cambios son adecuados, incorporarlos al
+            proyecto.
+        </p>
+
+        <p><strong>¿Qué función cumple cada elemento?</strong></p>
+
+        <ul>
+            <li><strong>Fork:</strong> crea una copia del repositorio dentro de tu cuenta de GitHub.</li>
+            <li><strong>Clone:</strong> descarga esa copia en tu computadora para trabajar localmente.</li>
+            <li><strong>Branch:</strong> permite realizar los cambios de manera independiente.</li>
+            <li><strong>Commit:</strong> registra los cambios realizados.</li>
+            <li><strong>Push:</strong> sube tus commits a tu Fork.</li>
+            <li><strong>Pull Request:</strong> propone incorporar tus cambios al repositorio de destino.</li>
+            <li><strong>Merge:</strong> integra los cambios cuando el Pull Request es aceptado.</li>
+        </ul>
+
+        <p><strong>Flujo completo:</strong></p>
+
+        <p>
+            <code>Fork → Clone → Branch → cambios → Commit → Push → Pull Request → revisión → correcciones → Merge</code>
+        </p>
+
+        <p><strong>Fork + Pull Request vs. colaboración directa:</strong> cuando sos colaborador de un repositorio y
+            tenés
+            permisos suficientes, normalmente podés crear una rama directamente dentro del repositorio original y abrir
+            un
+            Pull Request desde allí. En cambio, cuando no tenés permisos de escritura, el Fork te proporciona una copia
+            propia desde la que podés realizar tu trabajo y proponerlo mediante un Pull Request.</p>
+
+        <p><strong>Importante:</strong> crear un Fork no modifica el repositorio original. Los cambios realizados en tu
+            Fork
+            permanecen separados hasta que se propone un Pull Request y los responsables del proyecto deciden si quieren
+            incorporarlos.</p>
+
+    </details>
+    <!-- Desplegable 72 -->
+    <details>
+        <summary>
+            <h3>Open Source</h3>
+        </summary>
+
+        <p><strong>Open Source</strong>, o código abierto, hace referencia al software cuyo código fuente está
+            disponible
+            para que otras personas puedan estudiarlo, utilizarlo, modificarlo y, según las condiciones establecidas por
+            su
+            licencia, redistribuirlo. GitHub es una de las plataformas más utilizadas para alojar y colaborar en este
+            tipo
+            de proyectos.</p>
+
+        <ol>
+            <li><strong>Encontrar un proyecto:</strong> en GitHub podés buscar proyectos de código abierto relacionados
+                con
+                diferentes lenguajes, tecnologías y áreas de programación.</li>
+
+            <li><strong>Consultar el repositorio:</strong> antes de realizar cambios, revisá el código, el
+                <code>README.md</code>, la documentación y las instrucciones proporcionadas por los responsables del
+                proyecto.
+            </li>
+
+            <li><strong>Leer la licencia:</strong> comprobá qué licencia utiliza el proyecto, ya que establece las
+                condiciones bajo las cuales se puede utilizar, modificar y distribuir el software.</li>
+
+            <li><strong>Revisar las contribuciones:</strong> muchos proyectos tienen un archivo como
+                <code>CONTRIBUTING.md</code> donde explican cómo deben realizarse las contribuciones y qué normas debe
+                seguir la comunidad.
+            </li>
+
+            <li><strong>Crear un Fork:</strong> si no tenés permisos para escribir directamente en el repositorio, podés
+                crear un Fork para disponer de una copia del proyecto dentro de tu cuenta.</li>
+
+            <li><strong>Crear una rama:</strong> desde tu Fork podés crear una rama independiente para desarrollar una
+                funcionalidad, corregir un error o mejorar la documentación.</li>
+
+            <li><strong>Realizar los cambios:</strong> trabajá sobre el proyecto, probá las modificaciones y asegurate
+                de
+                respetar las reglas establecidas por sus responsables.</li>
+
+            <li><strong>Crear commits:</strong> guardá los cambios utilizando commits claros que permitan comprender qué
+                modificaste.</li>
+
+            <li><strong>Subir los cambios:</strong> utilizá <code>git push</code> para publicar tu rama en tu Fork de
+                GitHub.</li>
+
+            <li><strong>Crear un Pull Request:</strong> si querés proponer tus cambios al proyecto original, abrí un
+                Pull
+                Request explicando qué modificaste y por qué.</li>
+
+            <li><strong>Participar en la revisión:</strong> los responsables y otros colaboradores pueden revisar tu
+                propuesta, realizar comentarios y solicitar modificaciones antes de aceptarla.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que encontrás un error en la documentación de una biblioteca de
+            JavaScript que utilizás. Podés crear un Fork del proyecto, modificar la documentación, crear un commit y
+            subir
+            los cambios a tu repositorio.</p>
+
+        <p>Después podés abrir un Pull Request hacia el proyecto original. Los responsables revisarán tu propuesta y, si
+            deciden incorporarla, realizarán el merge de los cambios.</p>
+
+        <p><strong>¿Qué características tiene un proyecto Open Source?</strong></p>
+
+        <ul>
+            <li>Su código fuente puede estar disponible públicamente.</li>
+            <li>Puede recibir contribuciones de diferentes desarrolladores.</li>
+            <li>Utiliza una licencia que establece las condiciones de uso y distribución.</li>
+            <li>Puede desarrollarse de manera colaborativa.</li>
+            <li>Puede utilizar Issues para organizar problemas y tareas.</li>
+            <li>Puede utilizar Pull Requests para revisar contribuciones.</li>
+            <li>Puede contar con documentación y normas para los colaboradores.</li>
+        </ul>
+
+        <p><strong>Open Source no significa simplemente «código gratis»:</strong> que un proyecto permita acceder a su
+            código fuente no significa que no tenga condiciones. La licencia determina qué se puede hacer con ese código
+            y
+            qué obligaciones deben respetarse.</p>
+
+        <p><strong>GitHub y Open Source:</strong> GitHub proporciona herramientas que facilitan el desarrollo
+            colaborativo,
+            como repositorios públicos, Issues, Pull Requests, Forks, revisiones de código y discusiones. Estas
+            funcionalidades permiten que personas de diferentes lugares puedan participar en un mismo proyecto.</p>
+
+        <p><strong>Ejemplo de flujo para contribuir:</strong>
+            <code>buscar proyecto → leer documentación y licencia → Fork → Clone → crear rama → cambios → Commit → Push → Pull Request → revisión → Merge</code>.
+        </p>
+
+        <p><strong>Importante:</strong> no todos los proyectos alojados públicamente en GitHub tienen necesariamente las
+            mismas condiciones de uso o contribución. Antes de reutilizar código o realizar una contribución, es
+            recomendable consultar la licencia, la documentación y las reglas específicas del proyecto.</p>
+
+    </details>
+
 
     <h2>BLOQUE 7 — Perfil y publicación</h2>
-    <h3>GitHub Profile</h3>
-    <h3>GitHub Pages</h3>
-    <h3>Publicar una web con GitHub Pages</h3>
+    <!-- Desplegable 73 -->
+    <details>
+        <summary>
+            <h3>GitHub Profile</h3>
+        </summary>
+
+        <p>El <strong>GitHub Profile</strong> es la página pública asociada a tu cuenta de GitHub donde podés presentar
+            información sobre vos, tus proyectos y tu actividad dentro de la plataforma. Puede funcionar como una
+            presentación de tu trabajo y, especialmente para desarrolladores, como una forma de mostrar proyectos y
+            contribuciones.</p>
+
+        <ol>
+            <li><strong>Acceder a tu perfil:</strong> ingresá a GitHub con tu cuenta y seleccioná tu imagen de perfil
+                para
+                acceder a tu página personal.</li>
+
+            <li><strong>Configurar la información básica:</strong> desde las opciones de perfil podés agregar o
+                modificar
+                información como tu nombre, biografía, ubicación, sitio web y otros datos que quieras mostrar
+                públicamente.</li>
+
+            <li><strong>Agregar una fotografía:</strong> podés utilizar una imagen de perfil que permita identificar
+                visualmente tu cuenta.</li>
+
+            <li><strong>Agregar una biografía:</strong> utilizá la sección de biografía para explicar brevemente quién
+                sos, qué tecnologías utilizás o en qué tipo de proyectos trabajás.</li>
+
+            <li><strong>Agregar tu sitio web:</strong> si tenés una página personal, portfolio o sitio profesional,
+                podés
+                incluirlo en tu perfil para que otras personas puedan acceder a él.</li>
+
+            <li><strong>Crear un Profile README:</strong> GitHub permite crear un repositorio especial asociado a tu
+                nombre de usuario. El archivo <code>README.md</code> de ese repositorio puede mostrarse directamente en
+                tu
+                perfil.</li>
+
+            <li><strong>Presentar tus proyectos:</strong> podés destacar determinados repositorios para facilitar que
+                otras personas encuentren los proyectos que considerás más importantes.</li>
+
+            <li><strong>Mostrar tu actividad:</strong> tu perfil puede mostrar información relacionada con tus
+                contribuciones y actividad pública en GitHub.</li>
+
+            <li><strong>Revisar la información pública:</strong> antes de completar tu perfil, comprobá qué información
+                querés mostrar públicamente y evitá incluir datos personales que no sean necesarios.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que estás aprendiendo desarrollo web y querés utilizar GitHub como
+            portfolio. Podés configurar tu perfil con una breve descripción, agregar tu sitio web y destacar
+            repositorios
+            donde hayas desarrollado proyectos utilizando HTML, CSS y JavaScript.</p>
+
+        <p>También podés crear un <strong>Profile README</strong> para presentar tus conocimientos, tecnologías,
+            proyectos destacados y enlaces relevantes. De esta manera, cuando otra persona visite tu perfil, puede
+            obtener
+            rápidamente una visión general de tu trabajo.</p>
+
+        <p><strong>¿Qué podés mostrar en tu GitHub Profile?</strong></p>
+
+        <ul>
+            <li>Nombre y fotografía de perfil.</li>
+            <li>Una breve biografía.</li>
+            <li>Tecnologías y áreas de interés.</li>
+            <li>Enlaces a un sitio web o portfolio.</li>
+            <li>Repositorios destacados.</li>
+            <li>Actividad y contribuciones públicas.</li>
+            <li>Un Profile README personalizado.</li>
+            <li>Información sobre proyectos en los que participás.</li>
+        </ul>
+
+        <p><strong>Profile README:</strong> para crear esta sección especial, el nombre del repositorio debe coincidir
+            con
+            tu nombre de usuario de GitHub y el repositorio debe cumplir las condiciones establecidas por GitHub para
+            que su
+            <code>README.md</code> se muestre en tu perfil.
+        </p>
+
+        <p>Por ejemplo, si tu nombre de usuario fuera <code>juan123</code>, el repositorio especial sería
+            <code>juan123/juan123</code>. Dentro de ese repositorio podés crear un archivo <code>README.md</code> con
+            información que quieras presentar en tu perfil.
+        </p>
+
+        <p><strong>Ejemplo de estructura para un Profile README:</strong></p>
+
+        <pre><code># Hola, soy Juan
+
+Desarrollador web especializado en JavaScript.
+
+## Tecnologías
+
+- HTML
+- CSS
+- JavaScript
+- Git
+- GitHub
+
+## Proyectos
+
+- Proyecto web personal
+- Aplicación JavaScript
+- API REST
+
+## Contacto
+
+- Mi sitio web
+- LinkedIn</code></pre>
+
+        <p><strong>GitHub Profile y portfolio:</strong> el perfil puede complementar un portfolio profesional porque
+            permite
+            mostrar proyectos reales alojados en GitHub y proporcionar información sobre las tecnologías utilizadas y
+            las
+            contribuciones realizadas.</p>
+
+        <p><strong>Importante:</strong> un perfil de GitHub no es lo mismo que la configuración general de la cuenta. La
+            configuración controla aspectos de la cuenta, seguridad, notificaciones y preferencias, mientras que el
+            perfil
+            se utiliza principalmente para presentar información y actividad que querés mostrar a otras personas.</p>
+
+        <p><strong>Flujo recomendado:</strong>
+            <code>configurar perfil → agregar biografía → crear Profile README → organizar repositorios → destacar proyectos → mantener actividad</code>.
+        </p>
+
+    </details>
+    <!-- Desplegable 74 -->
+    <details>
+        <summary>
+            <h3>GitHub Pages</h3>
+        </summary>
+
+        <p><strong>GitHub Pages</strong> es un servicio de GitHub que permite publicar sitios web directamente desde un
+            repositorio. Es especialmente útil para páginas estáticas creadas con <strong>HTML, CSS y
+                JavaScript</strong>,
+            ya que permite convertir un repositorio en un sitio web accesible desde Internet sin necesidad de contratar
+            un
+            servidor web tradicional.</p>
+
+        <ol>
+            <li><strong>Crear un repositorio:</strong> primero necesitás un repositorio de GitHub donde estarán los
+                archivos
+                de tu sitio web. Por ejemplo, podés crear uno llamado <code>mi-sitio-web</code>.</li>
+
+            <li><strong>Agregar los archivos:</strong> incorporá al repositorio los archivos necesarios para tu página,
+                como <code>index.html</code>, archivos CSS, JavaScript e imágenes.</li>
+
+            <li><strong>Subir los cambios:</strong> si trabajás desde tu computadora, podés utilizar Git para realizar
+                commits y enviar los archivos a GitHub mediante <code>git push</code>.</li>
+
+            <li><strong>Acceder a Pages:</strong> dentro del repositorio ingresá a <strong>Settings</strong> y buscá la
+                sección relacionada con <strong>Pages</strong>.</li>
+
+            <li><strong>Elegir la fuente de publicación:</strong> seleccioná la rama y la carpeta desde las que GitHub
+                Pages debe obtener los archivos del sitio.</li>
+
+            <li><strong>Guardar la configuración:</strong> confirmá la configuración de publicación para que GitHub
+                pueda
+                generar y publicar el sitio.</li>
+
+            <li><strong>Esperar la publicación:</strong> después de que GitHub procese el repositorio, el sitio quedará
+                disponible mediante una dirección web proporcionada por GitHub Pages.</li>
+
+            <li><strong>Actualizar el sitio:</strong> cuando realices nuevos cambios en los archivos y los subas al
+                repositorio, GitHub Pages puede volver a publicar el sitio utilizando la configuración establecida.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que desarrollaste una página personal utilizando
+            <code>index.html</code>, <code>style.css</code> y <code>script.js</code>. Subís esos archivos a un
+            repositorio
+            de GitHub y configurás GitHub Pages para publicar el contenido.
+        </p>
+
+        <p>Una vez realizada la publicación, otras personas pueden acceder a la página mediante la dirección web
+            generada
+            por GitHub Pages. Si posteriormente modificás el código y hacés un nuevo <code>git push</code>, el sitio
+            puede
+            actualizarse con esos cambios.</p>
+
+        <p><strong>¿Para qué se utiliza GitHub Pages?</strong></p>
+
+        <ul>
+            <li>Publicar sitios web estáticos.</li>
+            <li>Crear portfolios personales.</li>
+            <li>Publicar documentación de proyectos.</li>
+            <li>Crear páginas para proyectos de código abierto.</li>
+            <li>Mostrar proyectos desarrollados con HTML, CSS y JavaScript.</li>
+            <li>Publicar blogs y páginas informativas compatibles con el servicio.</li>
+        </ul>
+
+        <p><strong>¿Qué tipo de sitios se pueden publicar?</strong></p>
+
+        <p>GitHub Pages es especialmente apropiado para sitios que pueden ejecutarse en el navegador sin depender de un
+            servidor propio para procesar código del lado del servidor. Por ejemplo, una página creada con
+            <strong>HTML, CSS y JavaScript</strong> puede publicarse directamente.
+        </p>
+
+        <p>En cambio, una aplicación que necesite ejecutar código del lado del servidor, como PHP o un backend de
+            Node.js, no puede utilizar GitHub Pages como si fuera un servidor tradicional para ejecutar ese código.</p>
+
+        <p><strong>GitHub Pages y Git:</strong> Git se encarga de controlar las versiones de los archivos y GitHub
+            almacena
+            el repositorio de forma remota. GitHub Pages utiliza esos archivos almacenados en el repositorio como fuente
+            para publicar el sitio web.</p>
+
+        <p><strong>Flujo habitual:</strong>
+            <code>crear sitio → crear repositorio → subir archivos → configurar GitHub Pages → publicar → realizar cambios → git push → actualizar sitio</code>.
+        </p>
+
+        <p><strong>Importante:</strong> GitHub Pages está pensado principalmente para la publicación de sitios
+            estáticos.
+            Si tu proyecto necesita un servidor que procese solicitudes, ejecute código del backend o utilice una base
+            de
+            datos directamente, normalmente necesitarás un servicio de hosting que proporcione esas capacidades.</p>
+
+    </details>
+    <!-- Desplegable 75 -->
+    <details>
+        <summary>
+            <h3>Publicar una web con GitHub Pages</h3>
+        </summary>
+
+        <p>Una vez que conocemos qué es GitHub Pages, podemos utilizarlo para llevar un proyecto web desde nuestra
+            computadora hasta una dirección accesible desde Internet. Para una página creada con <strong>HTML, CSS y
+                JavaScript</strong>, el proceso consiste en subir los archivos a un repositorio de GitHub y configurar
+            GitHub
+            Pages para utilizar ese repositorio como fuente de publicación.</p>
+
+        <ol>
+            <li><strong>Preparar el proyecto:</strong> asegurate de tener los archivos necesarios para tu sitio, por
+                ejemplo <code>index.html</code>, <code>style.css</code> y <code>script.js</code>.</li>
+
+            <li><strong>Comprobar el archivo principal:</strong> el archivo <code>index.html</code> debe encontrarse en
+                la
+                ubicación que utilizará GitHub Pages como fuente del sitio. Este archivo normalmente funciona como la
+                página
+                principal.</li>
+
+            <li><strong>Crear un repositorio en GitHub:</strong> iniciá sesión en GitHub y creá un repositorio para
+                almacenar los archivos de tu proyecto. Por ejemplo, podés llamarlo <code>mi-sitio-web</code>.</li>
+
+            <li><strong>Subir los archivos:</strong> podés cargar los archivos directamente desde la interfaz de GitHub
+                o
+                utilizar Git desde tu computadora. Si trabajás localmente, el flujo habitual es
+                <code>git add</code>, <code>git commit</code> y <code>git push</code>.
+            </li>
+
+            <li><strong>Abrir la configuración del repositorio:</strong> dentro del repositorio ingresá en
+                <strong>Settings</strong> y buscá la sección <strong>Pages</strong>.
+            </li>
+
+            <li><strong>Seleccionar la fuente de publicación:</strong> en la configuración de GitHub Pages elegí la rama
+                que contiene los archivos del sitio, por ejemplo <code>main</code>, y seleccioná la carpeta que
+                corresponde
+                a tu proyecto.</li>
+
+            <li><strong>Guardar la configuración:</strong> confirmá la configuración para que GitHub Pages pueda
+                comenzar
+                el proceso de publicación.</li>
+
+            <li><strong>Esperar la publicación:</strong> GitHub procesará el repositorio y, cuando el sitio esté
+                publicado,
+                mostrará la dirección desde la que podés acceder a la página.</li>
+
+            <li><strong>Abrir la web:</strong> utilizá la dirección proporcionada por GitHub Pages para comprobar que el
+                sitio funciona correctamente.</li>
+
+            <li><strong>Actualizar la página:</strong> cuando modifiques el proyecto, subí nuevamente los cambios al
+                repositorio. GitHub Pages utilizará la nueva versión para actualizar el sitio publicado.</li>
+        </ol>
+
+        <p><strong>Ejemplo práctico:</strong> imaginá que tenés esta estructura en tu computadora:</p>
+
+        <pre><code>mi-sitio-web/
+├── index.html
+├── style.css
+├── script.js
+└── imagenes/
+    └── logo.png</code></pre>
+
+        <p>Primero subís estos archivos a un repositorio de GitHub. Después configurás GitHub Pages para utilizar la
+            rama
+            <code>main</code> y la carpeta correspondiente como fuente de publicación.
+        </p>
+
+        <p>Una vez publicado el proyecto, GitHub Pages genera una dirección web desde la que cualquier persona puede
+            acceder al sitio. Si posteriormente modificás <code>index.html</code>, <code>style.css</code> o
+            <code>script.js</code>, realizás un nuevo commit y ejecutás <code>git push</code>, los cambios podrán
+            reflejarse
+            en la página publicada.
+        </p>
+
+        <p><strong>Si trabajás desde la terminal:</strong></p>
+
+        <pre><code># Inicializar Git en el proyecto
+git init
+
+# Agregar los archivos
+git add .
+
+# Crear el primer commit
+git commit -m "Publicar sitio web"
+
+# Conectar el proyecto con GitHub
+git remote add origin URL_DEL_REPOSITORIO
+
+# Subir los archivos a GitHub
+git push -u origin main</code></pre>
+
+        <p>Después de subir el proyecto, la configuración de GitHub Pages se realiza desde las opciones del repositorio.
+            A partir de ese momento, GitHub Pages utiliza los archivos seleccionados como fuente para publicar el sitio.
+        </p>
+
+        <p><strong>¿Qué ocurre cuando modificás la web?</strong></p>
+
+        <ol>
+            <li>Modificás los archivos de tu proyecto local.</li>
+            <li>Comprobás los cambios en tu computadora.</li>
+            <li>Ejecutás <code>git add</code>.</li>
+            <li>Creás un nuevo commit con <code>git commit</code>.</li>
+            <li>Subís los cambios mediante <code>git push</code>.</li>
+            <li>GitHub Pages vuelve a procesar la fuente configurada y publica la nueva versión.</li>
+        </ol>
+
+        <p><strong>Errores frecuentes:</strong></p>
+
+        <ul>
+            <li>El archivo <code>index.html</code> no está en la ubicación utilizada como fuente de publicación.</li>
+            <li>Se seleccionó una rama o carpeta diferente de aquella donde están los archivos del sitio.</li>
+            <li>Las rutas hacia CSS, JavaScript o imágenes son incorrectas.</li>
+            <li>Se utilizaron rutas absolutas que funcionan localmente pero no en el sitio publicado.</li>
+            <li>Los cambios todavía no fueron enviados al repositorio mediante <code>git push</code>.</li>
+            <li>El sitio utiliza tecnologías de backend que GitHub Pages no ejecuta como un servidor tradicional.</li>
+        </ul>
+
+        <p><strong>Flujo completo:</strong>
+            <code>crear web → crear repositorio → subir archivos → configurar Pages → publicar → modificar → commit → push → actualizar</code>.
+        </p>
+
+        <p><strong>Importante:</strong> GitHub Pages permite publicar principalmente sitios estáticos. Si tu proyecto
+            necesita
+            ejecutar código del servidor, conectarse directamente a una base de datos o utilizar un backend propio,
+            tendrás
+            que utilizar una plataforma que proporcione esas capacidades.</p>
+
+    </details>
+  
 
     <p> Visto hasta 2:40 min en youtube</p>
 
