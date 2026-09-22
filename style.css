@@ -1,128 +1,964 @@
-/* ==========================================
-   Configuración General y Fondo
-   ========================================== */
+/* =========================================================
+   CURSO DE GIT - DISEÑO PROFESIONAL DARK
+   ========================================================= */
+
+/* ---------- VARIABLES ---------- */
+
+:root {
+    --git-bg: #0d1117;
+    --git-bg-secondary: #161b22;
+    --git-bg-card: #1c2128;
+    --git-bg-code: #0b0f14;
+
+    --git-border: #30363d;
+    --git-border-hover: #484f58;
+
+    --git-text: #e6edf3;
+    --git-text-secondary: #8b949e;
+    --git-text-muted: #6e7681;
+
+    --git-accent: #58a6ff;
+    --git-accent-hover: #79c0ff;
+
+    --git-green: #3fb950;
+    --git-green-hover: #56d364;
+
+    --git-purple: #bc8cff;
+    --git-orange: #d29922;
+    --git-red: #f85149;
+
+    --git-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+    --git-shadow-hover:
+        0 15px 40px rgba(0, 0, 0, 0.4);
+
+    --git-radius: 12px;
+}
+
+
+/* =========================================================
+   RESET BÁSICO
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #121212; /* Negro profundo pero suave para la vista */
-    color: #e0e0e0; /* Blanco grisáceo para evitar el cansancio visual */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 50px 25px 80px;
+
+    max-width: 1050px;
+
+    background:
+        radial-gradient(
+            circle at top center,
+            rgba(88, 166, 255, 0.08),
+            transparent 35%
+        ),
+        var(--git-bg);
+
+    color: var(--git-text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 17px;
+    line-height: 1.75;
+
+    -webkit-font-smoothing: antialiased;
 }
 
-/* ==========================================
-   Títulos Principales
-   ========================================== */
-h1 {
-    color: #4fc3f7; /* Azul celeste llamativo */
-    border-bottom: 2px solid #333333;
-    padding-bottom: 10px;
-    font-size: 2.5rem;
+
+/* =========================================================
+   SELECCIÓN DE TEXTO
+   ========================================================= */
+
+::selection {
+    background: rgba(88, 166, 255, 0.35);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PÁRRAFOS
+   ========================================================= */
+
+body > p {
+    color: var(--git-text-secondary);
+
+    max-width: 850px;
+
+    margin: 0 auto 25px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   H1 - TÍTULO PRINCIPAL
+   ========================================================= */
+
+body > h1 {
+    position: relative;
+
+    margin: 0 auto 20px;
+
+    padding: 55px 35px;
+
+    max-width: 100%;
+
     text-align: center;
+
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #161b22,
+            #0d1117
+        );
+
+    border: 1px solid var(--git-border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-h2 {
-    color: #81c784; /* Verde suave para subtítulos */
-    margin-top: 30px;
-    font-size: 1.8rem;
+
+/* Línea decorativa del H1 */
+
+body > h1::after {
+    content: "";
+
+    display: block;
+
+    width: 80px;
+    height: 4px;
+
+    margin: 25px auto 0;
+
+    background: linear-gradient(
+        90deg,
+        var(--git-accent),
+        var(--git-green)
+    );
+
+    border-radius: 10px;
 }
 
-p {
-    color: #b0bec5; /* Gris claro para los párrafos generales */
-    font-size: 1.1rem;
-}
 
-/* ==========================================
-   Estilos de los Desplegables (details)
-   ========================================== */
-details {
-    background-color: #1e1e1e; /* Gris muy oscuro para las tarjetas */
-    border: 1px solid #333333;
-    border-radius: 8px;
+/* =========================================================
+   SUBTÍTULO INICIAL
+   ========================================================= */
+
+body > h2:first-of-type {
+    text-align: center;
+
+    margin-top: 45px;
     margin-bottom: 15px;
-    padding: 15px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    color: #ffffff;
+
+    font-size: 2rem;
 }
 
-/* Efecto al pasar el mouse por encima del desplegable */
+
+/* =========================================================
+   H2 - ETAPAS DEL CURSO
+   ========================================================= */
+
+body > h2 {
+    position: relative;
+
+    margin-top: 70px;
+    margin-bottom: 28px;
+
+    padding: 20px 25px;
+
+    color: #ffffff;
+
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+
+    line-height: 1.3;
+
+    font-weight: 750;
+
+    letter-spacing: -0.5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(88, 166, 255, 0.12),
+            rgba(88, 166, 255, 0.02)
+        );
+
+    border-left: 4px solid var(--git-accent);
+
+    border-radius: 0 12px 12px 0;
+}
+
+
+/* Número visual de las etapas */
+
+body > h2:not(:first-of-type)::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 9px;
+    height: 9px;
+
+    margin-right: 12px;
+
+    vertical-align: middle;
+
+    background: var(--git-green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px rgba(63, 185, 80, 0.6);
+}
+
+
+/* =========================================================
+   DETAILS - TARJETAS
+   ========================================================= */
+
+details {
+    position: relative;
+
+    margin: 14px 0;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    border: 1px solid var(--git-border);
+
+    border-radius: var(--git-radius);
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.15);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover de cada tarjeta */
+
 details:hover {
-    border-color: #4fc3f7; /* El borde se vuelve azul */
-    background-color: #252526;
+    border-color: var(--git-border-hover);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* Cuando el desplegable está abierto */
+
+/* Tarjeta abierta */
+
 details[open] {
-    border-color: #81c784; /* El borde cambia a verde */
-    background-color: #1e1e1e;
+    border-color: rgba(88, 166, 255, 0.45);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(88, 166, 255, 0.05);
 }
 
-/* Encabezado del desplegable */
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
 summary {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 65px;
+
+    padding: 18px 55px 18px 24px;
+
     cursor: pointer;
-    font-weight: bold;
-    outline: none;
-    padding: 5px;
+
+    list-style: none;
+
+    color: #ffffff;
+
+    font-weight: 650;
+
+    user-select: none;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
 }
 
-/* Títulos dentro de los desplegables */
-summary h3, summary h4 {
-    display: inline; /* Mantiene el título alineado con la flecha nativa */
-    color: #ffb74d; /* Naranja cálido para resaltar los títulos internos */
-    font-size: 1.3rem;
-    margin-left: 10px;
+
+/* Quitar marcador nativo */
+
+summary::-webkit-details-marker {
+    display: none;
 }
 
-/* Especial para el resumen paso a paso */
-details summary:only-child, details[open] summary {
-    border-bottom: 1px solid #333333;
-    padding-bottom: 10px;
+summary::marker {
+    display: none;
+}
+
+
+/* Flecha */
+
+summary::after {
+    content: "›";
+
+    position: absolute;
+
+    right: 24px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(0deg);
+
+    color: var(--git-text-secondary);
+
+    font-size: 28px;
+
+    font-weight: 300;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* Flecha cuando está abierto */
+
+details[open] > summary::after {
+    transform:
+        translateY(-50%)
+        rotate(90deg);
+
+    color: var(--git-accent);
+}
+
+
+/* Hover summary */
+
+summary:hover {
+    color: var(--git-accent-hover);
+
+    background:
+        rgba(88, 166, 255, 0.04);
+}
+
+
+/* =========================================================
+   H3 DENTRO DE SUMMARY
+   ========================================================= */
+
+summary h3 {
+    margin: 0;
+
+    color: inherit;
+
+    font-size: 1.08rem;
+
+    font-weight: 650;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   CONTENIDO DE DETAILS
+   ========================================================= */
+
+details > p,
+details > ul,
+details > ol {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+
+/* Separación superior del primer elemento */
+
+details[open] > p:first-of-type,
+details[open] > ul:first-of-type,
+details[open] > ol:first-of-type {
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   PÁRRAFOS DENTRO DE DETAILS
+   ========================================================= */
+
+details p {
+    color: var(--git-text-secondary);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   LISTAS
+   ========================================================= */
+
+details ul,
+details ol {
+    padding-left: 25px;
+
+    color: var(--git-text-secondary);
+}
+
+
+details li {
+    margin-bottom: 10px;
+
+    padding-left: 4px;
+}
+
+
+details li::marker {
+    color: var(--git-accent);
+}
+
+
+/* Listas anidadas */
+
+details li ul,
+details li ol {
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
-/* ==========================================
-   Listas y Elementos de Texto
-   ========================================== */
-ul, ol {
-    padding-left: 25px;
-    color: #e0e0e0;
-}
 
-li {
-    margin-bottom: 8px;
-}
+/* =========================================================
+   STRONG
+   ========================================================= */
 
 strong {
-    color: #ffffff; /* Blanco puro para las palabras importantes */
+    color: #ffffff;
+
+    font-weight: 650;
 }
+
+
+/* =========================================================
+   EM
+   ========================================================= */
 
 em {
-    color: #ea80fc; /* Rosado/Morado suave para las aclaraciones o advertencias */
+    color: #b1bac4;
 }
 
-/* ==========================================
-   Bloques de Código (Estilo Terminal)
-   ========================================== */
+
+/* =========================================================
+   CÓDIGO INLINE
+   ========================================================= */
+
 code {
-    background-color: #2d2d2d; /* Fondo gris código */
-    color: #f1fa8c; /* Amarillo brillante estilo consola */
-    padding: 3px 6px;
-    border-radius: 4px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.95rem;
+    display: inline;
+
+    padding: 3px 7px;
+
+    background: #161b22;
+
+    color: #79c0ff;
+
+    border: 1px solid #30363d;
+
+    border-radius: 6px;
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace;
+
+    font-size: 0.88em;
+
+    white-space: nowrap;
 }
 
-/* ==========================================
-   Enlaces (Links)
-   ========================================== */
-a {
-    color: #4fc3f7;
-    text-decoration: none;
-    border-bottom: 1px dashed #4fc3f7;
+
+/* =========================================================
+   CÓDIGO DENTRO DE LISTAS
+   ========================================================= */
+
+li code {
+    color: #79c0ff;
 }
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    color: var(--git-accent);
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
 
 a:hover {
-    color: #81c784;
-    border-bottom: 1px solid #81c784;
+    color: var(--git-accent-hover);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   BLOQUE DE RESUMEN
+   ========================================================= */
+
+details:last-of-type {
+    margin-bottom: 35px;
+}
+
+
+/* El details que tiene el resumen paso a paso */
+
+summary:has(+ ul) {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BLOQUE "RESUMEN PASO A PASO"
+   ========================================================= */
+
+details:has(summary:first-child) {
+    /* base */
+}
+
+
+/* =========================================================
+   SECCIÓN FINAL - GITHUB
+   ========================================================= */
+
+body > section {
+    position: relative;
+
+    margin-top: 80px !important;
+    margin-bottom: 20px !important;
+
+    padding: 50px 30px !important;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #161b22,
+            #0d1117
+        ) !important;
+
+    border: 1px solid var(--git-border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+
+    overflow: hidden;
+}
+
+
+/* Decoración superior */
+
+body > section::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--git-green),
+            var(--git-accent),
+            var(--git-purple)
+        );
+}
+
+
+/* =========================================================
+   H2 DEL BLOQUE GITHUB
+   ========================================================= */
+
+body > section h2 {
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+    color: #ffffff;
+
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   TEXTO DEL BLOQUE GITHUB
+   ========================================================= */
+
+body > section p {
+    color: var(--git-text-secondary) !important;
+
+    max-width: 650px;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTÓN GITHUB
+   ========================================================= */
+
+body > section a {
+    display: flex !important;
+
+    width: 190px !important;
+    height: 150px !important;
+
+    margin: 30px auto 0;
+
+    padding: 20px !important;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #238636,
+            #2ea043
+        ) !important;
+
+    border: 1px solid rgba(63, 185, 80, 0.5);
+
+    border-radius: 16px !important;
+
+    font-size: 16px !important;
+
+    font-weight: 700;
+
+    text-decoration: none !important;
+
+    box-shadow:
+        0 8px 25px rgba(35, 134, 54, 0.25) !important;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* Hover del botón */
+
+body > section a:hover {
+    transform: translateY(-6px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #2ea043,
+            #3fb950
+        ) !important;
+
+    box-shadow:
+        0 15px 35px rgba(63, 185, 80, 0.35) !important;
+
+    text-decoration: none !important;
+}
+
+
+/* =========================================================
+   SVG DE GITHUB
+   ========================================================= */
+
+body > section a svg {
+    width: 40px !important;
+    height: 40px !important;
+
+    margin-bottom: 12px !important;
+}
+
+
+/* =========================================================
+   FOCUS - ACCESIBILIDAD
+   ========================================================= */
+
+a:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--git-accent);
+
+    outline-offset: 4px;
+
+    border-radius: 6px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #30363d;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 25px 16px 60px;
+
+        font-size: 16px;
+    }
+
+
+    body > h1 {
+        padding: 40px 20px;
+
+        font-size: 2.3rem;
+
+        border-radius: 15px;
+    }
+
+
+    body > h2 {
+        margin-top: 50px;
+
+        padding: 17px 18px;
+
+        font-size: 1.55rem;
+    }
+
+
+    summary {
+        padding:
+            16px
+            45px
+            16px
+            18px;
+
+        min-height: 60px;
+    }
+
+
+    summary h3 {
+        font-size: 1rem;
+    }
+
+
+    details > p,
+    details > ul,
+    details > ol {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+
+
+    body > section {
+        padding: 40px 20px !important;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MÓVIL
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding:
+            15px
+            10px
+            45px;
+
+        font-size: 15px;
+    }
+
+
+    body > h1 {
+        padding: 35px 16px;
+
+        font-size: 2rem;
+
+        letter-spacing: -1px;
+    }
+
+
+    body > h1::after {
+        width: 60px;
+    }
+
+
+    body > h2 {
+        font-size: 1.35rem;
+
+        margin-top: 40px;
+
+        padding: 15px;
+    }
+
+
+    body > h2:first-of-type {
+        font-size: 1.5rem;
+    }
+
+
+    details {
+        margin: 10px 0;
+
+        border-radius: 10px;
+    }
+
+
+    summary {
+        padding:
+            15px
+            40px
+            15px
+            15px;
+    }
+
+
+    summary h3 {
+        font-size: 0.95rem;
+    }
+
+
+    summary::after {
+        right: 15px;
+
+        font-size: 24px;
+    }
+
+
+    details > p,
+    details > ul,
+    details > ol {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+
+    details ul,
+    details ol {
+        padding-left: 22px;
+    }
+
+
+    code {
+        white-space: normal;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    body > section {
+        margin-top: 55px !important;
+
+        padding:
+            35px
+            15px !important;
+
+        border-radius: 15px;
+    }
+
+
+    body > section h2 {
+        font-size: 1.7rem;
+    }
+
+
+    body > section a {
+        width: 170px !important;
+        height: 140px !important;
+    }
+
 }
